@@ -4,9 +4,9 @@ enum ResponseMessage{
 
     //http status 400
     VALIDATION_FAILED = "Validation Failed.",
-    DUPLICATE_UPI = "Duplicate Upi.",
+    DUPLICATE_EMAIL = "Duplicate email.",
     DUPLICATE_USERNAME = "Duplicate Username.",
-    NOT_EXISTED_UPI = "This upi does not exist.",
+    NOT_EXISTED_EMAIL = "This email does not exist.",
     NOT_EXISTED_REVIEW = "This review does not exist.",
 
     //Http status 401
@@ -21,3 +21,4 @@ enum ResponseMessage{
     DATABASE_ERROR = "Database error.",
     MAIL_SEND_FAILED = "Mail send failed."
 }
+export default ResponseMessage;

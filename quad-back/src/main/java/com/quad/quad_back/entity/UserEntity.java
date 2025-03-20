@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @Table(name="user")
 public class UserEntity {
     @Id
-    private String upi;
+    private String userId;
+    private String email;
     private String password;
     private String username;
     private String role;

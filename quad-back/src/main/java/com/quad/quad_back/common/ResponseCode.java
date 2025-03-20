@@ -7,9 +7,9 @@ public interface ResponseCode {
 
     // Http status 400: BAD REQUEST
     String VALIDATION_FAILED = "VF";
-    String DUPLICATE_UPI = "DU";
+    String DUPLICATE_EMAIL = "DE";
     String DUPLICATED_USERNAME = "DN";
-    String NOT_EXISTED_UPI = "NU";
+    String NOT_EXISTED_EMAIL = "NE";
     String NOT_EXISTED_REVIEW = "NR";
 
     // Http status 401: Unauthorized

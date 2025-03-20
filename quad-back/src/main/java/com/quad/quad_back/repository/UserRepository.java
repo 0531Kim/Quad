@@ -10,6 +10,7 @@ import com.quad.quad_back.entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, String>{
     
-    UserEntity findByUserUpi(String upi);
-
+    boolean existsByUsername(String username);
+    
+    UserEntity findByUserID(String userId);
 }

@@ -46,22 +46,22 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
                 return;
             }
 
-            String upi = jwtProvider.validate(token);
-            if (upi == null) {
+            String userId = jwtProvider.validate(token);
+            if (userId == null) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.setContentType("application/json");
                 response.getWriter().write("{ \"code\":\"Invalid Token\", \"message\": \"Token validation failed.\"}");
                 return;
             }
 
-            UserEntity userEntity = userRepository.findByUserUpi(upi);
+            UserEntity userEntity = userRepository.findByUserID(userId);
             String role = userEntity.getRole(); // role : ROLE_USER or ROLE_ADMIN
 
             List<GrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority(role));
 
             AbstractAuthenticationToken authenticationToken = 
-                new UsernamePasswordAuthenticationToken(upi, null, authorities);
+                new UsernamePasswordAuthenticationToken(userId, null, authorities);
             authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
             SecurityContext securityContext = SecurityContextHolder.createEmptyContext();

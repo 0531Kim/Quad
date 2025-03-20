@@ -6,9 +6,9 @@ public interface ResponseMessage {
 
     //http status 400
     String VALIDATION_FAILED = "Validation Failed.";
-    String DUPLICATE_UPI = "Duplicate Upi.";
+    String DUPLICATE_EMAIL = "Duplicate Email.";
     String DUPLICATE_USERNAME = "Duplicate Username.";
-    String NOT_EXISTED_UPI = "This upi does not exist.";
+    String NOT_EXISTED_EMAIL = "This email does not exist.";
     String NOT_EXISTED_REVIEW = "This review does not exist.";
 
     //Http status 401

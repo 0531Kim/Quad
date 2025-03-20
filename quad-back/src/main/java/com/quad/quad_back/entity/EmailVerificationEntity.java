@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 public class EmailVerificationEntity {
     
     @Id
-    private String upi;
     private String username;
+    private String email;
     // use string not int in case a verification number starts from 0
     private String verificationNumber;
 }

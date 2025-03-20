@@ -8,4 +8,5 @@ import com.quad.quad_back.entity.EmailVerificationEntity;
 @Repository
 public interface VertificationRepository extends JpaRepository<EmailVerificationEntity, String>{
     
+    EmailVerificationEntity findByUsername(String username);
 }
