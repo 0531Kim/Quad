@@ -20,15 +20,25 @@
 .inputbox-container{
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     padding: 11px 16px 11px 0px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.inputbox-container-red-underbar{
+    border-bottom: 1px solid rgba(255, 0, 0, 0.7);
+    padding: 11px 16px 11px 0px;
+    flex : 1;
+    background-color: rgba(250, 250, 250, 1);
 
     display: flex;
     align-items: center;
 }
 
-.inputbox-container-error{
-    border-bottom: 1px solid rgba(255, 0, 0, 0.7);
+.inputbox-container-blue-underbar{
+    border-bottom: 1px solid rgba(58, 87, 248, 0.9);
     padding: 11px 16px 11px 0px;
-
+    flex : 1;
     background-color: rgba(250, 250, 250, 1);
 
     display: flex;
@@ -42,24 +52,24 @@
 
     flex: 1;
 
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.75);
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
 }
 
-.inputbox-message-ok{
-    color: rgba(58, 87, 248, 0.8);
+.inputbox-blueMessage{
+    color: rgba(58, 87, 248, 0.9);
 
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 400;
     line-height: 140%;
 }
 
-.inputbox-message{
+.inputbox-redMessage{
     color: rgba(255, 0, 0, 0.7);
 
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 400;
     line-height: 140%;
 }
@@ -70,41 +80,51 @@
     align-items: center;
 
     border-radius: 6px;
-    width: 86px;
+    width: 92px;
     height: 36px;
 
-    background-color: aliceblue;
+    color: #013620;
 
-    font-size: 16px;
+    font-size: 14px;
     line-height: 175%;
 
     cursor: pointer;
+    margin-right: 8px;
+    border: 1.5px solid #00804b99;
 }
 
 .input-box-button-disable{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border-radius: 3px;
-    width: 86px;
+    color: rgba(0, 0, 0, 0.509);
+    border-radius: 6px;
+    width: 92px;
     height: 36px;
 
-    background-color: rgba(240, 240, 240, 1);
+    background-color: white;
+    border: 1.5px solid rgba(230, 230, 230, 1);
 
-    font-size: 16px;
+    font-size: 14px;
     line-height: 175%;
 
     cursor:default;
+
+    margin-right: 8px;
 }
 
 
 .input-box-button:hover{
-    background-color: antiquewhite;
+    background-color: #00804b11;
 }
 
 .button-box{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.inputbox-message-sent{
+    color: rgba(58, 87, 248, 0.8);
+    font-size: 11px;
 }

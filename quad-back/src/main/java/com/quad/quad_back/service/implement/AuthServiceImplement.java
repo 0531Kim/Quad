@@ -1,18 +1,26 @@
 package com.quad.quad_back.service.implement;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.quad.quad_back.common.VerificationNumber;
+import com.quad.quad_back.common.VerificationCode;
 import com.quad.quad_back.dto.request.auth.ConfirmEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.EmailVerificationRequestDto;
+import com.quad.quad_back.dto.request.auth.SignInRequestDto;
+import com.quad.quad_back.dto.request.auth.SignUpRequestDto;
 import com.quad.quad_back.dto.request.auth.UsernameCheckRequestDto;
 import com.quad.quad_back.dto.response.ResponseDto;
 import com.quad.quad_back.dto.response.auth.ConfirmEmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.EmailVerificationResponseDto;
+import com.quad.quad_back.dto.response.auth.SignInResponseDto;
+import com.quad.quad_back.dto.response.auth.SignUpResponseDto;
 import com.quad.quad_back.dto.response.auth.UsernameCheckResponseDto;
 import com.quad.quad_back.entity.EmailVerificationEntity;
+import com.quad.quad_back.entity.UserEntity;
 import com.quad.quad_back.provider.EmailProvider;
+import com.quad.quad_back.provider.JwtProvider;
 import com.quad.quad_back.repository.UserRepository;
 import com.quad.quad_back.repository.VertificationRepository;
 import com.quad.quad_back.service.AuthService;
@@ -27,6 +35,8 @@ public class AuthServiceImplement implements AuthService{
     private final VertificationRepository vertificationRepository;
 
     private final EmailProvider emailProvider;
+    private final JwtProvider jwtProvider;
+    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Override
     public ResponseEntity<? super UsernameCheckResponseDto> usernameCheck(UsernameCheckRequestDto dto) {
@@ -50,20 +60,17 @@ public class AuthServiceImplement implements AuthService{
       
         try{
 
-            String username = dto.getUsername();
-            System.out.println(username);
-            System.out.println(username.length());
             String email = dto.getEmail();
 
-            boolean isExistUsername = userRepository.existsByUsername(username);
-            if(isExistUsername) return EmailVerificationResponseDto.duplicateUsername();
+            boolean isExistEmail = userRepository.existsByEmail(email);
+            if(isExistEmail) return EmailVerificationResponseDto.duplicateEmail();
 
-            String verificationNumber = VerificationNumber.getVerificationNumber();
+            String verificationCode = VerificationCode.getVerificationCode();
 
-            boolean isSuccessed = emailProvider.sendVerificationMail(email, verificationNumber);
+            boolean isSuccessed = emailProvider.sendVerificationMail(email, verificationCode);
             if(!isSuccessed) return EmailVerificationResponseDto.mailSendFail();
 
-            EmailVerificationEntity verificationEntity = new EmailVerificationEntity(username, email, verificationNumber);
+            EmailVerificationEntity verificationEntity = new EmailVerificationEntity(email, verificationCode);
             vertificationRepository.save(verificationEntity);
 
         }catch(Exception exception){
@@ -79,14 +86,13 @@ public class AuthServiceImplement implements AuthService{
             ConfirmEmailVerificationRequestDto dto) {
         try{
                 
-            String username = dto.getUsername();
             String email = dto.getEmail();
-            String verificationNumber = dto.getVerificationNumber();
+            String verificationCode = dto.getVerificationCode();
 
-            EmailVerificationEntity emailVerificationEntity = vertificationRepository.findByUsername(username);
+            EmailVerificationEntity emailVerificationEntity = vertificationRepository.findByEmail(email);
             if(emailVerificationEntity == null) return ConfirmEmailVerificationResponseDto.verificationFail();
 
-            boolean isMatched = emailVerificationEntity.getEmail().equals(email) && emailVerificationEntity.getVerificationNumber().equals(verificationNumber);
+            boolean isMatched = emailVerificationEntity.getEmail().equals(email) && emailVerificationEntity.getVerificationCode().equals(verificationCode);
             if(!isMatched) return ConfirmEmailVerificationResponseDto.verificationFail();
 
         }catch(Exception exception){
@@ -95,5 +101,57 @@ public class AuthServiceImplement implements AuthService{
         }
         
         return ConfirmEmailVerificationResponseDto.success();
+    }
+
+    @Override
+    public ResponseEntity<? super SignUpResponseDto> signUp(SignUpRequestDto dto) {
+       
+        try{
+            String username = dto.getUsername();
+            boolean isExistUsername = userRepository.existsByUsername(username);
+            if(isExistUsername) return SignUpResponseDto.duplicateUsername();
+
+            String password = dto.getPassword();
+            String encodedPassword = passwordEncoder.encode(password);
+            dto.setPassword(encodedPassword);
+
+            UserEntity userEntity = new UserEntity(dto);
+            userRepository.save(userEntity);
+
+            String email = dto.getEmail();
+            vertificationRepository.deleteByEmail(email);
+
+        }catch(Exception exception){
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+
+        return SignUpResponseDto.success();
+    }
+
+    @Override
+    public ResponseEntity<? super SignInResponseDto> signIn(SignInRequestDto dto) {
+       
+        String token = null;
+
+        try{
+
+            String email = dto.getEmail();
+            UserEntity userEntity = userRepository.findByEmail(email);
+            if(userEntity == null) SignInResponseDto.signInFailed();
+
+            String password = dto.getPassword();
+            String encodedPassword = userEntity.getPassword();
+            boolean isMatched = passwordEncoder.matches(password, encodedPassword);
+            if(!isMatched) return SignInResponseDto.signInFailed();
+
+            token = jwtProvider.create(email);
+
+        }catch(Exception exception){
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+
+        return SignInResponseDto.success(token);
     }
 }

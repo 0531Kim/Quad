@@ -14,13 +14,13 @@ public class EmailProvider {
 
     private final String SUBJECT = "[Welcome to quad] Authentication email!";
 
-    public boolean sendVerificationMail(String email, String verificationNumber){
+    public boolean sendVerificationMail(String email, String verificationCode){
 
         try{
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper messageHelper = new MimeMessageHelper(message, true);
 
-            String htmlContent = getVerificationMessage(verificationNumber);
+            String htmlContent = getVerificationMessage(verificationCode);
 
             messageHelper.setTo(email);
             messageHelper.setSubject(SUBJECT);
@@ -35,12 +35,12 @@ public class EmailProvider {
 
         return true;
     }
-
-    private String getVerificationMessage(String verificationNumber){
+    
+    private String getVerificationMessage(String verificationCode){
 
         String verificationMessage ="";
         verificationMessage += "<h1 style='text-align: center;'>[Quad Authentication email]</h1>";
-        verificationMessage += "<h3 style='text-align: center;'>Verification code : <strong style='font-size': 32px; letter-spacing: 8px;'>" + verificationNumber + "</strong></h3>";
+        verificationMessage += "<h3 style='text-align: center;'>Verification code : <strong style='font-size': 32px; letter-spacing: 8px;'>" + verificationCode + "</strong></h3>";
         return verificationMessage;
         
     }

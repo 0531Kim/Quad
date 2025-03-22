@@ -72,7 +72,7 @@
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-.black-large-full-button{
+.green-large-full-button{
   border-radius: 46px; 
   
   width: 100%;
@@ -93,8 +93,32 @@
   cursor: pointer;
 }
 
-.black-large-full-button:hover{
+.green-large-full-button:hover{
   background-color: rgba(0, 128, 75, 0.9);
+}
+
+.green-empty-large-full-button{
+  border-radius: 46px; 
+  
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1.5px solid #00804b;
+
+  /* background-color: rgba(0, 0, 0, 1); */
+  /* background-color: #00804b; */
+
+  /* color: rgba(255, 255, 255, 1); */
+  color: #013620;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+
+  cursor: pointer;
 }
 
 .disable-button{
@@ -268,9 +292,9 @@
   background-image: url(assets/image/swing.png);
 }
 
-.google-sign-in{
-  width: 48px;
-  height: 48px;
+.google-logo{
+  width: 28px;
+  height: 28px;
 
   background-image: url(assets/image/google-logo.png);
 

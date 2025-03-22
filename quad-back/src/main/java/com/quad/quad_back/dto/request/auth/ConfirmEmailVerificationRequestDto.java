@@ -11,13 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ConfirmEmailVerificationRequestDto {
     
-    @NotBlank
-    private String username;
-
     @Email
     @NotBlank
     private String email;
 
     @NotBlank
-    private String verificationNumber;
+    private String verificationCode;
 }

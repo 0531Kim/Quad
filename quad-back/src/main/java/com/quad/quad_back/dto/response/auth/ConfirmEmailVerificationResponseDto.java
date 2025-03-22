@@ -11,17 +11,17 @@ import lombok.Getter;
 
 @Getter
 public class ConfirmEmailVerificationResponseDto extends ResponseDto{
-    private ConfirmEmailVerificationResponseDto(){
+    private ConfirmEmailVerificationResponseDto(String code, String message){
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
     }
 
     public static ResponseEntity<ConfirmEmailVerificationResponseDto> success(){
-        ConfirmEmailVerificationResponseDto responseBody = new ConfirmEmailVerificationResponseDto();
+        ConfirmEmailVerificationResponseDto responseBody = new ConfirmEmailVerificationResponseDto(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
         return ResponseEntity.status(HttpStatus.OK).body(responseBody);
     }
 
-    public static ResponseEntity<ConfirmEmailVerificationResponseDto> verificationFail(){
-        ConfirmEmailVerificationResponseDto responseBody = new ConfirmEmailVerificationResponseDto();
+    public static ResponseEntity<ResponseDto> verificationFail(){
+        ResponseDto responseBody = new ResponseDto(ResponseCode.VALIDATION_FAILED, ResponseMessage.VALIDATION_FAILED);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseBody);
     }
 }
