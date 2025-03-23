@@ -33,4 +33,12 @@ public class UserEntity {
         this.type = "app";
         this.role = "ROLE_USER";
     }
+
+    public UserEntity(String email){
+        this.email = email;
+        this.password = "P!ssword123";
+        this.username = email.substring(0,4);
+        this.type = "google";
+        this.role = "ROLE_USER";
+    }
 }

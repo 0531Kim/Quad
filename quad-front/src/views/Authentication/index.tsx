@@ -2,7 +2,7 @@ import React, { useState, KeyboardEvent, useRef, ChangeEvent, useEffect } from '
 import './style.css';
 import InputBox from 'components/InputBox';
 import { SignInRequestDto, SignUpRequestDto, emailVerificationRequestDto, checkVerificationCodeRequestDto, usernameCheckRequestDto } from 'apis/request/auth';
- import { checkValidateCode, sendEmailVerificationCode, signInRequest, signUpRequest, usernameCheck } from 'apis';
+ import { checkValidateCode, GOOGLE_SIGN_IN_URL, sendEmailVerificationCode, signInRequest, signUpRequest, usernameCheck } from 'apis';
 import { checkVerificationCodeResponseDto, EmailVerificationCodeResponseDto, SignInResponseDto, SignUpResponseDto } from 'apis/response/auth';
 import { ResponseDto } from 'apis/response';
 import { useCookies } from 'react-cookie';
@@ -78,6 +78,11 @@ export default function Authentication() {
       signInRequest(requestBody).then(signInResponse);
     }
 
+    //          event handler: google button click         //
+    const onGoogleButtonClickHandler = () => {
+      window.location.href = GOOGLE_SIGN_IN_URL();
+    }
+
     //          event handler: sign up link click event handler         //
     const onSignUpLinkClickHandler = () => {
       setView('sign-up');
@@ -135,7 +140,7 @@ export default function Authentication() {
               </div>
             }
             <div className='green-large-full-button' onClick={onSignInButtonClickHandler}>{'Sign in'}</div>
-            <div className='google-oauth-button'>
+            <div className='google-oauth-button' onClick={onGoogleButtonClickHandler}>
                 <div className='google-icon'>
                   <div className='google-logo'></div>
                 </div>

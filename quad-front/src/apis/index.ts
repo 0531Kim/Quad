@@ -108,3 +108,5 @@ export const usernameCheck = async (requestBody: usernameCheckRequestDto) => {
     });
     return result;
 }
+
+ export const GOOGLE_SIGN_IN_URL = () => `${API_DOMAIN}/auth/oauth2/google`;
