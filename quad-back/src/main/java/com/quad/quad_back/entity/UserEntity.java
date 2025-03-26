@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+import java.util.Random;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,11 +34,19 @@ public class UserEntity {
         this.role = "ROLE_USER";
     }
 
-    public UserEntity(String email){
+    public UserEntity(String email, String defaultPassword){
         this.email = email;
-        this.password = "P!ssword123";
-        this.username = email.substring(0,4);
+        this.password = defaultPassword;
+
+        Random random = new Random();
+        int randomFourDigitNumber = random.nextInt(9000) + 1000;
+
+        this.username = "default_" + email.substring(0,4) + randomFourDigitNumber;
         this.type = "google";
         this.role = "ROLE_USER";
+    }
+
+    public void setUsername(String newUsername){
+        this.username = newUsername;
     }
 }

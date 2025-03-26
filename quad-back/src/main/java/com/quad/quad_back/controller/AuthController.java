@@ -2,10 +2,12 @@ package com.quad.quad_back.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quad.quad_back.dto.request.auth.ChangeUsernameRequestDto;
 import com.quad.quad_back.dto.request.auth.ConfirmEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.EmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.SignInRequestDto;
 import com.quad.quad_back.dto.request.auth.SignUpRequestDto;
+import com.quad.quad_back.dto.response.auth.ChangeUsernameResponseDto;
 import com.quad.quad_back.dto.response.auth.ConfirmEmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.EmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.SignInResponseDto;
@@ -18,6 +20,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -65,6 +68,14 @@ public class AuthController {
         @RequestBody @Valid SignInRequestDto requestBody
     ){
         ResponseEntity<? super SignInResponseDto> response = authService.signIn(requestBody);
+        return response;
+    }
+
+    @PatchMapping("/change-username")
+    public ResponseEntity<? super ChangeUsernameResponseDto> changeUsername(
+        @RequestBody ChangeUsernameRequestDto requestBody
+    ) {
+        ResponseEntity<? super ChangeUsernameResponseDto> response = authService.changeUsername(requestBody);
         return response;
     }
 }

@@ -2,10 +2,11 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 // import Main from 'views/Main';
 import Authentication from 'views/Authentication';
+import OAuth from 'views/OAuth';
 // import UserP from 'views/User';
 // import Container from 'layouts/Container';
 import { useLoginUserStore } from 'stores';
-import { AUTH_PATH, MAIN_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, MAIN_PATH, OAUTH_PATH, USER_PATH } from 'constant';
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { ResponseDto } from 'apis/response';
@@ -56,6 +57,7 @@ function App() {
       {/* <Route element={<Container />}> */}
         {/* <Route path={MAIN_PATH()} element={<Main />} /> */}
         <Route path={AUTH_PATH()} element={<Authentication />} />
+        <Route path={OAUTH_PATH()} element={<OAuth />} />
         {/* <Route path={SEARCH_PATH(':searchWord')} element={<Search />} />
         <Route path={USER_PATH(':userEmail')} element={<UserP />} /> */}
         {/* <Route path={BOARD_PATH()}>

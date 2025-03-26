@@ -1,9 +1,10 @@
 import axios from "axios";
 import { emailVerificationRequestDto, SignInRequestDto, SignUpRequestDto, checkVerificationCodeRequestDto, usernameCheckRequestDto } from "./request/auth";
 import { EmailVerificationCodeResponseDto, SignInResponseDto, SignUpResponseDto, checkVerificationCodeResponseDto } from "./response/auth";
-import { GetSignInUserResponseDto } from "./response/user";
+import { ChangeUsernameResponseDto, GetSignInUserResponseDto } from "./response/user";
 import { ResponseDto } from "./response";
 import usernameCheckResponseDto from "./response/auth/username-check-response.dto";
+import { ChangeUsernameRequestDto } from "./request/user";
 
 const DOMAIN = 'http://localhost:4000';
 
@@ -80,7 +81,6 @@ const CONFIRM_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/confirm-em
 export const checkValidateCode = async (requestBody: checkVerificationCodeRequestDto) => {
     const result = await axios.post(CONFIRM_EMAIL_VERIFICATION_CODE_URL(), requestBody)
     .then(response => {
-        console.log(response);
         const responseBody: checkVerificationCodeResponseDto = response.data;
         return responseBody;
     })
@@ -97,7 +97,6 @@ const USERNAME_CHECK_URL = () => `${API_DOMAIN}/auth/username-check`;
 export const usernameCheck = async (requestBody: usernameCheckRequestDto) => {
     const result = await axios.post(USERNAME_CHECK_URL(), requestBody)
     .then(response => {
-        console.log(response);
         const responseBody: usernameCheckResponseDto = response.data;
         return responseBody;
     })
@@ -109,4 +108,20 @@ export const usernameCheck = async (requestBody: usernameCheckRequestDto) => {
     return result;
 }
 
- export const GOOGLE_SIGN_IN_URL = () => `${API_DOMAIN}/auth/oauth2/google`;
+export const GOOGLE_SIGN_IN_URL = () => `${API_DOMAIN}/auth/oauth2/google`;
+
+export const AUTH_CHANGE_USERNAME_URL = () => `${API_DOMAIN}/auth/change-username`;
+
+export const changeUsername = async (requestBody: ChangeUsernameRequestDto) => {
+    const result = await axios.patch(AUTH_CHANGE_USERNAME_URL(), requestBody)
+    .then(response => {
+        const responseBody: ChangeUsernameResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}

@@ -4,11 +4,10 @@ import emailVerificationRequestDto from "./email-verification.request.dto";
 import checkVerificationCodeRequestDto from "./check-verification-code.request.dto";
 import usernameCheckRequestDto from "./username-check.requst.dto";
 
-
 export type{
     usernameCheckRequestDto,
     emailVerificationRequestDto,
     checkVerificationCodeRequestDto,
     SignUpRequestDto,
-    SignInRequestDto
+    SignInRequestDto,
 }

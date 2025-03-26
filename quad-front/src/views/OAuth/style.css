@@ -1,0 +1,11 @@
+.oauth-message-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 6px;
+    color: rgba(0, 0, 0, 0.8);
+}
+.oauth-message{
+    font-size: 18px;
+}

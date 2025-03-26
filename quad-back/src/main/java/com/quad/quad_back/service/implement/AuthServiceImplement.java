@@ -4,14 +4,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.quad.quad_back.common.VerificationCode;
+import com.quad.quad_back.dto.request.auth.ChangeUsernameRequestDto;
 import com.quad.quad_back.dto.request.auth.ConfirmEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.EmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.SignInRequestDto;
 import com.quad.quad_back.dto.request.auth.SignUpRequestDto;
 import com.quad.quad_back.dto.request.auth.UsernameCheckRequestDto;
 import com.quad.quad_back.dto.response.ResponseDto;
+import com.quad.quad_back.dto.response.auth.ChangeUsernameResponseDto;
 import com.quad.quad_back.dto.response.auth.ConfirmEmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.EmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.SignInResponseDto;
@@ -153,5 +156,27 @@ public class AuthServiceImplement implements AuthService{
         }
 
         return SignInResponseDto.success(token);
+    }
+
+    @Transactional
+    @Override
+    public ResponseEntity<? super ChangeUsernameResponseDto> changeUsername(ChangeUsernameRequestDto dto) {
+       try{
+
+            String tempUsername = dto.getTempUsername();
+            String newUsername = dto.getNewUsername();
+
+            UserEntity userEntity = userRepository.findByUsername(tempUsername);
+            if(userEntity == null) return ChangeUsernameResponseDto.validationFailed();
+
+            userEntity.setUsername(newUsername);
+
+            userRepository.save(userEntity);
+
+       }catch(Exception exception){
+        exception.printStackTrace();
+        return ResponseDto.databaseError();
+    }
+       return ChangeUsernameResponseDto.success();
     }
 }

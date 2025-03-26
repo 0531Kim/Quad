@@ -7,5 +7,5 @@ export type{
     SignUpResponseDto,
     SignInResponseDto,
     EmailVerificationCodeResponseDto,
-    checkVerificationCodeResponseDto
+    checkVerificationCodeResponseDto,  
 }
