@@ -37,16 +37,12 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
 
         UserEntity userEntity = userRepository.findByEmail(userEmail);
         String username = userEntity.getUsername();
-        boolean isExist = false;
+        boolean isDefaultUsername = false;
 
-        if(username.substring(0, 12) == ("default_" + userEmail.substring(0,4))){
-            isExist = true;
-        }
+        String defaultPrefix = "default_" + userEmail.substring(0, 4);
+        isDefaultUsername = username.startsWith(defaultPrefix);
 
-        System.out.println(username.substring(0, 12));
-        System.out.println("default_" + userEmail.substring(0,4));
-
-        if(isExist){
+        if(!isDefaultUsername){
             response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600");
         }else{
             response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600/" + username);
