@@ -13,6 +13,7 @@ import { ResponseDto } from 'apis/response';
 import { GetSignInUserResponseDto } from 'apis/response/user';
 import { getSignInUserRequest } from 'apis';
 import { User } from 'types/interface';
+import Main from 'views/Main';
 
 // app renders twice.
 //      Component: Application component      //
@@ -55,7 +56,7 @@ function App() {
   return (
     <Routes>
       {/* <Route element={<Container />}> */}
-        {/* <Route path={MAIN_PATH()} element={<Main />} /> */}
+        <Route path={MAIN_PATH()} element={<Main />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
         <Route path={OAUTH_PATH()} element={<OAuth />} />
         {/* <Route path={SEARCH_PATH(':searchWord')} element={<Search />} />

@@ -1,4 +1,4 @@
-import ResponseDto from './response.dto';
+import ResponseDto from './Response.dto';
 
 // when exporting interface, must export type - 
 export type {ResponseDto};

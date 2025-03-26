@@ -36,8 +36,20 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
         String token = jwtProvider.create(userEmail);
 
         UserEntity userEntity = userRepository.findByEmail(userEmail);
-        String tempUsername = userEntity.getUsername();
+        String username = userEntity.getUsername();
+        boolean isExist = false;
 
-        response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600/" + tempUsername);
+        if(username.substring(0, 12) == ("default_" + userEmail.substring(0,4))){
+            isExist = true;
+        }
+
+        System.out.println(username.substring(0, 12));
+        System.out.println("default_" + userEmail.substring(0,4));
+
+        if(isExist){
+            response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600");
+        }else{
+            response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600/" + username);
+        }
 	}
 }

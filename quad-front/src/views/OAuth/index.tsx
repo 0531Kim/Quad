@@ -33,6 +33,7 @@ export default function OAuth() {
     //          state: usestate         //
     const[page, setPage] = useState<1 | 2>(2);
     const[username, setUsername] = useState<string>('');
+    const[hasNavigated, setHasNavigated] = useState<boolean>(false);
 
     //          state: blue box           //
     const[usernameBlueBox, setUsernameBlueBox] = useState<boolean>(false);
@@ -89,6 +90,11 @@ export default function OAuth() {
       if(code === 'DBE') alert('Database error occurred.');
 
       if(code !== 'SU')return;
+
+      const now = Date.now();
+      const expires = new Date(now + Number(expirationTime) * 1000);
+
+      setCookie('accessToken', token, { expires, path: MAIN_PATH() });
       navigate(MAIN_PATH());
     }
 
@@ -104,21 +110,21 @@ export default function OAuth() {
       setIsVerified(false);
     }
 
-    const{ tempUsername } = useParams();
+    const { token, expirationTime, tempUsername } = useParams();
 
-    //          event handler: sign in btn click handler          //
+    //          event handler : sign in button        //
     const onSignUpButtonClickHandler = () => {
-      if(!isVerified)return;
+      if (!isVerified) return;
+      if (!expirationTime || !token) return;
 
       const newUsername: string = username;
-
-      if(tempUsername === undefined)return;
-
-      const requestBody: ChangeUsernameRequestDto= {
-        tempUsername, newUsername
+      const requestBody: ChangeUsernameRequestDto = {
+        tempUsername: tempUsername as string,
+        newUsername
       };
+
       changeUsername(requestBody).then(ChangeUsernameResponse);
-    }
+};
 
     //          event handler: username key down event handler         //
     const onUsernameKeyDownHandler = (event: KeyboardEvent<HTMLInputElement>) =>{
@@ -156,6 +162,27 @@ export default function OAuth() {
         usernameRef.current.focus();
       }
     }, [page])
+
+    //          effect: navigate to main           //
+    useEffect(() => {
+      const isNavigated = sessionStorage.getItem('hasNavigated');
+      if (isNavigated === 'true') return;
+
+      if (!token || !expirationTime) return;
+      console.log(tempUsername);
+      console.log(tempUsername === undefined);
+      if (tempUsername === undefined) {
+
+        const now = Date.now();
+        const expires = new Date(now + Number(expirationTime) * 1000);
+
+        setCookie('accessToken', token, { expires, path: MAIN_PATH() });
+
+        sessionStorage.setItem('hasNavigated', 'true');
+        navigate(MAIN_PATH());
+      }
+    }, [])
+    
 
     //          render: sign up card component rendering        //
     return (

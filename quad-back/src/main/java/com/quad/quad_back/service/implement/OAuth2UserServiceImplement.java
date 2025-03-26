@@ -28,9 +28,13 @@ public class OAuth2UserServiceImplement extends DefaultOAuth2UserService{
         OAuth2User oAuth2User = super.loadUser(request);
 
         String clientEmail = (String) oAuth2User.getAttributes().get("email");
-        UserEntity userEntity = new UserEntity(clientEmail, defaultPassword);
+        boolean userExists = userRepository.existsByEmail(clientEmail);
 
-        userRepository.save(userEntity);
+        if (!userExists) {
+            UserEntity userEntity = new UserEntity(clientEmail, defaultPassword);
+            userRepository.save(userEntity);
+        }
+
         return new CustomOAuth2User(clientEmail);
 
     }
