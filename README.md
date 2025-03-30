@@ -11,32 +11,32 @@ Quad is a course review platform built for University of Auckland students to sh
 
 ## 🛠️ Tech Stack
 
- **Frontend:**  
+ ### **Frontend:**  
   - React (v19.0.0)  
   - TypeScript (v5.7.2)
   - Zustand (v5.0.3)  
   - Axios (v1.8.3)
 
-  **Backend:**  
+ ### **Backend:**  
   - Java (v17.0.11)  
   - Spring Boot (v3.4.3)  
   - JPA (Hibernate)  
   - OAuth 2.0
   - Lombok (v1.18.36)
 
-  **Database:**
-    - MySQL (v9.2.0)
+ ### **Database:**
+  - MySQL (v9.2.0)
 
 ## 🚏 API Endpoints (Work in Progress)
 
- **Auth**
+ ### **Auth**
   - SIGN IN : POST /api/v1/auth/sign-in
   - SIGN UP : POST /api/v1/auth/sign-up
   - DUPLICATED USERNAME CHECK : POST /api/v1/auth/username-check
   - EMAIL VERIFICATION : POST /api/v1/auth/email-verification
   - CONFIRM EMAIL VERIFICATION : POST /api/v1/auth/confirm-email-verification
 
- **REVIEW** (Work in Progress)
+ ### **REVIEW** (Work in Progress)
   - LATEST REVIEW LIST : GET /api/v1/review/latest
   - TRENDING REVIEW LIST : GET /api/v1/review/trending
   - SEARCH REVIEW LIST : GET /api/v1/review/search/{searchWord}
@@ -49,7 +49,7 @@ Quad is a course review platform built for University of Auckland students to sh
   - LIKE FEATURE : PUT /api/v1/review/{reviewNumber}/like
   - DELETE REVIEW : POST /api/v1/review/{reviewNumber}
 
- **USER** (Work in Progress)
+ ### **USER** (Work in Progress)
   - USER INFORMATION : GET /api/v1/user/{username}
   - LOGIN USER INFORMATION : GET /api/v1/user/{userId}
 
