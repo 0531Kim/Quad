@@ -1,7 +1,6 @@
 ## 📘 Quad – UoA Course Review Platform
 
 Quad is a course review platform built for University of Auckland students to share and explore real feedback on university courses. It aims to bridge the information gap students face during enrollment by providing insights beyond just course titles and brief descriptions.
---- 
 
 ## 🎯 Purpose
 
@@ -9,7 +8,6 @@ Quad is a course review platform built for University of Auckland students to sh
   - Honest student reviews
   - Course ratings
   - Aggregated statistics and review charts
----
 
 ## 🛠️ Tech Stack
 
@@ -28,7 +26,6 @@ Quad is a course review platform built for University of Auckland students to sh
 
   **Database:**
     - MySQL (v9.2.0)
----
 
 ## 🚏 API Endpoints (Work in Progress)
 
@@ -55,7 +52,6 @@ Quad is a course review platform built for University of Auckland students to sh
  **USER** (Work in Progress)
   - USER INFORMATION : GET /api/v1/user/{username}
   - LOGIN USER INFORMATION : GET /api/v1/user/{userId}
----
 
 ## 🔒 Authentication
 
