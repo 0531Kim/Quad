@@ -2,6 +2,9 @@ import SidebarBox from 'components/SideBar';
 import React from 'react';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
+import BarChart from 'components/Chart'
+import Example from 'components/Chart';
+import CustomBarChart from 'components/Chart';
 
 export default function Main() {
   
@@ -34,7 +37,11 @@ export default function Main() {
     return(
       <>
         <div className="main-container">
-          <div className="main-container-graph"></div>
+          <div className="main-container-graph">
+            <CustomBarChart />
+          </div>
+          <div className="main-container-content">
+          </div>
         </div>
       </>
     )

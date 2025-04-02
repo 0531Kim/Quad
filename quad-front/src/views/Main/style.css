@@ -38,13 +38,19 @@
 .main-container{
     width: 848px;
     height: 800px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+}
+
+.main-container-graph{
+    display: flex;
+    justify-content: center;
 }
 
 .main-right{
     width: 168px;
     height: 800px;
     background-color: antiquewhite;
+    background-color: #f2f7fc;
 }
 
 .main-bottom{
@@ -54,4 +60,10 @@
     gap: 28px;
     max-width: 1200px;
     width: 100%;
+}
+
+.main-container-content{
+    background-color: darkkhaki;
+    width: 100%;
+    height: 120px;
 }
