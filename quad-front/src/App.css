@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .quad-green{
   color: #00804b !important;
 }

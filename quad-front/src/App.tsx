@@ -14,6 +14,7 @@ import { GetSignInUserResponseDto } from 'apis/response/user';
 import { getSignInUserRequest } from 'apis';
 import { User } from 'types/interface';
 import Main from 'views/Main';
+import Container from 'layouts/Container';
 
 // app renders twice.
 //      Component: Application component      //
@@ -55,7 +56,7 @@ function App() {
   //      description: user page: '/user/:email' - User     //
   return (
     <Routes>
-      {/* <Route element={<Container />}> */}
+      <Route element={<Container />}>
         <Route path={MAIN_PATH()} element={<Main />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
         <Route path={OAUTH_PATH()} element={<OAuth />} />
@@ -67,7 +68,7 @@ function App() {
           <Route path={BOARD_DETAIL_PATH(':boardNumber')} element={<BoardDetail />} />
         </Route> */}
         <Route path='*' element={<h1>404 Not Found</h1>} />
-      {/* </Route> */}
+      </Route>
     </Routes>
   );
 }

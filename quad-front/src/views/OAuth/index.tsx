@@ -1,9 +1,8 @@
 import React, { useState, KeyboardEvent, useRef, ChangeEvent, useEffect } from 'react'
 import './style.css';
 import InputBox from 'components/InputBox';
-import { SignInRequestDto, SignUpRequestDto, emailVerificationRequestDto, checkVerificationCodeRequestDto, usernameCheckRequestDto } from 'apis/request/auth';
- import { changeUsername, checkValidateCode, GOOGLE_SIGN_IN_URL, sendEmailVerificationCode, signInRequest, signUpRequest, usernameCheck } from 'apis';
-import { checkVerificationCodeResponseDto, EmailVerificationCodeResponseDto, SignInResponseDto, SignUpResponseDto } from 'apis/response/auth';
+import { usernameCheckRequestDto } from 'apis/request/auth';
+ import { changeUsername, usernameCheck } from 'apis';
 import { ResponseDto } from 'apis/response';
 import { useCookies } from 'react-cookie';
 import { MAIN_PATH } from 'constant';
@@ -38,11 +37,6 @@ export default function OAuth() {
     //          state: blue box           //
     const[usernameBlueBox, setUsernameBlueBox] = useState<boolean>(false);
 
-
-    //          state: no edit        //
-    const[emailNoEdit, setEmailNoEdit] = useState<boolean>(false);
-    const[verificationCodeNoEdit, setVerificationCodeNoEdit] = useState<boolean>(false);
-
     //          state: isVerified         //
     const[isVerified, setIsVerified] = useState<boolean>(false);
 
@@ -65,7 +59,7 @@ export default function OAuth() {
       }
       const {code} = responseBody;
 
-      if(code === 'DN'){
+      if(code === 'DU'){
         setUsernameValidationRedNotification(true);
         setUsernameValidationRedMessage("That username is already taken.");
       }

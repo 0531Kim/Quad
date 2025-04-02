@@ -21,7 +21,7 @@ public class ConfirmEmailVerificationResponseDto extends ResponseDto{
     }
 
     public static ResponseEntity<ResponseDto> verificationFail(){
-        ResponseDto responseBody = new ResponseDto(ResponseCode.VALIDATION_FAILED, ResponseMessage.VALIDATION_FAILED);
+        ResponseDto responseBody = new ResponseDto(ResponseCode.EMAIL_VERIFICATION_FAILED, ResponseMessage.EMAIL_VERIFICATION_FAIL);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(responseBody);
     }
 }

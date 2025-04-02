@@ -231,7 +231,7 @@ export default function Authentication() {
         setEmailBoxRedNotification(true);
         setEmailBoxRedMessage('This email is already in use.');
       }
-      if(code === 'DN'){
+      if(code === 'DU'){
         setUsernameError(true);
         setUsernameErrorMessage('This username is already in use.');
       }
@@ -288,6 +288,11 @@ export default function Authentication() {
         setVerificationCodeBoxRedMessage("The verification code you entered is incorrect.");
       }
 
+      if(code === 'EVF'){
+        setVerificationCodeBoxRedNotification(true);
+        setVerificationCodeBoxRedMessage("The verification code you entered is incorrect.");
+      }
+
       if(code === 'DBE') alert('Database error occurred.');
 
       if(code !== 'SU')return;
@@ -307,7 +312,7 @@ export default function Authentication() {
       }
       const {code} = responseBody;
 
-      if(code === 'DN'){
+      if(code === 'DU'){
         setUsernameValidationRedNotification(true);
         setUsernameValidationRedMessage("That username is already taken.");
       }
