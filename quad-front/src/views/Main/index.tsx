@@ -1,16 +1,34 @@
 import SidebarBox from 'components/SideBar';
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
 import BarChart from 'components/Chart'
 import Example from 'components/Chart';
 import CustomBarChart from 'components/Chart';
+import ContentCard from 'components/ContentCard';
 
 export default function Main() {
   
   //      function: navigate        //
   const navigate = useNavigate();
   
+  //      Component: Hightlight content       //
+  const HighLightContent = () => {
+
+    //         state: title        //
+    const[title, setTitle] = useState<string>('Trending Reviews');
+
+    return(
+      <div className='high-light-content'>
+        <div className='high-light-content-top'>
+          {title}
+        </div>
+        <div className='high-light-content-bot'>
+        </div>
+      </div>
+    )
+  }
+
   //      Component: Main-top       //
   const MainTop = () => {
     return(
@@ -32,6 +50,7 @@ export default function Main() {
       </>
     )
   }
+
   //      Component: Main-container       //
   const MainContainer = () => {
     return(
@@ -41,6 +60,7 @@ export default function Main() {
             <CustomBarChart />
           </div>
           <div className="main-container-content">
+            <HighLightContent />
           </div>
         </div>
       </>
