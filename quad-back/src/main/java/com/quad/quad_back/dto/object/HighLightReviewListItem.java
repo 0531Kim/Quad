@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReviewListItem {
+public class HighLightReviewListItem {
     private String courseName;
     private Double avgScore;
     private String time;
