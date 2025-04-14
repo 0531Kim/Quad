@@ -308,3 +308,15 @@ html, body {
   background-position:  50% 50%;
   background-size: 100% 100%;
 }
+
+.star{
+  background-image: url(assets/image/full-star.png);
+}
+
+.half-star{
+  background-image: url(assets/image/half-star.png);
+}
+
+.empty-star{
+  background-image: url(assets/image/empty-star.png);
+}

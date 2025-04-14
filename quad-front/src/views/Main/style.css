@@ -63,7 +63,58 @@
 }
 
 .main-container-content{
-    background-color: darkkhaki;
+    /* background-color: darkkhaki; */
+    border: 1px solid black;
+    display: flex;
+
     width: 100%;
-    height: 120px;
+    gap: 36px;
+}
+
+.high-light-content{
+    border: 1px solid violet;
+    width: 394.305px;
+    height: 400px;
+}
+
+.high-light-content-top{
+    background-color: #f2f7fc;
+    height: 60px;
+}
+
+.content-card-top{
+    display: flex;
+}
+
+.content-card-view-box{
+    display: flex;
+}
+
+.content-card-time{
+    display: flex;
+    font-size: 14px;
+    color: rgb(0, 0, 0, 0.7);
+    gap: 2px;
+}
+
+.content-rate{
+    display: flex;
+    gap: 1px;
+}
+.star-wrapper {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+.empty-star,
+.star,
+.half-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    width: 15px;
+    height: 15px;
 }

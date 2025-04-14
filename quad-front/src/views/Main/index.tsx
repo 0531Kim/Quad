@@ -17,6 +17,30 @@ export default function Main() {
 
     //         state: title        //
     const[title, setTitle] = useState<string>('Trending Reviews');
+    const[starCount, setStarCount] = useState<number>(3.5);
+
+    function StarRating({ starCount } : { starCount: number }) {
+      const stars = Array.from({ length: 5 }, (_, idx) => {
+          const position = idx + 1;
+  
+          let overlayClass = null;
+  
+          if (starCount >= position - 0.25) {
+              overlayClass = 'star';
+          } else if (starCount >= position - 0.75) {
+              overlayClass = 'half-star';
+          }
+  
+          return (
+              <div key={idx} className="star-wrapper">
+                  <div className="empty-star"></div>
+                  {overlayClass && <div className={overlayClass}></div>}
+              </div>
+          );
+      });
+  
+      return <div className="content-rate">{stars}</div>;
+  }
 
     return(
       <div className='high-light-content'>
@@ -24,6 +48,19 @@ export default function Main() {
           {title}
         </div>
         <div className='high-light-content-bot'>
+          <div className='contentCard'>
+            <div className='content-card-top'>
+                <div className='content-course-name'>COMPSCI 220</div>
+                  <StarRating starCount={starCount} />
+                <div className='content-card-time'>
+                    <div className='content-card-time'>31min</div>
+                    <div className='content-card-time-text'>ago</div>
+                </div>
+            </div>
+            <div className='content-card-bot'>
+                <div className='content-card-content'>contents random contents</div>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -60,6 +97,7 @@ export default function Main() {
             <CustomBarChart />
           </div>
           <div className="main-container-content">
+            <HighLightContent />
             <HighLightContent />
           </div>
         </div>

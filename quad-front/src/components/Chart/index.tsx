@@ -27,7 +27,6 @@ const data = [
 
 const colors = ['#A61E32', '#860064', '#E4660B', '#52A01B', '#492973', '#03618F', '#028384', '#0055A0', '#CFC70A'];
 
-
 export default function CustomBarChart() {
 
   const CustomTooltip = ({ active, payload }: any) => {
@@ -52,7 +51,7 @@ export default function CustomBarChart() {
   return (
     <ResponsiveContainer width="70%" height={240}>
       <BarChart data={data} margin={{ top: 0, right: 30, left: 0, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid strokeDasharray="4 3" />
         <XAxis dataKey="name" tick={{ fill: 'black', fontSize: 12, fontWeight: 400 }} />
         <YAxis />
         <Tooltip
