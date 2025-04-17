@@ -1,12 +1,8 @@
 export default interface HighlightReviewListItem{
-    username : string;
-    title : string;
-    content : string;
-    boardTitleImage : string | null;
-    favoriteCount : number;
-    commentCount : number;
-    viewCount : number;
-    writeDatetime : string;
-    writerNickname : string;
-    writerProfileImage : string | null;
+    reviewNumber: number,
+    courseName: string,
+    rate: number,
+    time: string,
+    likeCount: number,
+    content: string
 }

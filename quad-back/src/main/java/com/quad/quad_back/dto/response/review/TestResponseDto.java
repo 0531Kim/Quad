@@ -14,17 +14,17 @@ import com.quad.quad_back.entity.ReviewListViewEntity;
 import lombok.Getter;
 
 @Getter
-public class GetTrendingReviewListItemResponseDto extends ResponseDto{
+public class TestResponseDto extends ResponseDto{
 
-    private List<HighLightReviewListItem> trendingReviews;
+    // private List<HighLightReviewListItem> trendingReviews;
 
-    private GetTrendingReviewListItemResponseDto(List<ReviewListViewEntity> reviewEntities){
+    private TestResponseDto(){
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
-        this.trendingReviews = HighLightReviewListItem.getList(reviewEntities);
+        // this.trendingReviews = HighLightReviewListItem.getList(reviewEntities);
     }
 
-    public static ResponseEntity<GetTrendingReviewListItemResponseDto> success(List<ReviewListViewEntity> reviewEntities){
-        GetTrendingReviewListItemResponseDto result = new GetTrendingReviewListItemResponseDto(reviewEntities);
+    public static ResponseEntity<TestResponseDto> success(){
+        TestResponseDto result = new TestResponseDto();
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 }

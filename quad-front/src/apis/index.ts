@@ -5,8 +5,11 @@ import { ChangeUsernameResponseDto, GetSignInUserResponseDto } from "./response/
 import { ResponseDto } from "./response";
 import usernameCheckResponseDto from "./response/auth/username-check-response.dto";
 import { ChangeUsernameRequestDto } from "./request/user";
+import getLatestReviewResponseDto from "./response/review/get-latest-review.response.dto";
+import getTrendingReviewResponseDto from "./response/review/get-trending-review.response.dto";
 
-const DOMAIN = 'http://localhost:4000';
+const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
+console.log('[DEBUG] DOMAIN:', DOMAIN);
 
 const API_DOMAIN = `${DOMAIN}/api/v1`;
 const authorization = (accessToken: string) => {
@@ -15,6 +18,17 @@ const authorization = (accessToken: string) => {
 
 const SIGN_IN_URL = () => `${API_DOMAIN}/auth/sign-in`;
 const SIGN_UP_URL = () => `${API_DOMAIN}/auth/sign-up`;
+
+const GET_SIGN_IN_USER_URL = () => `${API_DOMAIN}/user`;
+
+const CONFIRM_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/confirm-email-verification`;
+const SEND_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/email-verification`;
+const USERNAME_CHECK_URL = () => `${API_DOMAIN}/auth/username-check`;
+export const GOOGLE_SIGN_IN_URL = () => `${API_DOMAIN}/auth/oauth2/google`;
+export const AUTH_CHANGE_USERNAME_URL = () => `${API_DOMAIN}/auth/change-username`;
+
+const GET_LATEST_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/latest`;
+const GET_TRENDING_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/trending`;
 
 export const signInRequest = async(requestBody: SignInRequestDto) => {
     const result = await axios.post(SIGN_IN_URL(), requestBody)
@@ -44,8 +58,6 @@ export const signUpRequest = async(requestBody: SignUpRequestDto) => {
     return result;
 }
 
-const GET_SIGN_IN_USER_URL = () => `${API_DOMAIN}/user`;
-
 export const getSignInUserRequest = async (accessToken: string) => {
     const result = await axios.get(GET_SIGN_IN_USER_URL(), authorization(accessToken))
     .then(response => {
@@ -59,8 +71,6 @@ export const getSignInUserRequest = async (accessToken: string) => {
     });
     return result;
 }
-
-const SEND_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/email-verification`;
 
 export const sendEmailVerificationCode = async (requestBody: emailVerificationRequestDto) => {
     const result = await axios.post(SEND_EMAIL_VERIFICATION_CODE_URL(), requestBody)
@@ -76,8 +86,6 @@ export const sendEmailVerificationCode = async (requestBody: emailVerificationRe
     return result;
 }
 
-const CONFIRM_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/confirm-email-verification`;
-
 export const checkValidateCode = async (requestBody: checkVerificationCodeRequestDto) => {
     const result = await axios.post(CONFIRM_EMAIL_VERIFICATION_CODE_URL(), requestBody)
     .then(response => {
@@ -91,8 +99,6 @@ export const checkValidateCode = async (requestBody: checkVerificationCodeReques
     });
     return result;
 }
-
-const USERNAME_CHECK_URL = () => `${API_DOMAIN}/auth/username-check`;
 
 export const usernameCheck = async (requestBody: usernameCheckRequestDto) => {
     const result = await axios.post(USERNAME_CHECK_URL(), requestBody)
@@ -108,14 +114,38 @@ export const usernameCheck = async (requestBody: usernameCheckRequestDto) => {
     return result;
 }
 
-export const GOOGLE_SIGN_IN_URL = () => `${API_DOMAIN}/auth/oauth2/google`;
-
-export const AUTH_CHANGE_USERNAME_URL = () => `${API_DOMAIN}/auth/change-username`;
-
 export const changeUsername = async (requestBody: ChangeUsernameRequestDto) => {
     const result = await axios.patch(AUTH_CHANGE_USERNAME_URL(), requestBody)
     .then(response => {
         const responseBody: ChangeUsernameResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const getLatestReviewRequest = async () => {
+    const result = await axios.get(GET_LATEST_REVIEW_LIST_URL())
+    .then(response => {
+        const responseBody: getLatestReviewResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const getTrendingReviewRequest = async () => {
+    const result = await axios.get(GET_TRENDING_REVIEW_LIST_URL())
+    .then(response => {
+        const responseBody: getTrendingReviewResponseDto = response.data;
         return responseBody;
     })
     .catch(error => {

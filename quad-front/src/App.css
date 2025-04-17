@@ -5,7 +5,7 @@ html, body {
 }
 
 .quad-green{
-  color: #00804b !important;
+  color: rgb(0, 128, 75) !important;
 }
 
 .quad-green-background{
@@ -297,6 +297,18 @@ html, body {
 
 .swing{
   background-image: url(assets/image/swing.png);
+}
+
+.full-heart{
+  background-image: url(assets/image/full-heart.png);
+}
+
+.empty-heart{
+  background-image: url(assets/image/empty-heart.png);
+}
+
+.empty-star{
+  background-image: url(assets/image/empty-heart.png);
 }
 
 .google-logo{
