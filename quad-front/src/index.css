@@ -36,3 +36,39 @@ code {
   font-weight: normal;
   font-style: normal;
 }
+
+.arts-color{
+  background-color: #A61E32;
+}
+
+.bus-color{
+  background-color: #860064;
+}
+
+.cai-color{
+  background-color: #E4660B;
+}
+
+.edu-color{
+  background-color: #52A01B;
+}
+
+.eng-color{
+  background-color: #492973;
+}
+
+.law-color{
+  background-color: #03618F;
+}
+
+.med-color{
+  background-color: #028384;
+}
+
+.sci-color{
+  background-color: #0055A0;
+}
+
+.gen-color{
+  background-color: #CFC70A;
+}

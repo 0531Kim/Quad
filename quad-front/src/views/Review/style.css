@@ -1,0 +1,134 @@
+.review-container{
+    width: 830px;
+    height: 26px;
+}
+
+.review-faculty-list-box{
+    width: 830px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 3px 0px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    margin-bottom: 6px;
+}
+
+.department-container{
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 8px; */
+    padding: 4px 20px;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+    
+}
+
+.department-text{
+    font-size: 14px;
+    /* font-weight: 600; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* .arts-color{
+    background-color: rgb(164, 30, 50, 0.03);
+    border-bottom: 1.2px solid rgb(164, 30, 50, 1);
+  }
+  
+  .bus-color{
+    background-color: rgb(133, 0, 99, 0.03);
+    border: 1.2px solid rgb(133, 0, 99);
+  }
+  
+  .cai-color{
+    background-color: rgb(229, 102, 11, 0.03);
+    border: 1.2px solid rgb(229, 102, 11);
+  }
+  
+  .edu-color{
+    background-color: rgb(83, 161, 27, 0.03);
+    border: 1.2px solid rgb(83, 161, 27);
+  }
+  
+  .eng-color{
+    background-color: rgb(74, 42, 116, 0.03);
+    border: 1.2px solid rgb(74, 42, 116);
+  }
+  
+  .law-color{
+    background-color: rgb(3, 97, 143, 0.03);
+    border: 1.2px solid rgb(3, 97, 143);
+  }
+  
+  .med-color{
+    background-color: rgb(2, 131, 132, 0.03);
+    border: 1.2px solid rgb(2, 131, 132);
+  }
+  
+  .sci-color{
+    background-color: rgb(0, 85, 160, 0.03);
+    border: 1.2px solid rgb(0, 85, 160);
+  }
+  
+  .gen-color{
+    background-color: rgb(207, 199, 10, 0.03);
+    border: 1.2px solid rgb(207, 199, 10);
+  } */
+
+  .art-color {
+    background-color: rgb(164, 30, 50);
+    color: white;
+  }
+  
+  .bus-color {
+    background-color: rgb(133, 0, 99);
+    color: white;
+  }
+  
+  .cai-color {
+    background-color: rgb(229, 102, 11);
+    color: white;
+  }
+  
+  .edu-color {
+    background-color: rgb(83, 161, 27);
+    color: white;
+  }
+  
+  .eng-color {
+    background-color: rgb(74, 42, 116);
+    color: white;
+  }
+  
+  .law-color {
+    background-color: rgb(3, 97, 143);
+    color: white;
+  }
+  
+  .med-color {
+    background-color: rgb(2, 131, 132);
+    color: white;
+  }
+  
+  .sci-color {
+    background-color: rgb(0, 85, 160);
+    color: white;
+  }
+  
+  .gen-color {
+    background-color: rgb(207, 199, 10);
+    color: white;
+  }

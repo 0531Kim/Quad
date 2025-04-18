@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
 import com.quad.quad_back.service.ReviewService;
@@ -33,9 +34,9 @@ public class ReviewController {
         return response;
     }
 
-    @GetMapping("/test")
-    public ResponseEntity<? super GetTrendingReviewListItemResponseDto> test() {
-        ResponseEntity<? super GetTrendingReviewListItemResponseDto> response = reviewService.getTrendingReviewList();
+    @GetMapping("/allFacultyReviews")
+    public ResponseEntity<? super GetAllFacultyReviewsResponseDto> getAllFacultyReview(){
+        ResponseEntity<? super GetAllFacultyReviewsResponseDto> response = reviewService.getAllFacultyReview();
         return response;
     }
     

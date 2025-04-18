@@ -38,14 +38,14 @@ interface ContentCardProps {
         let overlayClass = null;
 
         if (starCount >= position - 0.25) {
-            overlayClass = 'star';
+            overlayClass = 'star highlight-star';
         } else if (starCount >= position - 0.75) {
-            overlayClass = 'half-star';
+            overlayClass = 'half-star highlight-star';
         }
 
         return (
             <div key={idx} className="star-wrapper">
-                <div className="empty-star"></div>
+                <div className="empty-star highlight-star"></div>
                 {overlayClass && <div className={overlayClass}></div>}
             </div>
         );

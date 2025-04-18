@@ -29,5 +29,6 @@ public class ReviewListViewEntity {
     private int entertaining;
     private int quality;
     private String username;
-    
+    private Integer noExam;
+    private String faculty;
 }

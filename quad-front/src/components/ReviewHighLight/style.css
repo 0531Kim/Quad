@@ -31,6 +31,11 @@
     border-bottom: 0.9px solid rgba(0, 0, 0, 0.2);
 }
 
+.contentCard:hover{
+    margin-left: 4px;
+    cursor: pointer;
+}
+
 .content-card-top{
     display: flex;
     align-items: center;
@@ -50,6 +55,7 @@
     font-family: Verdana, Geneva, sans-serif;
 }
 
+
 .content-card-top-right{
     display: flex;
 }
@@ -58,6 +64,9 @@
     display: flex;
     align-items: center;
     gap: 0.2px;
+    
+    width: 30px;
+    height: 100%;
 }
 
 .divider{
@@ -99,9 +108,7 @@
     top: 1px;
 }
 
-.empty-star,
-.star,
-.half-star {
+.highlight-star {
     position: absolute;
     top: 0;
     left: 0;
