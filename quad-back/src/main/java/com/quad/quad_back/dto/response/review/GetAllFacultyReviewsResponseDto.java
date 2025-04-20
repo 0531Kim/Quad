@@ -19,11 +19,11 @@ import lombok.Getter;
 @Getter
 public class GetAllFacultyReviewsResponseDto extends ResponseDto{
 
-    private Map<String, List<ReviewListItem>> result = new HashMap<>();
+    private Map<String, List<ReviewListItem>> allFacultyReview = new HashMap<>();
 
     private GetAllFacultyReviewsResponseDto(Map<String, List<ReviewListItem>> reviewEntities) {
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
-        this.result = reviewEntities;
+        this.allFacultyReview = reviewEntities;
     }
 
     public static ResponseEntity<? super GetAllFacultyReviewsResponseDto> success(Map<String, List<ReviewListItem>> reviewEntities) {

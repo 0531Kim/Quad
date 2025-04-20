@@ -36,7 +36,7 @@ export default function Main() {
   const MainSideBar = () => {
     return(
       <>
-        <SidebarBox onMenuClick={setSelectedMenu}/>
+        <SidebarBox onMenuClick={setSelectedMenu} selectedMenu= {selectedMenu}/>
       </>
     )
   }

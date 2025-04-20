@@ -21,6 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ReviewListItem {
     private String username;
+    private String courseName;
     private String date;
     private Integer noExam;
     private int difficulty;
@@ -32,6 +33,7 @@ public class ReviewListItem {
 
     public ReviewListItem(ReviewListViewEntity reviewListViewEntity){
         this.username = reviewListViewEntity.getUsername();
+        this.courseName = reviewListViewEntity.getCourseName();
         this.date = timeChanger(reviewListViewEntity.getWriteDatetime());
         this.noExam = reviewListViewEntity.getNoExam();
         this.difficulty = reviewListViewEntity.getDifficulty();

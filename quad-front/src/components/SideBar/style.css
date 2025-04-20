@@ -21,16 +21,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: aliceblue; */
 }
 
-.btn-box:first-child{
+/* .btn-box:first-child{
     border-radius: 4px;
     background-color: #00804b18;
 }
 
 .btn-box:hover{
     background-color: aliceblue;
+} */
+
+.active{
+    border-radius: 4px;
+    background-color: #00804b18;
 }
 
 .btn-container{
@@ -42,10 +46,14 @@
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
+
+    cursor: pointer;
 }
+
 .btn-icon{
     font-size: 20px;
 }
+
 .btn-text{
     font-size: 20px;
 }

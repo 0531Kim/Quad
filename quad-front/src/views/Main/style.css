@@ -5,6 +5,9 @@
     justify-content: flex-start;
     align-items: center;
     width: 100vw;
+    height: auto;
+
+    margin-bottom: 60px;
 }
 
 .main-top-box{
@@ -37,7 +40,7 @@
 
 .main-container{
     width: 830px;
-    height: 800px;
+    height: auto;
     /* background-color: aliceblue; */
 }
 
@@ -49,7 +52,7 @@
 
 .main-right{
     width: 168px;
-    height: 800px;
+    height: auto;
     background-color: antiquewhite;
     background-color: #f2f7fc;
 }
@@ -67,7 +70,7 @@
     /* background-color: darkkhaki; */
     /* border: 1px solid black; */
     display: flex;
-
+    height: auto;
     width: 100%;
     gap: 36px;
 }

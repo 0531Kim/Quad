@@ -7,6 +7,7 @@ import usernameCheckResponseDto from "./response/auth/username-check-response.dt
 import { ChangeUsernameRequestDto } from "./request/user";
 import getLatestReviewResponseDto from "./response/review/get-latest-review.response.dto";
 import getTrendingReviewResponseDto from "./response/review/get-trending-review.response.dto";
+import getAllFacultyReviewResponseDto from "./response/review/get-all-faculty-review.response.dto";
 
 const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
 console.log('[DEBUG] DOMAIN:', DOMAIN);
@@ -29,6 +30,7 @@ export const AUTH_CHANGE_USERNAME_URL = () => `${API_DOMAIN}/auth/change-usernam
 
 const GET_LATEST_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/latest`;
 const GET_TRENDING_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/trending`;
+const GET_ALL_FACULTY_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/allFacultyReviews`;
 
 export const signInRequest = async(requestBody: SignInRequestDto) => {
     const result = await axios.post(SIGN_IN_URL(), requestBody)
@@ -146,6 +148,20 @@ export const getTrendingReviewRequest = async () => {
     const result = await axios.get(GET_TRENDING_REVIEW_LIST_URL())
     .then(response => {
         const responseBody: getTrendingReviewResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const getAllFacultyReview = async () => {
+    const result = await axios.get(GET_ALL_FACULTY_REVIEW_LIST_URL())
+    .then(response => {
+        const responseBody: getAllFacultyReviewResponseDto = response.data;
         return responseBody;
     })
     .catch(error => {

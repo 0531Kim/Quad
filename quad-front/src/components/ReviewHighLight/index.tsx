@@ -84,11 +84,6 @@ interface ContentCardProps {
 
     const{titleEmo, title, highlightReviewListItem} = props;
 
-    // //         state: title        //
-    // const[titleEmo, setTitleEmo] = useState<string>('🔥');
-    // const[title, setTitle] = useState<string>('Trending Reviews');
-    // const[starCount, setStarCount] = useState<number>(2.4);
-
     return(
       <div className='high-light-content'>
         <div className='high-light-content-top'>
