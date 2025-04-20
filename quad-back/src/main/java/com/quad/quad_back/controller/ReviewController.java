@@ -1,11 +1,16 @@
 package com.quad.quad_back.controller;
 
+import java.util.Map;
+import java.util.Set;
+
+import org.apache.catalina.connector.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
+import com.quad.quad_back.dto.response.review.GetStudiesByFacultyResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
 import com.quad.quad_back.service.ReviewService;
 
@@ -40,5 +45,10 @@ public class ReviewController {
         return response;
     }
     
+    @GetMapping("/allStudies")
+    public ResponseEntity<? super GetStudiesByFacultyResponseDto> getAllStudies() {
+        Map<String, Set<String>> studyList = reviewService.getAllStudiesMap();
+        return GetStudiesByFacultyResponseDto.success(studyList);
+    }
 
 }

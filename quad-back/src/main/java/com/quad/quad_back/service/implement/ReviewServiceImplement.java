@@ -5,10 +5,14 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +20,11 @@ import com.quad.quad_back.dto.object.ReviewListItem;
 import com.quad.quad_back.dto.response.ResponseDto;
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
+import com.quad.quad_back.dto.response.review.GetStudiesByFacultyResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
+import com.quad.quad_back.entity.CourseEntity;
 import com.quad.quad_back.entity.ReviewListViewEntity;
+import com.quad.quad_back.repository.CourseRepository;
 import com.quad.quad_back.repository.ReviewListViewRepository;
 import com.quad.quad_back.service.ReviewService;
 
@@ -28,6 +35,7 @@ import lombok.RequiredArgsConstructor;
 public class ReviewServiceImplement implements ReviewService{
 
     private final ReviewListViewRepository reviewListViewRepository;
+    private final CourseRepository courseRepository;
 
     @Override
     public ResponseEntity<? super GetTrendingReviewListItemResponseDto> getTrendingReviewList() {
@@ -96,6 +104,19 @@ public class ReviewServiceImplement implements ReviewService{
         ));
 
         return GetAllFacultyReviewsResponseDto.success(grouped);
+    }
+
+    @Override
+    @Cacheable("allStudies")
+    public Map<String, Set<String>> getAllStudiesMap() {
+        Map<String, Set<String>> map = new HashMap<>();
+        Set<CourseEntity> studySet = new HashSet<>(courseRepository.findAll());
+        for (CourseEntity courseEntity : studySet) {
+            String faculty = courseEntity.getDepartment();
+            String studyName = courseEntity.getStudyName();
+            map.computeIfAbsent(faculty, k -> new HashSet<>()).add(studyName);
+        }
+        return map;
     }
     
 }

@@ -30,7 +30,7 @@ export default function ReviewContainer() {
         LAW: "Law",
         MED: "Medical and Health Sciences",
         SCI: "Science",
-        GEN: "General",
+        GEN: "General Education",
     };
 
     //          state: btn active           //
@@ -53,12 +53,6 @@ export default function ReviewContainer() {
         const { allFacultyReview } = responseBody as getAllFacultyReviewResponseDto;
         setAllFacultyReview(allFacultyReview);
     }
-
-
-    // //      effect: executed on the first mount       //
-    // useEffect(() => {
-    //     getAllFacultyReview().then(getAllFacultyReviewResponse);
-    // }, []);
 
     useEffect(() => {
         getAllFacultyReview().then((res) => {

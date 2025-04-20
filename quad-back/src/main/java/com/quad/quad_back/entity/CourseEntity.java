@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "courses") // Use the existing table name
+@Table(name = "course")
 public class CourseEntity {
     
     @Id
@@ -19,7 +19,7 @@ public class CourseEntity {
     @Column(name = "study_name")
     private String studyName;
     
-    @Column(name = "department")
+    @Column(name = "department_name")
     private String department;
     
     @Column(name = "course_title")
