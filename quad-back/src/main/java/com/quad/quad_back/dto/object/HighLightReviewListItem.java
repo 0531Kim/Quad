@@ -66,7 +66,7 @@ public class HighLightReviewListItem {
         if (zonedDateTime.toLocalDate().isEqual(today)) {
             return zonedDateTime.format(DateTimeFormatter.ofPattern("HH:mm"));
         } else {
-            return zonedDateTime.format(DateTimeFormatter.ofPattern("d MMM"));
+            return zonedDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
         }
     }
 }

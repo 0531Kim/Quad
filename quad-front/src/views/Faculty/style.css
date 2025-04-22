@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Condensed+One&display=swap');
+.faculty-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faculty-view-container{
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 6px;
+
+    width: 830px;
+    height: auto;
+}
+
+.faculty-view-container-top{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px 12px 24px;
+
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+.faculty-view-bottom{
+    margin-bottom: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.faculty-view-text-box{
+    display: flex;
+}
+
+.faculty-view-text-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 52px;
+}
+
+.faculty-view-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* gap: 2px; */
+}
+
+.faculty-view-title{
+    font-size: 25px;
+
+    font-family: "Special Gothic Condensed One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.faculty-view-description{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.faculty-icon{
+    font-size: 34px;
+    color: rgb(164, 30, 50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faculty-view-container-bot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 0px 12px;
+
+    margin-top: 2px;
+}
+
+.study-name-box{
+    display: flex;
+    align-items: center;
+
+    padding: 0px 12px;
+
+    cursor: pointer;
+    border: 1.2px solid white;
+}
+
+.study-name-box-dot{
+    min-width: 5px;
+    min-height: 5px;
+
+    border-radius: 50%;
+}
+
+.studies-in-faculty{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+
+    height: 48px;
+    padding: 0px 9px 0px 9px;
+
+    border-radius: 4px;
+    cursor:pointer;
+
+    font-size: 14px;
+
+    line-height: 140%;
+}
+
+.study-name-box:hover .studies-in-faculty{
+    font-weight: 600;
+    padding: 0px 9px 0px 8px;
+}
+
+.study-name-box:hover .study-name-box-dot {
+    min-width: 5.5px;
+    min-height: 5.5px;
+}
+
+.study-name-box:hover{
+    border-radius: 3px;
+}
+
+
+.art-hover-border:hover {
+    border: 1.2px solid rgb(164, 30, 50);
+  }
+  .bus-hover-border:hover {
+    border: 1.2px solid rgb(133, 0, 99);
+  }
+  .cai-hover-border:hover {
+    border: 1.2px solid rgb(229, 102, 11);
+  }
+  .edu-hover-border:hover {
+    border: 1.2px solid rgb(83, 161, 27);
+  }
+  .eng-hover-border:hover {
+    border: 1.2px solid rgb(74, 42, 116);
+  }
+  .law-hover-border:hover {
+    border: 1.2px solid rgb(3, 97, 143);
+  }
+  .med-hover-border:hover {
+    border: 1.2px solid rgb(2, 131, 132);
+  }
+  .sci-hover-border:hover {
+    border: 1.2px solid rgb(0, 85, 160);
+  }
+  .gen-hover-border:hover {
+    border: 1.2px solid rgb(207, 199, 10);
+  }
+
+  .review-faculty-list-box{
+    width: 830px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 3px 0px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    margin-bottom: 6px;
+}

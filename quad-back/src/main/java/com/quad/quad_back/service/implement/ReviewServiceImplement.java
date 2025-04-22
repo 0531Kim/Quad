@@ -16,6 +16,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.quad.quad_back.dto.object.CourseDto;
 import com.quad.quad_back.dto.object.ReviewListItem;
 import com.quad.quad_back.dto.response.ResponseDto;
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
@@ -108,15 +109,33 @@ public class ReviewServiceImplement implements ReviewService{
 
     @Override
     @Cacheable("allStudies")
-    public Map<String, Set<String>> getAllStudiesMap() {
+    public Map<String, Set<String>> getAllStudies() {
         Map<String, Set<String>> map = new HashMap<>();
         Set<CourseEntity> studySet = new HashSet<>(courseRepository.findAll());
         for (CourseEntity courseEntity : studySet) {
             String faculty = courseEntity.getDepartment();
-            String studyName = courseEntity.getStudyName();
+            String studyName = courseEntity.getStudyTitle();
             map.computeIfAbsent(faculty, k -> new HashSet<>()).add(studyName);
         }
         return map;
     }
+
+    @Override
+    @Cacheable("coursesByStudy")
+    public Map<String, Set<CourseDto>> getAllCoursesByStudy() {
+    Map<String, Set<CourseDto>> map = new HashMap<>();
+    List<CourseEntity> courses = courseRepository.findAll();
+
+    for (CourseEntity course : courses) {
+        String studyName = course.getStudyName();
+        String courseName = course.getCourseName();
+        String courseTitle = course.getCourseTitle();
+
+        CourseDto summary = new CourseDto(courseName, courseTitle);
+        map.computeIfAbsent(studyName, k -> new HashSet<>()).add(summary);
+    }
+
+    return map;
+}
     
 }

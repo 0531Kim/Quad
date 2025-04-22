@@ -3,12 +3,12 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh + 170px);
+    /* min-height: calc(100vh + 170px); */
 }
 
 .main-wrapper{
-    flex: 1 1 auto;
+    /* flex: 1 1 auto; */
     display: flex;
     flex-direction: column;
-    min-height: 0px;
+    min-height: calc(100vh - 144.6px);
 }

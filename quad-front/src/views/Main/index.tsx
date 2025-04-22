@@ -10,6 +10,8 @@ import { ResponseDto } from 'apis/response';
 import HighlightReviewListItem from 'types/interface/hightlight-review-list-item.interface';
 import getTrendingReviewResponseDto from 'apis/response/review/get-trending-review.response.dto';
 import ReviewContainer from 'views/Review';
+import MainTop from 'components/MainTop';
+import MainRight from 'components/MainRight';
 
 export default function Main() {
   
@@ -18,28 +20,6 @@ export default function Main() {
 
   //      state: sideBar button      //
   const [selectedMenu, setSelectedMenu] = useState<'home' | 'review'>('home');
-  //      Component: Main-top       //
-  const MainTop = () => {
-    return(
-      <>
-        <div className="main-top-box">
-          <div className="main-top-container">
-            <div className="main-top-text1">Kia Ora! Whanau!</div>
-            <div className="main-top-text2">Have an issue or found a bug? Let us know at no-reply@quadnz.com</div>
-          </div>
-        </div>
-      </>
-    )
-  }
-
-  //      Component: Main-sidebar       //
-  const MainSideBar = () => {
-    return(
-      <>
-        <SidebarBox onMenuClick={setSelectedMenu} selectedMenu= {selectedMenu}/>
-      </>
-    )
-  }
 
   //      Component: Main-container       //
   const MainContainer = () => {
@@ -90,22 +70,14 @@ export default function Main() {
     )
   }
 
-  //      Component: Right-section        //
-  const MainRight = () => {
-    return(
-      <>
-        <div className="main-right"></div>
-      </>
-    )
-  }
-
   return (
     <>
     <div className="main">
       <MainTop />
       <div className="main-bottom">
-        <MainSideBar />
-        {selectedMenu === 'home' ? <MainContainer /> : <ReviewContainer />}
+        <SidebarBox />
+        {/* {selectedMenu === 'home' ? <MainContainer /> : <ReviewContainer />} */}
+        <MainContainer />
         <MainRight />
       </div>
     </div>

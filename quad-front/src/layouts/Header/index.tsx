@@ -1,7 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from 'react'
 import './style.css';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { AUTH_PATH, MAIN_PATH, USER_PATH, SEARCH_PATH } from 'constant';
+import { AUTH_PATH, MAIN_PATH, USER_PATH } from 'constant';
 import { useCookies } from 'react-cookie';
 import { useLoginUserStore } from 'stores';
 import { ResponseDto } from 'apis/response';
@@ -86,7 +86,7 @@ export default function Header() {
         setStatus(!status);
         return;
       }
-      navigate(SEARCH_PATH(word));
+      // navigate(SEARCH_PATH(word));
     }
 
     //        effect: setting search word variable function           //
@@ -176,8 +176,8 @@ export default function Header() {
                 <div className ='header-logo'>{'QUAD'}</div>
             </div>
             <div className ='header-right-box'>
-              {(isMainPage || isSearchPage || isBoardDetailPage) && <SearchButton />}
-              {(isMainPage || isSearchPage || isBoardDetailPage || isUserPage) && <MyPageButton />}
+              <SearchButton />
+              <MyPageButton />
             </div>
         </div>
       }

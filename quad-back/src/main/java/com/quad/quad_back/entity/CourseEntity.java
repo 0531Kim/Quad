@@ -24,4 +24,7 @@ public class CourseEntity {
     
     @Column(name = "course_title")
     private String courseTitle;
+
+    @Column(name = "study_title")
+    private String studyTitle;
 }

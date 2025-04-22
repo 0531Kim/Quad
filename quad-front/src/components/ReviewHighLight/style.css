@@ -60,6 +60,10 @@
     display: flex;
 }
 
+.content-card-time{
+    letter-spacing: 0.2px;
+}
+
 .content-card-likes{
     display: flex;
     align-items: center;
@@ -88,7 +92,7 @@
 }
 
 .content-card-content{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     color: rgb(0, 0, 0, 0.9);
 }

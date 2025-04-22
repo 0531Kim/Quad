@@ -8,6 +8,7 @@ import { ChangeUsernameRequestDto } from "./request/user";
 import getLatestReviewResponseDto from "./response/review/get-latest-review.response.dto";
 import getTrendingReviewResponseDto from "./response/review/get-trending-review.response.dto";
 import getAllFacultyReviewResponseDto from "./response/review/get-all-faculty-review.response.dto";
+import getStudiesByFacultyResponseDto from "./response/review/get-studies-by-faculty.response.dto";
 
 const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
 console.log('[DEBUG] DOMAIN:', DOMAIN);
@@ -31,6 +32,8 @@ export const AUTH_CHANGE_USERNAME_URL = () => `${API_DOMAIN}/auth/change-usernam
 const GET_LATEST_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/latest`;
 const GET_TRENDING_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/trending`;
 const GET_ALL_FACULTY_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/allFacultyReviews`;
+const GET_STUDIES_BY_FACULTY_URL = () => `${API_DOMAIN}/review/allStudies`;
+const GET_COURSES_BY_STUDY_URL = () => `${API_DOMAIN}/review/CoursesByStudy`;
 
 export const signInRequest = async(requestBody: SignInRequestDto) => {
     const result = await axios.post(SIGN_IN_URL(), requestBody)
@@ -162,6 +165,34 @@ export const getAllFacultyReview = async () => {
     const result = await axios.get(GET_ALL_FACULTY_REVIEW_LIST_URL())
     .then(response => {
         const responseBody: getAllFacultyReviewResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const getStudiesByFaculty = async () => {
+    const result = await axios.get(GET_STUDIES_BY_FACULTY_URL())
+    .then(response => {
+        const responseBody: getStudiesByFacultyResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const getCoursesByStudy = async () => {
+    const result = await axios.get(GET_COURSES_BY_STUDY_URL())
+    .then(response => {
+        const responseBody: getStudiesByFacultyResponseDto = response.data;
         return responseBody;
     })
     .catch(error => {

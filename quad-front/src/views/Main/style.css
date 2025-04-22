@@ -41,20 +41,12 @@
 .main-container{
     width: 830px;
     height: auto;
-    /* background-color: aliceblue; */
 }
 
 .main-container-graph{
     display: flex;
     justify-content: center;
     border-bottom: 8px;
-}
-
-.main-right{
-    width: 168px;
-    height: auto;
-    background-color: antiquewhite;
-    background-color: #f2f7fc;
 }
 
 .main-bottom{

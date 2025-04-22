@@ -6,7 +6,7 @@ import OAuth from 'views/OAuth';
 // import UserP from 'views/User';
 // import Container from 'layouts/Container';
 import { useLoginUserStore } from 'stores';
-import { AUTH_PATH, MAIN_PATH, OAUTH_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, FACULTY_PATH, FACULTY_PATH_WITH_CODE, MAIN_PATH, OAUTH_PATH, STUDY_PATH, USER_PATH } from 'constant';
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { ResponseDto } from 'apis/response';
@@ -15,6 +15,9 @@ import { getSignInUserRequest } from 'apis';
 import { User } from 'types/interface';
 import Main from 'views/Main';
 import Container from 'layouts/Container';
+import ReviewView from 'views/Review';
+import FacultyView from 'views/Faculty';
+import StudyView from 'views/Study';
 
 // app renders twice.
 //      Component: Application component      //
@@ -47,26 +50,15 @@ function App() {
   }, [cookies.accessToken]);
 
   //      render:rendering Application component      //
-  //      description: main page: '/' - Main      //
-  //      description: signin + signup: 'auth' - Authentication     //
-  //      description: search page: '/search/:searchWord' - Search      //
-  //      description: board page: '/board/detail/:boardNumber' - BoardDetail      //
-  //      description: write board: '/board/write' - Boardwrite      //
-  //      description: edit board: '/board/update/:boardNumber' - BoardUpdate      //
-  //      description: user page: '/user/:email' - User     //
   return (
     <Routes>
       <Route element={<Container />}>
         <Route path={MAIN_PATH()} element={<Main />} />
         <Route path={AUTH_PATH()} element={<Authentication />} />
         <Route path={OAUTH_PATH()} element={<OAuth />} />
-        {/* <Route path={SEARCH_PATH(':searchWord')} element={<Search />} />
-        <Route path={USER_PATH(':userEmail')} element={<UserP />} /> */}
-        {/* <Route path={BOARD_PATH()}>
-          <Route path={BOARD_WRITE_PATH()} element={<BoardWrite />} />
-          <Route path={BOARD_UPDATE_PATH(':boardNumber')} element={<BoardUpdate />} />
-          <Route path={BOARD_DETAIL_PATH(':boardNumber')} element={<BoardDetail />} />
-        </Route> */}
+        <Route path={FACULTY_PATH()} element={<FacultyView />} />
+        <Route path={FACULTY_PATH_WITH_CODE(":facultyName")} element={<FacultyView />} />
+        <Route path={STUDY_PATH(":faculty",":studyCode")} element={<StudyView />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>

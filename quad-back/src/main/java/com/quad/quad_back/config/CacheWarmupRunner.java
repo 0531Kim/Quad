@@ -16,6 +16,7 @@ public class CacheWarmupRunner {
 
     @EventListener(ApplicationReadyEvent.class)
     public void warmupCache() {
-        reviewService.getAllStudiesMap();
+        reviewService.getAllStudies();
+        reviewService.getAllCoursesByStudy();
     }
 }

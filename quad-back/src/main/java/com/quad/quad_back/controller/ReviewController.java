@@ -3,12 +3,13 @@ package com.quad.quad_back.controller;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quad.quad_back.dto.object.CourseDto;
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
+import com.quad.quad_back.dto.response.review.GetCoursesByStudyResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
 import com.quad.quad_back.dto.response.review.GetStudiesByFacultyResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
@@ -16,9 +17,6 @@ import com.quad.quad_back.service.ReviewService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
 
 @RestController
 @RequestMapping("/api/v1/review")
@@ -47,8 +45,13 @@ public class ReviewController {
     
     @GetMapping("/allStudies")
     public ResponseEntity<? super GetStudiesByFacultyResponseDto> getAllStudies() {
-        Map<String, Set<String>> studyList = reviewService.getAllStudiesMap();
+        Map<String, Set<String>> studyList = reviewService.getAllStudies();
         return GetStudiesByFacultyResponseDto.success(studyList);
     }
 
+    @GetMapping("/CoursesByStudy")
+    public ResponseEntity<? super GetCoursesByStudyResponseDto> getCoursesByStudy(){
+        Map<String, Set<CourseDto>> coursesByStudy = reviewService.getAllCoursesByStudy();
+        return GetCoursesByStudyResponseDto.success(coursesByStudy);
+    }
 }

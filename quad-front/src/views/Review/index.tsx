@@ -5,9 +5,13 @@ import getAllFacultyReviewResponseDto from 'apis/response/review/get-all-faculty
 import { ResponseDto } from 'apis/response';
 import { getAllFacultyReview } from 'apis';
 import ReviewListItem from 'types/interface/review-list-item.interface';
+import MainTop from 'components/MainTop';
+import SidebarBox from 'components/SideBar';
+import MainRight from 'components/MainRight';
+import { useNavigate } from 'react-router-dom';
 
 //          Component: ReviewContainer          //
-export default function ReviewContainer() {
+export default function ReviewView() {
 
     const departments = [
         { name: 'ART', colorClass: 'art-color' },
@@ -21,6 +25,18 @@ export default function ReviewContainer() {
         { name: 'GEN', colorClass: 'gen-color' },
     ];
 
+    const facultyIconMap: { [key: string]: string } = {
+        ART: "fa-earth-americas",
+        BUS: "fa-money-bill-trend-up",
+        CAI: "fa-palette",
+        EDU: "fa-school",
+        ENG: "fa-robot",
+        LAW: "fa-scale-balanced",
+        MED: "fa-syringe",
+        SCI: "fa-flask-vial",
+        GEN: "fa-graduation-cap",
+      };
+
     const facultyKeyMap: { [key: string]: string } = {
         ART: "Arts",
         BUS: "Business and Economics",
@@ -31,6 +47,12 @@ export default function ReviewContainer() {
         MED: "Medical and Health Sciences",
         SCI: "Science",
         GEN: "General Education",
+    };
+
+    const navigate = useNavigate();
+
+    const handleFacultyClick = (facultyKey: string) => {
+        navigate(`/review/${facultyKey}`);        
     };
 
     //          state: btn active           //
@@ -67,15 +89,21 @@ export default function ReviewContainer() {
 
     //          render          //
     return (
-    <div className="review-container">
+    <div className="review">
+        <MainTop />
+        <div className="review-bottom">
+            <SidebarBox />
+        <div className="review-container">
         <div className="review-faculty-list-box">
             {departments.map((department, index) => (
             <div
                 key={index}
                 className={`department-container ${activeIndex === index ? department.colorClass : ''}`}
                 onMouseEnter={() => setActiveIndex(index)}
+                onClick={() => handleFacultyClick(department.name)}
             >
-            <div className="department-text">{department.name}</div>
+                {activeIndex === index && ( <i className={`fa-solid ${facultyIconMap[department.name]} department-icon`} />)}
+                <div className="department-text">{department.name}</div>
             </div>
             ))}
         </div>
@@ -83,6 +111,9 @@ export default function ReviewContainer() {
             {activeReviewList.map((review, index) => (
             <ReviewBox key={index} review={review} />
             ))}
+        </div>
+        </div>
+        <MainRight />
         </div>
     </div>
     );

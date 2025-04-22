@@ -1,0 +1,27 @@
+.main-top-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.main-top-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 800px;
+    gap: 4px;
+}
+
+.main-top-text1{
+    height: 24px;
+    font-size: 22px;
+}
+
+.main-top-text2{
+    font-size: 18px;
+    height: 26px;
+}

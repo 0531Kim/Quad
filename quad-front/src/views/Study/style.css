@@ -1,0 +1,130 @@
+.study-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.study-view-bottom{
+    margin-bottom: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.study-view-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.right-dir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-dir, .top-study-name{
+    top: 1px;
+    position: relative;
+}
+
+.top-study-name{
+    font-family: "Special Gothic Condensed One", sans-serif;
+    font-size: 21px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.study-view-container-bot{
+    display: flex;
+    flex-direction: column;
+
+    padding: 0px 24px;
+
+    gap: 16px;
+}
+
+.course-stage{
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.course-stage-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 16px;
+
+    padding: 0px 6px;
+}
+
+.course-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+
+    height: 36px;
+}
+
+.course-container:hover{
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.course-code{
+    font-size: 14px;
+    font-weight: 600;
+    /* font-family: Verdana, Geneva, sans-serif; */
+}
+
+.course-title{
+    font-size: 14px;
+}
+
+.course-stage-index{
+    font-size: 15px;
+    font-weight: 600;
+    /* font-family: Verdana, Geneva, sans-serif; */
+    color: #00804b;
+}
+
+.box-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+
+    margin-left: 4px;
+
+    display: none;
+}
+
+.course-info{
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.course-container:hover .box-dot {
+    display: inline-block;
+}
+
+.course-container:hover .course-code {
+    font-size: 15px;
+}

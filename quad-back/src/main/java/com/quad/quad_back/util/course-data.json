@@ -1,0 +1,1443 @@
+[
+    {
+      "courseCode": "ACADENG",
+      "title": "Academic English Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/academic-english-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ACADINT",
+      "title": "Academic Integrity",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/the-university-of-auckland/academic-integrity.html#par_title",
+      "Faculty": "The University of Auckland"
+    },
+    {
+      "courseCode": "ACCTG",
+      "title": "Accounting",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/accounting.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "AEROSPCE",
+      "title": "Aerospace Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/aerospace-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "ANCIENT",
+      "title": "Classical Studies and Ancient History",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/classical-studies-and-ancient-history.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ANTHRO",
+      "title": "Anthropology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/anthropology.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ARCHDES",
+      "title": "Architectural Design",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/architectural-design.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "ARCHDRC",
+      "title": "Architectural Media and Fabrication",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/architectural-media-and-fabrication.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "ARCHGEN",
+      "title": "Architecture – General",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/architecture-general.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "ARCHHTC",
+      "title": "Architectural History, Theory and Criticism",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/architectural-history--theory-and-criticism.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "ARCHPRM",
+      "title": "Architectural Professional Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/architectural-professional-studies.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "ARCHTECH",
+      "title": "Architectural Technology and Sustainability",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/architectural-technology-and-sustainability.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "ARTHIST",
+      "title": "Art History",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/art-history.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ARTSCHOL",
+      "title": "Arts Scholars",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/arts-scholars.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ARTSGEN",
+      "title": "Arts General",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/arts-general.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ASIAN",
+      "title": "Asian Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/asian-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ASTRO",
+      "title": "Astrosciences",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/astrosciences.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "AUDIOL",
+      "title": "Audiology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/audiology.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "BIOENG",
+      "title": "Bioengineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/bioengineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "BIOINF",
+      "title": "Bioinformatics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/bioinformatics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "BIOMENG",
+      "title": "Biomedical Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/biomedical-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "BIOMED",
+      "title": "Biomedical Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/biomedical-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "BIOSCI",
+      "title": "Biological Sciences",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/biological-sciences.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "BIOSEC",
+      "title": "Biosecurity and Conservation",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/biosecurity-and-conservation.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "BIOTECH",
+      "title": "Biotechnology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/biotechnology.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "BLTENV",
+      "title": "Built Environment",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/built-environment.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "BUSACT",
+      "title": "Business Accounting",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-accounting.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSAN",
+      "title": "Business Analytics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-analytics.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSDEV",
+      "title": "Business Development",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-development.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSHRM",
+      "title": "Business Human Resource Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-human-resource-management.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSFIN",
+      "title": "Business Finance",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-finance.html#par_title",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSINESS",
+      "title": "Business",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSINFO",
+      "title": "Business Information Analytics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-information-analytics.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSINT",
+      "title": "Business International",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-international.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSMAN",
+      "title": "Business Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-management.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSMBA",
+      "title": "Business MBA",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-mba.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSMGT",
+      "title": "Business Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-management.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "BUSMKT",
+      "title": "Business Marketing",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/business-marketing.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "CAREER",
+      "title": "Career",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/career.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "CHEM",
+      "title": "Chemistry",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/chemistry.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "CHEMMAT",
+      "title": "Chemical and Materials Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/chemical-and-materials-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "CHINESE",
+      "title": "Chinese",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/chinese.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "CIVIL",
+      "title": "Civil Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/civil-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "CLINED",
+      "title": "Clinical Education",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/clinical-education.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "CLINIMAG",
+      "title": "Clinical Imaging",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/clinical-imaging.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "COMLAW",
+      "title": "Commercial Law",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/commercial-law.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "COMLAW",
+      "title": "Commercial Law",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-law/commercial-law.html",
+      "Faculty": "Law"
+    },
+    {
+      "courseCode": "COMMS",
+      "title": "Communication",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/communication.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "COMPLIT",
+      "title": "Comparative Literature",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/comparative-literature.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "COMPSCI",
+      "title": "Computer Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/computer-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "COMPSYS",
+      "title": "Computer Systems Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/computer-systems-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "COOKIS",
+      "title": "Cook Islands Māori",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/cook-islands-m-ori.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "CREWRIT",
+      "title": "Creative Writing",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/creative-writing.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "CRIM",
+      "title": "Criminology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/criminology.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "CTFOUND",
+      "title": "University of Auckland Foundation Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/the-university-of-auckland/university-of-auckland-foundation-studies.html",
+      "Faculty": "The University of Auckland"
+    },
+    {
+      "courseCode": "DANCE",
+      "title": "Dance Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/dance-studies.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "DATASCI",
+      "title": "Data Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/data-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "DESIGN",
+      "title": "Design",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/design.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "DEVELOP",
+      "title": "Development Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/development-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "DIETETIC",
+      "title": "Dietetics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/dietetics.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "DIGIHLTH",
+      "title": "Digital Health",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/digital-health.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "DISABLTY",
+      "title": "Disability Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/disability-studies.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "DISMGT",
+      "title": "Disaster Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/disaster-management.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "DRAMA",
+      "title": "Drama",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/drama.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "EARTHSCI",
+      "title": "Earth Sciences",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/earth-sciences.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "ECOLOG",
+      "title": "Ecology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/ecology.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "ECON",
+      "title": "Economics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/economics.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "EDCURRM",
+      "title": "Education Curriculum Māori",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-curriculum-m-ori.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDCURRPK",
+      "title": "Education Curriculum Pasifika",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-curriculum-pasifika.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDCURSEC",
+      "title": "Education Curriculum Secondary Diploma",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-curriculum-secondary-diploma.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDCURRIC",
+      "title": "Education Curriculum Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-curriculum-studies.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPRAC",
+      "title": "Education Practice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-practice.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPRACM",
+      "title": "Education Practice Māori",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-practice-m-ori.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPRACPK",
+      "title": "Education Practice Pasifika",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-practice-pasifika.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPROF",
+      "title": "Education Professional",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-professional.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPROFST",
+      "title": "Education Professional Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-professional-studies.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPROFM",
+      "title": "Education Professional Studies Māori",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-professional-studies-m-ori.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPROFPK",
+      "title": "Education Professional Studies Pasifika",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-professional-studies-pasifika.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDPSYCH",
+      "title": "Educational Psychology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/educational-psychology.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDUC",
+      "title": "Education",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDUCM",
+      "title": "Education Māori",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-m-ori.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDUCN",
+      "title": "Education Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-studies.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "EDUCSW",
+      "title": "Education and Social Work",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/education-and-social-work.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "ELECTENG",
+      "title": "Electrical and Electronic Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/electrical-and-electronic-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "ENERGY",
+      "title": "Energy",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/energy.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "ENGGEN",
+      "title": "Engineering General",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/engineering-general.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "ENGLACP",
+      "title": "English for Academic Purposes",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/english-for-academic-purposes.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ENGLISH",
+      "title": "English",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/english.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ENGSCI",
+      "title": "Engineering Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/engineering-science.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "ENGWRIT",
+      "title": "English Writing",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/english-writing.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "ENV",
+      "title": "Environment",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/environment.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "ENVCHG",
+      "title": "Environmental Change",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/environmental-change.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "ENVENG",
+      "title": "Environmental Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/environmental-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "ENVMGT",
+      "title": "Environmental Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/environmental-management.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "ENVPHYS",
+      "title": "Environmental Physics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/environmental-physics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "ENVSCI",
+      "title": "Environmental Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/environmental-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "EUROPEAN",
+      "title": "European Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/european-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "EXERSCI",
+      "title": "Exercise Sciences",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/exercise-sciences.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "FINANCE",
+      "title": "Finance",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/finance.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "FINEARTS",
+      "title": "Fine Arts",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/fine-arts.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "FOODSCI",
+      "title": "Food Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/food-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "FORENSIC",
+      "title": "Forensic Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/forensic-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "FOUNDST",
+      "title": "Foundation Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/the-university-of-auckland/foundation-studies.html",
+      "Faculty": "The University of Auckland"
+    },
+    {
+      "courseCode": "FRENCH",
+      "title": "French",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/french.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "GENDER",
+      "title": "Gender Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/gender-studies.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "GISCI",
+      "title": "Geographic Information Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/geographic-information-science.html",
+      "faculty": "Science"
+    },
+    {
+      "courseCode": "GEOG",
+      "title": "Geography",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/geography.html",
+      "faculty": "Science"
+    },
+    {
+      "courseCode": "GEOPHYS",
+      "title": "Geophysics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/geophysics.html",
+      "faculty": "Science"
+    },
+    {
+      "courseCode": "GEOTHERM",
+      "title": "Energy Technology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/energy-technology.html",
+      "faculty": "Engineering"
+    },
+    {
+      "courseCode": "GERMAN",
+      "title": "German",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/german.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "GLMI",
+      "title": "Global Management and Innovation",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/global-management-and-innovation.html",
+      "faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "GLOBAL",
+      "title": "Global Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/global-studies.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "HEALTHED",
+      "title": "Health Education",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/health-education.html",
+      "faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "HERCONS",
+      "title": "Heritage Conservation",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/heritage-conservation.html",
+      "faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "HIGHED",
+      "title": "Higher Education",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/higher-education.html",
+      "faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "HISTORY",
+      "title": "History",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/history.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "HLTHMGT",
+      "title": "Health Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/health-management.html",
+      "faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "HLTHPSYC",
+      "title": "Health Psychology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/health-psychology.html",
+      "faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "HLTHSCI",
+      "title": "Health Sciences",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/health-sciences.html",
+      "faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "HUMS",
+      "title": "Humanities",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/humanities.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "HUMSERV",
+      "title": "Human Services",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/human-services.html",
+      "faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "INDIGEN",
+      "title": "Indigenous Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/indigenous-studies.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "INFOGOV",
+      "title": "Information Governance",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/information-governance.html",
+      "faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "INFOMGMT",
+      "title": "Information Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/information-management.html",
+      "faculty": "Science"
+    },
+    {
+      "courseCode": "INFOSYS",
+      "title": "Information Systems",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/information-systems.html",
+      "faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "INNOVENT",
+      "title": "Innovation and Entrepreneurship",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/innovation-and-entrepreneurship.html",
+      "faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "INTBUS",
+      "title": "International Business",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/international-business.html",
+      "faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "INTERNSP",
+      "title": "Internship",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/the-university-of-auckland/internship.html",
+      "faculty": "The University of Auckland"
+    },
+    {
+      "courseCode": "ITALIAN",
+      "title": "Italian",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/italian.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "JAPANESE",
+      "title": "Japanese",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/japanese.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "JUR",
+      "title": "Juridical Science (Pending CUAP approval)",
+      "titleUrl": "",
+      "faculty": "Law"
+    },
+    {
+      "courseCode": "KOREAN",
+      "title": "Korean",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/korean.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "LANGTCHG",
+      "title": "Language Teaching and Learning",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/language-teaching-and-learning.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "LATIN",
+      "title": "Latin",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/latin.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "LATINAM",
+      "title": "Latin American Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/latin-american-studies.html",
+      "faculty": "Arts"
+    },
+    {
+      "courseCode": "LAW",
+      "title": "Law",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-law/law.html",
+      "Faculty": "Law"
+    },
+    {
+      "courseCode": "LAWCOMM",
+      "title": "Law Commercial",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-law/law-commercial.html",
+      "Faculty": "Law"
+    },
+    {
+      "courseCode": "LAWENVIR",
+      "title": "Law Environmental",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-law/law-environmental.html",
+      "Faculty": "Law"
+    },
+    {
+      "courseCode": "LAWGENRL",
+      "title": "Law General",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-law/law-general.html",
+      "Faculty": "Law"
+    },
+    {
+      "courseCode": "LAWHONS",
+      "title": "Law Honours",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-law/law-honours.html",
+      "Faculty": "Law"
+    },
+    {
+      "courseCode": "LAWPUBL",
+      "title": "Law Public",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-law/law-public.html",
+      "Faculty": "Law"
+    },
+    {
+      "courseCode": "LDGOV",
+      "title": "Leadership and Governance",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/leadership-and-governance.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "LINGUIST",
+      "title": "Linguistics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/linguistics.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "LOGICOMP",
+      "title": "Logic and Computation",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/logic-and-computation.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "MĀORI",
+      "title": "Māori Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/m-ori-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "MAORIDEV",
+      "title": "Māori Development",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/m-ori-development.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "MAORIHTH",
+      "title": "Māori Health",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/m-ori-health.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "MARINE",
+      "title": "Marine Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/marine-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "MĀTAU",
+      "title": "Mātauranga",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/m-tauranga.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "MATHS",
+      "title": "Mathematics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/mathematics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "MBCHB",
+      "title": "MBChB",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/mbchb.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "MECHENG",
+      "title": "Mechanical Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/mechanical-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "MECHTRON",
+      "title": "Mechatronics Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/mechatronics-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "MEDIA",
+      "title": "Media and Screen Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/media-and-screen-studies.html#par_title",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "MEDIMAGE",
+      "title": "Medical Imaging",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/medical-imaging.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "MEDICINE",
+      "title": "Medicine",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/medicine.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "MEDSCI",
+      "title": "Medical Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/medical-science.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "MGMT",
+      "title": "Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/management.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "MKTG",
+      "title": "Marketing",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/marketing.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "MUS",
+      "title": "Music",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/music.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "MUSEUMS",
+      "title": "Museums and Cultural Heritage",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/museums-and-cultural-heritage.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "NURSING",
+      "title": "Nursing",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/nursing.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "NURSPRAC",
+      "title": "Nursing Practice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/nursing-practice.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "OBSTGYN",
+      "title": "Obstetrics and Gynaecology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/obstetrics-and-gynaecology.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "OPHTHAL",
+      "title": "Ophthalmology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/ophthalmology.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "OPSMGT",
+      "title": "Operations and Supply Chain Management",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/operations-and-supply-chain-management.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "OPTOM",
+      "title": "Optometry and Vision Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/optometry-and-vision-science.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "PACIFIC",
+      "title": "Pacific Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/pacific-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "PAEDS",
+      "title": "Paediatrics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/paediatrics.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "PHARMACY",
+      "title": "Pharmacy",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/pharmacy.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "PHARMCOL",
+      "title": "Pharmacology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/pharmacology.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "PHIL",
+      "title": "Philosophy",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/philosophy.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "PHYSED",
+      "title": "Physical Education",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/physical-education.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "PHYSICS",
+      "title": "Physics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/physics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "PHYSIOL",
+      "title": "Physiology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/physiology.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "POLICY",
+      "title": "Public Policy",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/public-policy.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "POLITICS",
+      "title": "Politics and International Relations",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/politics-and-international-relations.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "POLYMER",
+      "title": "Polymer Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/polymer-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "POPLHLTH",
+      "title": "Population Health",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/population-health.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "POPLPRAC",
+      "title": "Population Health Practice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/population-health-practice.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "PROFCOUN",
+      "title": "Professional Counselling",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/professional-counselling.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "PROFSUPV",
+      "title": "Professional Supervision",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/professional-supervision.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "PROPERTY",
+      "title": "Property",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/property.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "PROPPRAC",
+      "title": "Property Practice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/property-practice.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "PSYCH",
+      "title": "Psychology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/psychology.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "PSYCHOL",
+      "title": "Psychology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/psychology.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "PSYCHIAT",
+      "title": "Psychiatry",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/psychiatry.html",
+      "Faculty": "Medical and Health Sciences"
+    },
+    {
+      "courseCode": "PŪTAIAO",
+      "title": "Pūtaiao",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/p-taiao.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "REGDEV",
+      "title": "Regional Development",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/regional-development.html#par_title",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "REGDEV",
+      "title": "Regional Development",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/regional-development.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "RUSSIAN",
+      "title": "Russian",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/russian.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "SAMOAN",
+      "title": "Samoan",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/samoan.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "SCIENT",
+      "title": "Science Enterprise",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/science-enterprise.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "SCIGEN",
+      "title": "Science General",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/science-general.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "SCIGEN",
+      "title": "Science Scholars",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/science-scholars.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "SCREEN",
+      "title": "Screen Production",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/screen-production.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "SOCCHFAM",
+      "title": "Social Work Child and Family Practice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/social-work-child-and-family-practice.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "SOCCLEAD",
+      "title": "Social and Community Leadership",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/social-and-community-leadership.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "SOCHLTH",
+      "title": "Social Work Health Practice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/social-work-health-practice.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "SOCIOL",
+      "title": "Sociology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/sociology.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "SOCJUS",
+      "title": "Social Justice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/social-justice.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "SOCWORK",
+      "title": "Social Work",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/social-work.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "SOCYOUTH",
+      "title": "Social Work Youth Practice",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/social-work-youth-practice.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "SOFTENG",
+      "title": "Software Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/software-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "SPANISH",
+      "title": "Spanish",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/spanish.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "SPCHSCI",
+      "title": "Speech Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/speech-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "SPORT",
+      "title": "Sport Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/sport-studies.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "SPORTHPE",
+      "title": "Sport, Health and Physical Education",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/sport--health-and-physical-education.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "STATS",
+      "title": "Statistics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/statistics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "STRCTENG",
+      "title": "Structural Engineering",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/structural-engineering.html",
+      "Faculty": "Engineering"
+    },
+    {
+      "courseCode": "SUSTAIN",
+      "title": "Sustainability",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/sustainability.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "TDAIS",
+      "title": "Artificial Intelligence and Society",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-engineering/transdisciplinary-artificial-intelligence-and-society.html",
+      "Faculty": "Transdisciplinary (Engineering)"
+    },
+    {
+      "courseCode": "TDDEM",
+      "title": "Democracy in the 21st Century",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/transdisciplinary-democracy.html",
+      "Faculty": "Transdisciplinary (Arts)"
+    },
+    {
+      "courseCode": "TDENVF",
+      "title": "Our Environmental Futures: Te Taiao Tāngata",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/transdisciplinary-environmental-futures.html",
+      "Faculty": "Transdisciplinary (Science)"
+    },
+    {
+      "courseCode": "TDFOOD",
+      "title": "The Future of Food",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/transdisciplinary-the-future-of-food.html",
+      "Faculty": "Transdisciplinary (Science)"
+    },
+    {
+      "courseCode": "TDMIGR",
+      "title": "Migration Futures",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-medical-and-health-sciences/transdisciplinary-migration-futures.html",
+      "Faculty": "Transdisciplinary (Medical and Health Sciences)"
+    },
+    {
+      "courseCode": "TDMOANA",
+      "title": "Tagata Moana, Tangata Whenua: Hawaiki Futures",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/transdisciplinary-tagata-moana--tangata-whenua--hawaiki-futures.html",
+      "Faculty": "Transdisciplinary (Arts)"
+    },
+    {
+      "courseCode": "TFCARTS",
+      "title": "Tertiary Foundation Certificate Arts General",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/tertiary-foundation-certificate-arts-general.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TFCBIO",
+      "title": "Tertiary Foundation Certificate Biological Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/tertiary-foundation-certificate-biological-science.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "TFCBUS",
+      "title": "Tertiary Foundation Certificate Business",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-business-and-economics/tertiary-foundation-certificate-business.html",
+      "Faculty": "Business and Economics"
+    },
+    {
+      "courseCode": "TFCCAI",
+      "title": "Tertiary Foundation Certificate Creative Arts",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/tertiary-foundation-certificate-creative-arts.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "TFCCHEM",
+      "title": "Tertiary Foundation Certificate Chemistry",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/tertiary-foundation-certificate-chemistry.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "TFCEDUC",
+      "title": "Tertiary Foundation Certificate Education",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/tertiary-foundation-certificate-education.html",
+      "Faculty": "Education and Social Work"
+    },
+    {
+      "courseCode": "TFCENG",
+      "title": "Tertiary Foundation Certificate English",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/tertiary-foundation-certificate-english.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TFCENV",
+      "title": "Tertiary Foundation Certificate Environmental Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/tertiary-foundation-certificate-environmental-stud.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "TFCHIST",
+      "title": "Tertiary Foundation Certificate History",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/tertiary-foundation-certificate-history.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TFCMAORI",
+      "title": "Tertiary Foundation Certificate Māori",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/tertiary-foundation-certificate-m-ori.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TFCMATHS",
+      "title": "Tertiary Foundation Certificate Mathematics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/tertiary-foundation-certificate-mathematics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "TFCPAC",
+      "title": "Tertiary Foundation Certificate Pacific Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/tertiary-foundation-certificate-pacific-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TFCPHYS",
+      "title": "Tertiary Foundation Certificate Physics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/tertiary-foundation-certificate-physics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "TFCSOCIO",
+      "title": "Tertiary Foundation Certificate Sociology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/tertiary-foundation-certificate-sociology.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TFCSTATS",
+      "title": "Tertiary Foundation Certificate Statistics",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/tertiary-foundation-certificate-statistics.html",
+      "Faculty": "Science"
+    },
+    {
+      "courseCode": "THEOLOGY",
+      "title": "Theology",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/theology.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "THEOREL",
+      "title": "Theological and Religious Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/theological-and-religious-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TONGAN",
+      "title": "Tongan",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/tongan.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "TRANSLAT",
+      "title": "Translation Studies",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-arts/translation-studies.html",
+      "Faculty": "Arts"
+    },
+    {
+      "courseCode": "URBDES",
+      "title": "Urban Design",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/urban-design.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "URBPLAN",
+      "title": "Urban Planning",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-creative-arts-and-industries/urban-planning.html",
+      "Faculty": "Creative Arts and Industries"
+    },
+    {
+      "courseCode": "WINESCI",
+      "title": "Wine Science",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-science/wine-science.html",
+      "faculty": "Science"
+    },
+    {
+      "courseCode": "YOUTHWRK",
+      "title": "Youth Work",
+      "titleUrl": "https://www.calendar.auckland.ac.nz/en/courses/faculty-of-education-and-social-work/youth-work.html",
+      "faculty": "Education and Social Work"
+    }
+  ]
+  

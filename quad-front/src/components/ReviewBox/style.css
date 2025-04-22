@@ -1,5 +1,5 @@
 .review-box{
-    width: 830px;
+    max-width: 830px;
     min-height: 116px;
     
     padding: 6px 16px;
@@ -80,6 +80,10 @@
 .review-written-date{
     color: rgba(0, 0, 0, 0.8);
     font-size: 14px;
+}
+
+.review-written-date{
+    letter-spacing: 0.2px;
 }
 
 .review-div{
