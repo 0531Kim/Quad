@@ -16,6 +16,7 @@ public interface ResponseCode {
     String SIGN_IN_FAIL = "SF";
     String AUTHORIZATION_FAIL = "AF";
     String EMAIL_VERIFICATION_FAILED = "EVF";
+    String SIGN_IN_TYPE_WRONG = "STW";
 
     // Http status 403: Forbidden
     String NO_PERMISSION = "NP";

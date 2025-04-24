@@ -38,6 +38,15 @@ export default function Authentication() {
     const [error, setError] = useState<boolean>(false);
     //          state: password btn icon state          //
     const [passwordButtonIcon, setPasswordButtonIcon] = useState<'eye-light-off-icon' | 'eye-light-on-icon'>('eye-light-off-icon');
+    
+    const [signInEmailBoxRedNotification, setSignInEmailBoxRedNotification] = useState<boolean>(false);
+    const [signInEmailBoxRedMessage, setSignInEmailBoxRedMessage] = useState<string>('');
+    const [signInEmailBlueBox, setSignInEmailBlueBox] = useState<boolean>(true);
+
+    const [signInPasswordBoxRedNotification, setSignInPasswordBoxRedNotification] = useState<boolean>(false);
+    const [signInPasswordBoxRedMessage, setSignInPasswordBoxRedMessage] = useState<string>('');
+    const [signInPasswordBlueBox, setSignInPasswordBlueBox] = useState<boolean>(true);
+    
 
     //          function: sign In Response handler function           //
     const signInResponse = (responseBody: SignInResponseDto | ResponseDto | null) => {
@@ -46,8 +55,25 @@ export default function Authentication() {
         return;
       }
       const { code } = responseBody;
+      console.log(code);
       if(code === 'DBE') alert('Database error occurred.');
-      if(code === 'VF' || code === 'SF') setError(true);
+      if(code === 'VF' || code === 'SF'){
+        // setSignInEmailBoxRedNotification(true);
+        // setSignInEmailBoxRedMessage('Invalid username or password. Please try again.');
+        // setSignInEmailBlueBox(false);
+
+        setSignInPasswordBoxRedNotification(true);
+        setSignInPasswordBoxRedMessage('Invalid username or password. Please try again.');
+        setSignInPasswordBlueBox(false);
+
+        if(!passwordRef.current) return;
+        passwordRef.current.focus();
+      }
+      if(code === 'STW'){
+        setSignInEmailBoxRedNotification(true);
+        setSignInEmailBoxRedMessage('This account was created using Google. Please log in with Google.');
+        setSignInEmailBlueBox(false);
+      }
       if(code !== 'SU') return;
 
       const {token, expirationTime} = responseBody as SignInResponseDto;
@@ -60,20 +86,49 @@ export default function Authentication() {
 
     //          event handler: changing input event           //
     const onEmailChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-      setError(false);
+      setSignInEmailBoxRedNotification(false);
+      setSignInEmailBoxRedMessage('');
+      setSignInEmailBlueBox(true);
+
+      setSignInPasswordBoxRedNotification(false);
+      setSignInPasswordBoxRedMessage('Invalid username or password. Please try again.');
+      setSignInPasswordBlueBox(true);
       const {value} = event.target;
       setEmail(value);
     }
 
     //          event handler: changing input event           //
     const onPasswordChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-      setError(false);
+      setSignInEmailBoxRedNotification(false);
+      setSignInEmailBoxRedMessage('');
+      setSignInEmailBlueBox(true);
+
+      setSignInPasswordBoxRedNotification(false);
+      setSignInPasswordBoxRedMessage('Invalid username or password. Please try again.');
+      setSignInPasswordBlueBox(true);
       const {value} = event.target;
       setPassword(value);
     }
 
     //          event handler: login button click event handler         //
     const onSignInButtonClickHandler = () => {
+
+      const hasEmail = email.trim().length > 0;
+      if(!hasEmail){
+        setSignInEmailBoxRedNotification(true);
+        setSignInEmailBoxRedMessage('Please enter your email address.');
+        setSignInEmailBlueBox(false);
+        return;
+      }
+
+      const hasPassword = password.trim().length > 0;
+      if(!hasPassword){
+        setSignInPasswordBoxRedNotification(true);
+        setSignInPasswordBoxRedMessage('Please enter your password.');
+        setSignInPasswordBlueBox(false);
+        return;
+      }
+
       const requestBody: SignInRequestDto = { email, password };
       signInRequest(requestBody).then(signInResponse);
     }
@@ -128,8 +183,16 @@ export default function Authentication() {
                 <div className='google-text'>Sign in with google</div>
               </div>
             </div> */}
-            <InputBox ref={emailRef} label='Email' type='text' placeholder='Please enter your email address.' notification={error} value={email} onChange={onEmailChangeHandler} onKeyDown={onEmailKeyDownHandler}/>
-            <InputBox ref={passwordRef} label='Password' type={passwordType} placeholder='Please enter your password.' notification={error} value={password} onChange={onPasswordChangeHandler} icon={passwordButtonIcon} onIconButtonClick={onPasswordButtonClickHandler} onKeyDown={onPasswordKeyDownHandler}/>
+            <InputBox ref={emailRef} label='Email' type='text' placeholder='Please enter your email address.' value={email} onChange={onEmailChangeHandler} onKeyDown={onEmailKeyDownHandler}
+              notification={signInEmailBoxRedNotification} 
+              notificationMessage={signInEmailBoxRedMessage} 
+              blueBox={signInEmailBlueBox}
+            />
+            <InputBox ref={passwordRef} label='Password' type={passwordType} placeholder='Please enter your password.' value={password} onChange={onPasswordChangeHandler} icon={passwordButtonIcon} onIconButtonClick={onPasswordButtonClickHandler} onKeyDown={onPasswordKeyDownHandler}
+              notification={signInPasswordBoxRedNotification} 
+              notificationMessage={signInPasswordBoxRedMessage} 
+              blueBox={signInPasswordBlueBox}
+            />
           </div>
           <div className='auth-card-bottom'>
             {error && 

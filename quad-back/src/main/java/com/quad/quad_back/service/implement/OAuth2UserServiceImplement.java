@@ -19,9 +19,6 @@ public class OAuth2UserServiceImplement extends DefaultOAuth2UserService{
 
     private final UserRepository userRepository;
 
-    @Value("${default-password}")
-    private String defaultPassword;
-
     @Override
     public OAuth2User loadUser(OAuth2UserRequest request) throws OAuth2AuthenticationException{
         
@@ -31,7 +28,7 @@ public class OAuth2UserServiceImplement extends DefaultOAuth2UserService{
         boolean userExists = userRepository.existsByEmail(clientEmail);
 
         if (!userExists) {
-            UserEntity userEntity = new UserEntity(clientEmail, defaultPassword);
+            UserEntity userEntity = new UserEntity(clientEmail, null);
             userRepository.save(userEntity);
         }
 

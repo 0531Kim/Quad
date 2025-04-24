@@ -141,7 +141,15 @@ public class AuthServiceImplement implements AuthService{
 
             String email = dto.getEmail();
             UserEntity userEntity = userRepository.findByEmail(email);
-            if(userEntity == null) SignInResponseDto.signInFailed();
+            if(userEntity == null){
+                return SignInResponseDto.signInFailed();
+            }
+
+            String userType = userEntity.getType();
+            
+            if("google".equals(userType)){
+                return SignInResponseDto.signInTypeWrong();
+            }
 
             String password = dto.getPassword();
             String encodedPassword = userEntity.getPassword();

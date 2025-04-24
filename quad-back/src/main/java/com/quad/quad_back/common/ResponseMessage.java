@@ -15,6 +15,7 @@ public interface ResponseMessage {
     String SIGN_IN_FAIL = "Login infomation mismatch.";
     String AUTHORIZATION_FAIL = "Authorization Failed.";
     String EMAIL_VERIFICATION_FAIL = "Email verification failed";
+    String SIGN_IN_TYPE_WRONG = "Sign in with wrong type";
 
     //HTTP STATUS 403
     String NO_PERMISSION = "Do not have permission.";

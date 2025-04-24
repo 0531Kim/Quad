@@ -13,6 +13,7 @@ enum ResponseCode{
     SIGN_IN_FAIL = "SF",
     AUTHORIZATION_FAIL = "AF",
     EMAIL_VERIFICATION_FAILED = "EVF",
+    SIGN_IN_TYPE_WRONG = "STW",
 
     // HTTP STATUS 403
     NO_PERMISSION = "NP",

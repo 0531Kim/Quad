@@ -13,6 +13,7 @@ enum ResponseMessage{
     SIGN_IN_FAIL = "Login infomation mismatch.",
     AUTHORIZATION_FAIL = "Authorization Failed.",
     EMAIL_VERIFICATION_FAIL = "Email verification failed",
+    SIGN_IN_TYPE_WRONG = "Signed in with wrong type",
 
     //HTTP STATUS 403
     NO_PERMISSION = "Do not have permission.",
