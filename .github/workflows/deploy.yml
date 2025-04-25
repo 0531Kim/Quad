@@ -40,3 +40,4 @@ jobs:
         script: |
           cd /home/ubuntu/app
           ./deploy.sh
+          
