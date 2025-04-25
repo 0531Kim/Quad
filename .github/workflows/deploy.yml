@@ -19,6 +19,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Gradle
+      working-directory: quad/quad-back
       run: ./gradlew build
 
     - name: Deploy to EC2
