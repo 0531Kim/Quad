@@ -79,7 +79,7 @@ public class WebSecurityConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
         // ------local------
-        // configuration.addAllowedOrigin("http://localhost:3000");
+        configuration.addAllowedOrigin("http://localhost:3000");
         // ------ec2------
         configuration.addAllowedOrigin("https://quadnz.com");
 

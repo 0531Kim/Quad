@@ -95,7 +95,7 @@ interface ContentCardProps {
           </div>
         </div>
         <div className="high-light-content-bot">
-            {highlightReviewListItem.map((item)=>(<ContentCard highlightReviewItem={item}/>))}
+        {highlightReviewListItem.map((item) => (<ContentCard key={item.reviewNumber} highlightReviewItem={item} />))}
       </div>
       </div>
     )
