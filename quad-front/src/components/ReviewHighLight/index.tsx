@@ -101,4 +101,5 @@ interface ContentCardProps {
     )
   }
 
+  
 export default HighLightContent;
