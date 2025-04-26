@@ -42,20 +42,7 @@ public class ReviewListItem {
         this.quality = reviewListViewEntity.getQuality();
         this.content = reviewListViewEntity.getContent();
         this.faculty = reviewListViewEntity.getFaculty();
-        
     }
-
-    // public static Map<String, List<ReviewListItem>> groupByFaculty(List<ReviewListViewEntity> entities) {
-    // Map<String, List<ReviewListItem>> result = new HashMap<>();
-
-    // for (ReviewListViewEntity entity : entities) {
-    //     String faculty = entity.getFaculty();
-    //     ReviewListItem item = new ReviewListItem(entity);
-    //     result.computeIfAbsent(faculty, k -> new ArrayList<>()).add(item);
-    // }
-
-    // return result;
-    // }
 
     private String timeChanger(String time) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

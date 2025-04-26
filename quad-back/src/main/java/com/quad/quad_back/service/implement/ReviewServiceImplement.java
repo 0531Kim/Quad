@@ -20,13 +20,16 @@ import com.quad.quad_back.dto.object.CourseDto;
 import com.quad.quad_back.dto.object.ReviewListItem;
 import com.quad.quad_back.dto.response.ResponseDto;
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
+import com.quad.quad_back.dto.response.review.GetCourseReviewResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
 import com.quad.quad_back.dto.response.review.GetStudiesByFacultyResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
 import com.quad.quad_back.entity.CourseEntity;
 import com.quad.quad_back.entity.ReviewListViewEntity;
+import com.quad.quad_back.entity.UserEntity;
 import com.quad.quad_back.repository.CourseRepository;
 import com.quad.quad_back.repository.ReviewListViewRepository;
+import com.quad.quad_back.repository.UserRepository;
 import com.quad.quad_back.service.ReviewService;
 
 import lombok.RequiredArgsConstructor;
@@ -44,17 +47,7 @@ public class ReviewServiceImplement implements ReviewService{
         List<ReviewListViewEntity> reviewListViewEntities = new ArrayList<>();
 
         try{ 
-            
-            // Deployment code version
-            // Date weekBefore = Date.from(Instant.now().minus(7, ChronoUnit.DAYS));
-            // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            // String weekBeforeString = simpleDateFormat.format(weekBefore);
-            // reviewListViewEntities = reviewListViewRepository.findTop4ByWriteDatetimeGreaterThanOrderByLikeCountDescWriteDatetimeDesc(weekBeforeString);
 
-            // Test Code
-            // Date weekBefore = Date.from(Instant.now().minus(7, ChronoUnit.DAYS));
-            // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            // String weekBeforeString = simpleDateFormat.format(weekBefore);
             reviewListViewEntities = reviewListViewRepository.findTop4ByOrderByLikeCountDescWriteDatetimeDesc();
 
         }catch(Exception exception){
@@ -137,5 +130,23 @@ public class ReviewServiceImplement implements ReviewService{
 
     return map;
 }
+
+    @Override
+    public ResponseEntity<? super GetCourseReviewResponseDto> getCourseReview(String courseName) {
+        
+        List<ReviewListViewEntity> reviewList = new ArrayList<>();
+        
+        try{
+
+            reviewList = reviewListViewRepository.findByCourseNameContainingIgnoreCase(courseName);
+
+        }catch(Exception exception){
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+
+        return GetCourseReviewResponseDto.success(reviewList);
+
+    }
     
 }

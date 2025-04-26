@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.quad.quad_back.dto.request.auth.ChangeUsernameRequestDto;
 import com.quad.quad_back.dto.response.ResponseDto;
 import com.quad.quad_back.dto.response.auth.ChangeUsernameResponseDto;
+import com.quad.quad_back.dto.response.user.GetSignInUserResponseDto;
 import com.quad.quad_back.entity.UserEntity;
 import com.quad.quad_back.repository.UserRepository;
 import com.quad.quad_back.service.UserService;
@@ -37,5 +38,22 @@ public class UserServiceImplement implements UserService{
         return ResponseDto.databaseError();
     }
        return ChangeUsernameResponseDto.success();
+    }
+
+    @Override
+    public ResponseEntity<? super GetSignInUserResponseDto> getSignInUser(String email) {
+        
+        UserEntity userEntity = null;
+
+        try{
+
+            userEntity = userRepository.findByEmail(email);
+            if(userEntity == null) return GetSignInUserResponseDto.notExistUser();
+
+       }catch(Exception exception){
+        exception.printStackTrace();
+        return ResponseDto.databaseError();
+    }
+       return GetSignInUserResponseDto.success(userEntity);
     }
 }
