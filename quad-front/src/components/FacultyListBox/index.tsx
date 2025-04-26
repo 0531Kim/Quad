@@ -9,6 +9,7 @@ interface FacultyListBoxProps {
   notHoverClick: number;
 }
 
+
 const FacultyListBox = ({ setHoveredFaculty, defaultFacultyKey, notHoverClick }: FacultyListBoxProps) => {
   const departments = [
     { name: 'ART', colorClass: 'art-color' },
