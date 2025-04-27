@@ -56,13 +56,13 @@ public class ReviewController {
         return GetStudiesByFacultyResponseDto.success(studyList);
     }
 
-    @GetMapping("/{courseName1}")
+    @GetMapping("/getCourseReview")
     public ResponseEntity<? super GetCourseReviewResponseDto> getCourseReview(
-        @PathVariable("courseName1") String courseName1
+        @RequestParam("courseName") String courseName
     ) {
-        ResponseEntity<? super GetCourseReviewResponseDto> response = reviewService.getCourseReview(courseName1);
+        ResponseEntity<? super GetCourseReviewResponseDto> response = reviewService.getCourseReview(courseName);
         return response;
-    }   
+    }
 
     @GetMapping("/CoursesByStudy")
     public ResponseEntity<? super GetCoursesByStudyResponseDto> getCoursesByStudy(){
