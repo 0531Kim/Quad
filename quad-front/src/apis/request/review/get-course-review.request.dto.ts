@@ -1,3 +1,3 @@
 export default interface getCourseReviewRequestDto{
-    courseName: string;
+    courseName1: string;
 }

@@ -122,7 +122,7 @@ export default function ReviewView() {
     useEffect(() => {
       if (courseCode) {
         const cleanedCourseCode = courseCode.replace(/\s+/g, '');
-          getCourseReview({ courseName: cleanedCourseCode }).then(getCourseReviewResponse);
+          getCourseReview({ courseName1: cleanedCourseCode }).then(getCourseReviewResponse);
       }
     }, []);
 

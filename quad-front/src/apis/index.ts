@@ -207,10 +207,10 @@ export const getCoursesByStudy = async () => {
 }
 
 export const getCourseReview = async (requestBody: getCourseReviewRequestDto) => {
-    const url = GET_COURSE_REVIEW_URL(requestBody.courseName);
+    const url = GET_COURSE_REVIEW_URL(requestBody.courseName1);
     console.log('Sending GET request to:', url);
     
-    const result = await axios.get(GET_COURSE_REVIEW_URL(requestBody.courseName))
+    const result = await axios.get(GET_COURSE_REVIEW_URL(requestBody.courseName1))
     .then(response => {
         const responseBody: getCourseReviewResponseDto = response.data;
         return responseBody;
