@@ -5,7 +5,7 @@ export const OAUTH_PATH = () => '/auth/oauth-response/:token/:expirationTime/:te
 export const FACULTY_PATH = () => 'review';
 export const FACULTY_PATH_WITH_CODE = (facultyName: string) => `review/${facultyName}`;
 export const STUDY_PATH = (faculty: string, studyCode: string) => `/review/${faculty}/${studyCode}`;
-export const COURSE_PATH = (courseCode: string) => `/review/:study/:course/${courseCode}`;
+export const COURSE_PATH = (faculty: string, studyCode: string, courseCode: string) => `/review/${faculty}/${studyCode}/${courseCode}`;
 export const USER_PATH = (userEmail: string) => `/user/${userEmail}`;
 // export const SEARCH_PATH = (searchWord: string) => `/search/${searchWord}`;
 

@@ -59,7 +59,7 @@ function App() {
         <Route path={FACULTY_PATH()} element={<FacultyView />} />
         <Route path={FACULTY_PATH_WITH_CODE(":facultyName")} element={<FacultyView />} />
         <Route path={STUDY_PATH(":faculty",":studyCode")} element={<StudyView />} />
-        <Route path={COURSE_PATH(":courseCode")} element={<ReviewView />} />
+        <Route path={COURSE_PATH(":faculty",":studyCode",":courseCode")} element={<ReviewView />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>

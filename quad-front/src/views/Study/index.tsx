@@ -77,9 +77,11 @@ export default function StudyView() {
     const { courses } = responseBody as getCoursesByStudyResponseDto
     setCourse(courses)
   }
-
+  
   const courseOnClick = (courseCode: string) => {
-    navigator(COURSE_PATH(courseCode));
+    if (faculty && studyCode) {
+      navigator(COURSE_PATH(faculty, studyCode, courseCode));
+    }
   }
 
   useEffect(() => {
