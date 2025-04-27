@@ -1,10 +1,6 @@
 package com.quad.quad_back.service.implement;
 
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -22,14 +18,11 @@ import com.quad.quad_back.dto.response.ResponseDto;
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
 import com.quad.quad_back.dto.response.review.GetCourseReviewResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
-import com.quad.quad_back.dto.response.review.GetStudiesByFacultyResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
 import com.quad.quad_back.entity.CourseEntity;
 import com.quad.quad_back.entity.ReviewListViewEntity;
-import com.quad.quad_back.entity.UserEntity;
 import com.quad.quad_back.repository.CourseRepository;
 import com.quad.quad_back.repository.ReviewListViewRepository;
-import com.quad.quad_back.repository.UserRepository;
 import com.quad.quad_back.service.ReviewService;
 
 import lombok.RequiredArgsConstructor;
@@ -88,12 +81,11 @@ public class ReviewServiceImplement implements ReviewService{
         Map<String, List<ReviewListItem>> grouped = reviewListViewEntities.stream()
             .map(ReviewListItem::new)
             .collect(Collectors.groupingBy(
-            ReviewListItem::getFaculty,
-            Collectors.collectingAndThen(
-                Collectors.toList(),
-                list -> list.stream()
-                              .limit(8)
-                              .collect(Collectors.toList())
+                ReviewListItem::getFaculty, Collectors.collectingAndThen(
+                    Collectors.toList(),
+                    list -> list.stream()
+                        .limit(8)
+                        .collect(Collectors.toList())
             )
         ));
 
@@ -137,8 +129,7 @@ public class ReviewServiceImplement implements ReviewService{
         List<ReviewListViewEntity> reviewList = new ArrayList<>();
         
         try{
-
-            reviewList = reviewListViewRepository.findByCourseNameContainingIgnoreCase(courseName);
+            reviewList = reviewListViewRepository.findByCourseName(courseName);
 
         }catch(Exception exception){
             exception.printStackTrace();
