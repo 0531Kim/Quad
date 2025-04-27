@@ -121,8 +121,8 @@ export default function ReviewView() {
 
     useEffect(() => {
       if (courseCode) {
-          const encodedCourseCode = courseCode.replace(/(\D)(\d)/, '$1%20$2');
-          getCourseReview({ courseName: encodedCourseCode }).then(getCourseReviewResponse);
+        const cleanedCourseCode = courseCode.replace(/\s+/g, '');
+          getCourseReview({ courseName: cleanedCourseCode }).then(getCourseReviewResponse);
       }
     }, []);
 

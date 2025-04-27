@@ -129,7 +129,8 @@ public class ReviewServiceImplement implements ReviewService{
         List<ReviewListViewEntity> reviewList = new ArrayList<>();
         
         try{
-            reviewList = reviewListViewRepository.findByCourseName(courseName);
+            String modifiedCourseName = courseName.replaceAll("(?<=\\D)(?=\\d)", " ");
+            reviewList = reviewListViewRepository.findByCourseName(modifiedCourseName);
 
         }catch(Exception exception){
             exception.printStackTrace();

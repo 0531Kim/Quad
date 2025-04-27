@@ -7,7 +7,6 @@ export const FACULTY_PATH_WITH_CODE = (facultyName: string) => `review/${faculty
 export const STUDY_PATH = (faculty: string, studyCode: string) => `/review/${faculty}/${studyCode}`;
 export const COURSE_PATH = (faculty: string, studyCode: string, courseCode: string) => `/review/${faculty}/${studyCode}/${courseCode}`;
 export const USER_PATH = (userEmail: string) => `/user/${userEmail}`;
-// export const SEARCH_PATH = (searchWord: string) => `/search/${searchWord}`;
 
 export const subjectCodeMap: { [key: string]: string } = {
     "Academic English Studies": "ACADENG",

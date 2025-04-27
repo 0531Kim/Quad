@@ -80,7 +80,8 @@ export default function StudyView() {
   
   const courseOnClick = (courseCode: string) => {
     if (faculty && studyCode) {
-      navigator(COURSE_PATH(faculty, studyCode, courseCode));
+      const cleanedCourseCode = courseCode.replace(/\s+/g, '');
+      navigator(COURSE_PATH(faculty, studyCode, cleanedCourseCode));
     }
   }
 
