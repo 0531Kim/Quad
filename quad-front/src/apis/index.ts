@@ -9,6 +9,8 @@ import getLatestReviewResponseDto from "./response/review/get-latest-review.resp
 import getTrendingReviewResponseDto from "./response/review/get-trending-review.response.dto";
 import getAllFacultyReviewResponseDto from "./response/review/get-all-faculty-review.response.dto";
 import getStudiesByFacultyResponseDto from "./response/review/get-studies-by-faculty.response.dto";
+import getCourseReviewResponseDto from "./response/review/get-course-review.response.dto";
+import getCourseReviewRequestDto from "./request/review/get-course-review.request.dto";
 
 const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
 console.log('[DEBUG] DOMAIN:', DOMAIN);
@@ -34,6 +36,7 @@ const GET_TRENDING_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/trending`;
 const GET_ALL_FACULTY_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/allFacultyReviews`;
 const GET_STUDIES_BY_FACULTY_URL = () => `${API_DOMAIN}/review/allStudies`;
 const GET_COURSES_BY_STUDY_URL = () => `${API_DOMAIN}/review/CoursesByStudy`;
+const GET_COURSE_REVIEW_URL = (courseName: string) => `${API_DOMAIN}/review/getCourseReview/${encodeURIComponent(courseName)}`;
 
 export const signInRequest = async(requestBody: SignInRequestDto) => {
     const result = await axios.post(SIGN_IN_URL(), requestBody)
@@ -193,6 +196,20 @@ export const getCoursesByStudy = async () => {
     const result = await axios.get(GET_COURSES_BY_STUDY_URL())
     .then(response => {
         const responseBody: getStudiesByFacultyResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const getCourseReview = async (requestBody: getCourseReviewRequestDto) => {
+    const result = await axios.get(GET_COURSE_REVIEW_URL(requestBody.courseName))
+    .then(response => {
+        const responseBody: getCourseReviewResponseDto = response.data;
         return responseBody;
     })
     .catch(error => {

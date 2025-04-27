@@ -8,7 +8,8 @@ import ReviewListItem from 'types/interface/review-list-item.interface';
 import MainTop from 'components/MainTop';
 import SidebarBox from 'components/SideBar';
 import MainRight from 'components/MainRight';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import FacultyListBox from 'components/FacultyListBox';
 
 //          Component: ReviewContainer          //
 export default function ReviewView() {
@@ -55,6 +56,8 @@ export default function ReviewView() {
         navigate(`/review/${facultyKey}`);        
     };
 
+    const { faculty, studyCode } = useParams()
+
     //          state: btn active           //
     const [activeIndex, setActiveIndex] = useState<number | null>(Math.floor(Math.random() * departments.length));
     //          state: allFacultyReviewMap        //
@@ -94,19 +97,7 @@ export default function ReviewView() {
         <div className="review-bottom">
             <SidebarBox />
         <div className="review-container">
-        <div className="review-faculty-list-box">
-            {departments.map((department, index) => (
-            <div
-                key={index}
-                className={`department-container ${activeIndex === index ? department.colorClass : ''}`}
-                onMouseEnter={() => setActiveIndex(index)}
-                onClick={() => handleFacultyClick(department.name)}
-            >
-                {activeIndex === index && ( <i className={`fa-solid ${facultyIconMap[department.name]} department-icon`} />)}
-                <div className="department-text">{department.name}</div>
-            </div>
-            ))}
-        </div>
+        <FacultyListBox setHoveredFaculty={() => {}} defaultFacultyKey={faculty} notHoverClick={1} />
         <div className="review-box-container">
             {activeReviewList.map((review, index) => (
             <ReviewBox key={index} review={review} />
