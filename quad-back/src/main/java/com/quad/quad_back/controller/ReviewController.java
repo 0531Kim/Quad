@@ -62,7 +62,7 @@ public class ReviewController {
         return GetCoursesByStudyResponseDto.success(coursesByStudy);
     }
 
-    @GetMapping("/getCourseReview/{courseName}")
+    @GetMapping("/{courseName}")
     public ResponseEntity<? super GetCourseReviewResponseDto> getCourseReview(
         @PathVariable(value = "courseName") String courseName
     ) {

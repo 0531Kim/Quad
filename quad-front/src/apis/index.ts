@@ -36,7 +36,7 @@ const GET_TRENDING_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/trending`;
 const GET_ALL_FACULTY_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/allFacultyReviews`;
 const GET_STUDIES_BY_FACULTY_URL = () => `${API_DOMAIN}/review/allStudies`;
 const GET_COURSES_BY_STUDY_URL = () => `${API_DOMAIN}/review/CoursesByStudy`;
-const GET_COURSE_REVIEW_URL = (courseName: string) => `${API_DOMAIN}/review/getCourseReview/${courseName}`;
+const GET_COURSE_REVIEW_URL = (courseName: string) => `${API_DOMAIN}/review/${courseName}`;
 
 export const signInRequest = async(requestBody: SignInRequestDto) => {
     const result = await axios.post(SIGN_IN_URL(), requestBody)
