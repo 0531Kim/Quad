@@ -55,6 +55,7 @@ public class WebSecurityConfig {
             )
             .authorizeHttpRequests(request -> request
                 .requestMatchers("/", "/api/v1/auth/**", "/oauth2/**", "/api/v1/review/**").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/v1/courseScraping").permitAll()
                 .requestMatchers("/health").permitAll()
                 .requestMatchers("/api/v1/user/**").hasRole("USER")
