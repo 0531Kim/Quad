@@ -2,10 +2,10 @@ import MainTop from "components/MainTop"
 import "./style.css"
 import SidebarBox from "components/SideBar"
 import MainRight from "components/MainRight"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import FacultyListBox from "components/FacultyListBox"
 import { useEffect, useState } from "react"
-import { codeToSubjectMap } from "constant"
+import { codeToSubjectMap, COURSE_PATH } from "constant"
 import { getCoursesByStudy } from "apis"
 import coursesByStudy from "types/interface/courses-by-study.interface"
 import { ResponseDto } from "apis/response"
@@ -13,6 +13,8 @@ import getCoursesByStudyResponseDto from "apis/response/review/get-courses-by-fa
 import courseItem from "types/interface/course-item.interface"
 
 export default function StudyView() {
+
+  const navigator = useNavigate();
 
   const facultyKeyMap: { [key: string]: string } = {
     ART: "Arts",
@@ -74,6 +76,10 @@ export default function StudyView() {
     if (code !== 'SU') return
     const { courses } = responseBody as getCoursesByStudyResponseDto
     setCourse(courses)
+  }
+
+  const courseOnClick = (courseCode: string) => {
+    navigator(COURSE_PATH(courseCode));
   }
 
   useEffect(() => {
@@ -147,6 +153,7 @@ export default function StudyView() {
                         if (stageNum === 2) return "Stage II";
                         if (stageNum === 3) return "Stage III";
                         if (stageNum === 4) return "Stage IV";
+                        if (stageNum === 6) return "Diploma Courses";
                         return "Postgraduate 700 Level Courses";
                       })()}
                     </div>
@@ -154,8 +161,7 @@ export default function StudyView() {
                       {grouped[stage]
                         .sort((a, b) => extractNumber(a.courseName) - extractNumber(b.courseName))
                         .map((item, idx) => (
-                          <div key={idx} className='course-container'>
-                            {/* <div className='box-dot' style={{ backgroundColor: facultyColorMap[faculty as string] }}></div> */}
+                          <div key={idx} className='course-container' onClick={() => { courseOnClick(item.courseName.replace(/\s+/g, '')) }}>
                             <div className="course-info">
                                 <div className='course-code'>{item.courseName}</div>
                                 <div className='course-title'>{item.courseTitle ?? "N/A"}</div>

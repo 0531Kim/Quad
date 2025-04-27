@@ -6,7 +6,7 @@ import OAuth from 'views/OAuth';
 // import UserP from 'views/User';
 // import Container from 'layouts/Container';
 import { useLoginUserStore } from 'stores';
-import { AUTH_PATH, FACULTY_PATH, FACULTY_PATH_WITH_CODE, MAIN_PATH, OAUTH_PATH, STUDY_PATH, USER_PATH } from 'constant';
+import { AUTH_PATH, COURSE_PATH, FACULTY_PATH, FACULTY_PATH_WITH_CODE, MAIN_PATH, OAUTH_PATH, STUDY_PATH, USER_PATH } from 'constant';
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { ResponseDto } from 'apis/response';
@@ -59,6 +59,7 @@ function App() {
         <Route path={FACULTY_PATH()} element={<FacultyView />} />
         <Route path={FACULTY_PATH_WITH_CODE(":facultyName")} element={<FacultyView />} />
         <Route path={STUDY_PATH(":faculty",":studyCode")} element={<StudyView />} />
+        <Route path={COURSE_PATH(":courseCode")} element={<ReviewView />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>
