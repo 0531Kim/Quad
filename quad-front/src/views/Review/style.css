@@ -167,3 +167,12 @@
 
   margin-top: 10px;
 }
+
+.top-course-name{
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-size: 19px;
+
+  position: relative;
+  top: 1px;
+
+}
