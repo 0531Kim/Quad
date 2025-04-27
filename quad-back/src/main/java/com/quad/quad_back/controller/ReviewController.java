@@ -58,7 +58,7 @@ public class ReviewController {
 
     @GetMapping("/getCourseReview")
     public ResponseEntity<? super GetCourseReviewResponseDto> getCourseReview(
-        @RequestParam("courseName") String courseName
+        @RequestParam(value = "courseName", required = false) String courseName
     ) {
         ResponseEntity<? super GetCourseReviewResponseDto> response = reviewService.getCourseReview(courseName);
         return response;
