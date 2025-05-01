@@ -96,9 +96,9 @@
     text-align: center;
     width: 68px;
     height: 18px;
-    border: 1px solid rgba(0, 0, 255, 0.15);
+    border: 1px solid #0000ff26;
     border-radius: 6px;
-    background-color: rgba(0, 0, 255, 0.05);
+    background-color: #0000ff0d;
 
     display: flex;
     justify-content: center;

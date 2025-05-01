@@ -1,11 +1,9 @@
 .main{
     display: flex;
     flex-direction: column;
-    max-width: 1440px;
+    
     justify-content: flex-start;
     align-items: center;
-    width: 100vw;
-    height: auto;
 
     margin-bottom: 60px;
 }
