@@ -1,6 +1,4 @@
 .sidebar-box{
-    /* width: 180px;
-    height: 1600px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,25 +10,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 2px; */
+    flex: 0 0 auto;
 }
 
 .btn-box{
-    /* width: 180px;
-    height: 48px; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* .btn-box:first-child{
-    border-radius: 4px;
-    background-color: #00804b18;
-}
-
-.btn-box:hover{
-    background-color: aliceblue;
-} */
 
 .active{
     border-radius: 4px;
@@ -38,10 +25,9 @@
 }
 
 .btn-container{
-    width: 152px;
     height: 48px;
-    padding-left: 16px;
-
+    padding-left: 1rem;
+    width: 9rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;

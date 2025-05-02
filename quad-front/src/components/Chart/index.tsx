@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 import React from 'react';
+import './style.css';
 import {
   BarChart,
   Bar,
@@ -49,7 +50,8 @@ export default function CustomBarChart() {
     return null;
   };
   return (
-    <ResponsiveContainer width="70%" height={240}>
+    <ResponsiveContainer className="chart-responsive-container" max-width="12rem" height={240}>
+    {/* <ResponsiveContainer max-width="36rem" min-width="24rem" max-height={240}> */}
       <BarChart data={data} margin={{ top: 0, right: 30, left: 0, bottom: 5 }}>
         <CartesianGrid strokeDasharray="4 3" />
         <XAxis dataKey="name" tick={{ fill: 'black', fontSize: 12, fontWeight: 400 }} />

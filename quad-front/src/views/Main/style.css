@@ -1,7 +1,7 @@
 .main{
     display: flex;
     flex-direction: column;
-    
+
     justify-content: flex-start;
     align-items: center;
 
@@ -37,8 +37,10 @@
 }
 
 .main-container{
-    width: 830px;
-    height: auto;
+    max-width: 52rem;
+    width: 100%;
+    min-width: 0;
+    margin: 0px auto;
 }
 
 .main-container-graph{
@@ -51,16 +53,17 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 28px;
-    max-width: 1200px;
+    gap: 1.5rem;
+    max-width: 75rem;
     width: 100%;
+    min-width: 0rem;
 }
 
-.main-container-content{
-    /* background-color: darkkhaki; */
-    /* border: 1px solid black; */
-    display: flex;
-    height: auto;
-    width: 100%;
-    gap: 36px;
+.main-container-content {
+  max-width: 52rem;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
