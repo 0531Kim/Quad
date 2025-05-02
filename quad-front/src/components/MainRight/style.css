@@ -5,4 +5,7 @@
     height: 100%;
     margin: auto;
     background-color: #f2f7fc;
+    flex:1 1 auto;
+    flex-shrink: 10;
+    min-width: 0;
 }

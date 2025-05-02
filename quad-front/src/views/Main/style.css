@@ -6,6 +6,7 @@
     align-items: center;
 
     margin-bottom: 60px;
+    padding: 0rem 1rem;
 }
 
 .main-top-box{
@@ -41,6 +42,8 @@
     width: 100%;
     min-width: 0;
     margin: 0px auto;
+    flex: 1 1 auto;
+    flex-shrink: 1;
 }
 
 .main-container-graph{
