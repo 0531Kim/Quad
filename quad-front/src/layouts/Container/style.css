@@ -7,6 +7,16 @@
 .main-wrapper{
     /* flex: 1 1 auto; */
     display: flex;
-    flex-direction: column;
     min-height: calc(100vh - 144.6px);
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16rem;
+    flex: 1 1;
+}
+
+.main-box.auth {
+    padding-left: 0rem;
 }

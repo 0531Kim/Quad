@@ -25,17 +25,17 @@ export default function Footer() {
                     <div className='footer-logo-text'>{'QUAD'}</div>
                 </div>
                 <div className ='footer-link-box'>
-                    <div className='footer-email-link'>{'email@email.com'}</div>
-                    <div className='icon-button' onClick={onInstaIconButtonClickHandler}>
+                    <div className='footer-email-link'>{'no-reply@quadnz.com'}</div>
+                    {/* <div className='icon-button' onClick={onInstaIconButtonClickHandler}>
                         <div className='icon insta-icon'></div>
                     </div>
                     <div className='icon-button' onClick={onNaverblogIconButtonClickHandler}>
                         <div className='icon naver-blog-icon'></div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className = 'footer-bottom'>
-                <div className ='footer-copy-right'>{'Copyright 2024 KihyunKim. All Rights Reserved.'}</div>
+                <div className ='footer-copy-right'>{'Copyright 2025 Quad. All Rights Reserved.'}</div>
             </div>
         </div>
     </div>

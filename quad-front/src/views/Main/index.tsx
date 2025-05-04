@@ -12,6 +12,7 @@ import getTrendingReviewResponseDto from 'apis/response/review/get-trending-revi
 import ReviewContainer from 'views/Review';
 import MainTop from 'components/MainTop';
 import MainRight from 'components/MainRight';
+import NavBar from 'components/NavBar';
 
 export default function Main() {
   
@@ -62,8 +63,8 @@ export default function Main() {
             <CustomBarChart />
           </div>
           <div className="main-container-content">
-            <HighLightContent titleEmo="📊" title="Trending Reviews" highlightReviewListItem={trendingReviewList}/>
-            <HighLightContent titleEmo="🔥" title="Latest Reviews" highlightReviewListItem={latestReviewList}/>
+            <HighLightContent icon={<i className="fa-sharp fa-solid fa-arrow-trend-up quad-green"></i>} title="Trending Reviews" highlightReviewListItem={trendingReviewList}/>
+            <HighLightContent icon={<i className="fa-sharp fa-regular fa-sparkles quad-green"></i>} title="Latest Reviews" highlightReviewListItem={latestReviewList}/>
           </div>
         </div>
       </>
@@ -75,7 +76,7 @@ export default function Main() {
     <div className="main">
       <MainTop />
       <div className="main-bottom">
-        <SidebarBox />
+        {/* <NavBar /> */}
         {/* {selectedMenu === 'home' ? <MainContainer /> : <ReviewContainer />} */}
         <MainContainer />
         <MainRight />

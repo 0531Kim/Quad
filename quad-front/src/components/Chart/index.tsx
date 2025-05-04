@@ -54,7 +54,7 @@ export default function CustomBarChart() {
     {/* <ResponsiveContainer max-width="36rem" min-width="24rem" max-height={240}> */}
       <BarChart data={data} margin={{ top: 0, right: 30, left: 0, bottom: 5 }}>
         <CartesianGrid strokeDasharray="4 3" />
-        <XAxis dataKey="name" tick={{ fill: 'black', fontSize: 12, fontWeight: 400 }} />
+        <XAxis dataKey="name" tick={{ fill: 'rgba(0, 0, 0, 0.8)', fontSize: 12, fontWeight: 500 }} />
         <YAxis />
         <Tooltip
           content={<CustomTooltip />}

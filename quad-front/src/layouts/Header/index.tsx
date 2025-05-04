@@ -169,12 +169,12 @@ export default function Header() {
     <div id = 'header'>
       {!isAuthPage && 
         <div className = 'header-container'>
-            <div className ='header-left-box' onClick={onLogoClickHandler}>
+            {/* <div className ='header-left-box' onClick={onLogoClickHandler}>
                 <div className ='icon-box' style={{'width': '34px', 'height': '32px'}}>
                     <div className ='icon quad-logo-green'></div>
                 </div>
                 <div className ='header-logo'>{'QUAD'}</div>
-            </div>
+            </div> */}
             <div className ='header-right-box'>
               <SearchButton />
               <MyPageButton />

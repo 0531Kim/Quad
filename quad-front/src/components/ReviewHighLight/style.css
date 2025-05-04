@@ -5,7 +5,7 @@
 }
 
 .high-light-content-top{
-    background-color: rgb(217, 217, 217, 0.3);
+    background-color: rgb(217, 217, 217, 0.28);
     height: 50px;
     
     display: flex;
@@ -14,11 +14,15 @@
 
     padding: 0px 12px;
 
-    gap: 6px;
+    gap: 0.75rem;
 }
-.high-light-content-top-emo,
+.high-light-content-top-emo{
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .high-light-content-top-message{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -93,8 +97,8 @@
 }
 
 .content-card-content{
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     color: rgb(0, 0, 0, 0.9);
 }
 
@@ -124,7 +128,7 @@
 
 .content-card-icon{
     position: relative;
-    top: 0.5px;
+    top: -1.4px;
     
     width: 13px;
     height: 12.5px;

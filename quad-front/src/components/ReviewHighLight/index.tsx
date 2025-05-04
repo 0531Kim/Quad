@@ -4,23 +4,13 @@ import HighlightReviewListItem from "types/interface/hightlight-review-list-item
 
 //          interface          //
 interface Props{
-    titleEmo: string;
+    icon: React.ReactNode;
     title: string;
     highlightReviewListItem: HighlightReviewListItem[];
-    // starCount: number;
-    // content: string;
-
-    // onNameClick?: () => void;
-    // onBoxClick?: () => void;
 }
 
 //          interface          //
 interface ContentCardProps {
-    // courseName?: string;
-    // star?: number;
-    // content?: string;
-    // time?: string;
-    // likeCount?: number;
     highlightReviewItem: HighlightReviewListItem;
   }
 
@@ -66,7 +56,9 @@ interface ContentCardProps {
                   <div className='content-card-time'>{time}</div>
                   <div className='divider'></div>
                   <div className='content-card-likes'>
-                    <div className='content-card-icon empty-heart'></div>
+                    <div className='content-card-icon'>
+                      <i className="fa-sharp fa-regular fa-sm fa-heart quad-green"></i>
+                    </div>
                     <div className='favortite-count'>{likeCount}</div>
                   </div>
                 </div>
@@ -82,13 +74,14 @@ interface ContentCardProps {
 //      Component: Hightlight content       //
   const HighLightContent = (props: Props) => {
 
-    const{titleEmo, title, highlightReviewListItem} = props;
+    const{icon, title, highlightReviewListItem} = props;
 
     return(
       <div className='high-light-content'>
         <div className='high-light-content-top'>
           <div className='high-light-content-top-emo'>
-            {titleEmo}
+            {/* {titleEmo} */}
+            {icon}
           </div>
           <div className='high-light-content-top-message'>
             {title}
