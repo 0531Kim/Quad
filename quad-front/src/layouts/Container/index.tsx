@@ -5,6 +5,8 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { AUTH_PATH } from 'constant';
 import './style.css';
 import NavBar from 'components/NavBar';
+import MainTop from 'components/MainTop';
+import MainRight from 'components/MainRight';
 
 //          Component: layout           //
 export default function Container() {
@@ -50,7 +52,11 @@ export default function Container() {
           {pathname !== AUTH_PATH() && <div ref={navBarRef}><NavBar /></div>}  
           <div className={`main-box ${pathname === AUTH_PATH() ? 'auth' : ''}`}>
             {pathname !== AUTH_PATH() && <Header />}  
-            <Outlet />
+            {pathname !== AUTH_PATH() && <MainTop />}
+            <div className='main-content-area'>
+              <Outlet />
+              <MainRight />
+            </div>
           </div>
         </div>
         <footer ref={footerRef}>

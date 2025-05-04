@@ -97,17 +97,6 @@ export default function ReviewView() {
 
     const [reviewList, setReviewList] = useState<ReviewListItem[]>();
 
-    // //          function: getAllFacultyReview          //
-    // const getAllFacultyReviewResponse = (responseBody: getAllFacultyReviewResponseDto | ResponseDto | null) =>{
-    //     if(!responseBody) return;
-    //         const { code } = responseBody;
-    //         if(code === 'DBE') alert('Database Error!');
-    //         if(code !== 'SU') return;
-        
-    //     const { allFacultyReview } = responseBody as getAllFacultyReviewResponseDto;
-    //     setAllFacultyReview(allFacultyReview);
-    // }
-
     //          function: getAllFacultyReview          //
     const getCourseReviewResponse = (responseBody: getCourseReviewResponseDto | ResponseDto | null) =>{
         if(!responseBody) return;
@@ -134,10 +123,6 @@ export default function ReviewView() {
 
     //          render          //
     return (
-    <div className="review">
-        <MainTop />
-        <div className="review-bottom">
-            <SidebarBox />
         <div className="review-container">
         <FacultyListBox setHoveredFaculty={() => {}} defaultFacultyKey={faculty} notHoverClick={1} />
         <div className='faculty-view-container-top'>
@@ -162,8 +147,5 @@ export default function ReviewView() {
           {reviewList?.map((review, index) => ( <ReviewBox key={index} review={review} /> ))}
         </div>
         </div>
-        <MainRight />
-        </div>
-    </div>
     );
 }

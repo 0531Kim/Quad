@@ -97,10 +97,6 @@ export default function StudyView() {
   }, [])
 
   return (
-    <div className='study-view'>
-      <MainTop />
-      <div className='study-view-bottom'>
-        <SidebarBox />
         <div className='study-view-container'>
           <FacultyListBox setHoveredFaculty={() => {}} defaultFacultyKey={faculty} notHoverClick={1} />
           <div className='faculty-view-container-top'>
@@ -177,8 +173,5 @@ export default function StudyView() {
             })()}
           </div>
         </div>
-        <MainRight />
-      </div>
-    </div>
   )
 }

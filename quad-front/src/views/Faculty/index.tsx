@@ -106,10 +106,6 @@ export default function FacultyView() {
     const currentFacultyKey = hoveredFaculty ?? 'ART';
 
     return(
-        <div className='faculty-view'>
-            <MainTop />
-            <div className='faculty-view-bottom'>
-                <SidebarBox />
                 <div className='faculty-view-container'>
                     <FacultyListBox setHoveredFaculty={setHoveredFaculty} defaultFacultyKey={hoveredFaculty} notHoverClick = {0}/>
                     <div className='faculty-view-container-top'>
@@ -138,8 +134,5 @@ export default function FacultyView() {
                         }
 </div>
                 </div>
-                <MainRight />
-            </div>
-        </div>
     )
 }

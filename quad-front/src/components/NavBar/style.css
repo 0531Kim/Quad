@@ -26,6 +26,8 @@
     align-items: center;
 
     gap: 0.4rem;
+
+    cursor: pointer;
 }
 
 .nav-bar-logo-box{
@@ -112,13 +114,13 @@
     justify-content: center;
     align-items: center;
 
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .nav-bar-text{
     font-weight: 600;
 
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .pencil-icon, .home-icon{

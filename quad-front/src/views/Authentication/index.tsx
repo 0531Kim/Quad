@@ -703,7 +703,7 @@ export default function Authentication() {
     <div id='auth-wrapper'>
       <div className = 'auth-container'>
         <div className='auth-jumbotron-box'>
-          <div className='auth-jumbotron-contents'>
+          <div className='auth-jumbotron-contents' onClick={() => navigate('/')}>
             {/* <div className='auth-logo-icon'></div> */}
             <div className ='icon-box' style={{'width': '68px', 'height': '64px'}}>
               <div className ='icon quad-logo-green'></div>

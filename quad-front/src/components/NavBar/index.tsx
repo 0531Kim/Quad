@@ -18,12 +18,9 @@ const NavBar = () => {
       const footerRect = footer.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Check if footer is visible in viewport
       if (footerRect.top < windowHeight) {
         setIsFooterVisible(true);
-        // Calculate how much of the footer is visible
         const visibleFooterHeight = windowHeight - footerRect.top;
-        // Apply this as bottom padding to the navbar
         navBarRef.current.style.marginBottom = `${visibleFooterHeight}px`;
       } else {
         setIsFooterVisible(false);
@@ -44,7 +41,7 @@ const NavBar = () => {
     <div className={`nav-bar-box ${isFooterVisible ? 'nav-bar-shrink' : ''}`} ref={navBarRef}>
       <div className='nav-bar-container'>
         <div className='nav-bar-logo-box'>
-          <div className='nav-bar-logo-container'>
+          <div className='nav-bar-logo-container' onClick={() => navigate('/')}>
             <div className='nav-bar-logo'>
               <div className='icon quad-logo-green'></div>
             </div>

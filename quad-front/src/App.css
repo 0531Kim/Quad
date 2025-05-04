@@ -73,7 +73,7 @@ body{
   color: rgba(255, 255, 255, 1);
 
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 140%;
 
   cursor: pointer;
@@ -98,7 +98,7 @@ body{
   border: 1.5px solid #00804b;
   color: rgba(255, 255, 255, 1);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 140%;
 
   cursor: pointer;

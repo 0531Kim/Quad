@@ -41,9 +41,11 @@
     max-width: 52rem;
     width: 100%;
     min-width: 0;
-    margin: 0px auto;
+    margin: 0rem auto 5rem auto;
     flex: 1 1 auto;
     flex-shrink: 1;
+
+    padding: 0rem 1rem;
 }
 
 .main-container-graph{

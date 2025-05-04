@@ -7,7 +7,7 @@
 .main-wrapper{
     /* flex: 1 1 auto; */
     display: flex;
-    min-height: calc(100vh - 144.6px);
+    min-height: 100vh;
 }
 
 .main-box {
@@ -19,4 +19,10 @@
 
 .main-box.auth {
     padding-left: 0rem;
+}
+
+.main-content-area{
+    display: flex;
+
+    padding: 0px 1rem;
 }

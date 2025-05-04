@@ -72,16 +72,6 @@ export default function Main() {
   }
 
   return (
-    <>
-    <div className="main">
-      <MainTop />
-      <div className="main-bottom">
-        {/* <NavBar /> */}
-        {/* {selectedMenu === 'home' ? <MainContainer /> : <ReviewContainer />} */}
         <MainContainer />
-        <MainRight />
-      </div>
-    </div>
-    </>
   );
 }
