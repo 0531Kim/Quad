@@ -43,9 +43,9 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
         isDefaultUsername = username.startsWith(defaultPrefix);
 
         if(!isDefaultUsername){
-            response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600");
+            response.sendRedirect("https://quadnz.com/auth/oauth-response/" + token + "/3600");
         }else{
-            response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600/" + username);
+            response.sendRedirect("https://quadnz.com/auth/oauth-response/" + token + "/3600/" + username);
         }
 	}
 }
