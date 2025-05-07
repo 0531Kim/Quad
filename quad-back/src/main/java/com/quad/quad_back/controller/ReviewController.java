@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.quad.quad_back.dto.object.ReviewListItem;
 import com.quad.quad_back.dto.object.CourseDto;
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
+import com.quad.quad_back.dto.response.review.GetCourseDescriptionResponseDto;
 import com.quad.quad_back.dto.response.review.GetCourseReviewResponseDto;
 import com.quad.quad_back.dto.response.review.GetCoursesByStudyResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
@@ -68,5 +69,13 @@ public class ReviewController {
     public ResponseEntity<? super GetCoursesByStudyResponseDto> getCoursesByStudy(){
         Map<String, Set<CourseDto>> coursesByStudy = reviewService.getAllCoursesByStudy();
         return GetCoursesByStudyResponseDto.success(coursesByStudy);
+    }
+
+    @GetMapping("/CourseDescription")
+    public ResponseEntity<? super GetCourseDescriptionResponseDto> getCourseDescription(
+        @RequestParam(value = "courseName", required = false) String courseName
+    ){
+        ResponseEntity<? super GetCourseDescriptionResponseDto> response = reviewService.getCourseDescription(courseName);
+        return response;
     }
 } 

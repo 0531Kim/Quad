@@ -56,7 +56,6 @@ public class CourseScraperService {
     public void saveCourseDescriptions(List<CourseDescriptionDto> courseDescriptionDtos) {
         for (CourseDescriptionDto dto : courseDescriptionDtos) {
 
-            // CourseEntity course;
             Optional<CourseEntity> existingCourse = courseRepository.findByCourseName(dto.getCourseName());
             
             System.out.println("Starting from: " + dto.getCourseName());
@@ -68,15 +67,12 @@ public class CourseScraperService {
 
             CourseEntity course = existingCourse.get();
 
-            // Find or create course description
-            // CourseDescriptionEntity courseDescription;
             CourseDescriptionEntity courseDescription = courseDescriptionRepository
                 .findByCourse(course)
                 .orElse(new CourseDescriptionEntity());
             
             courseDescription.setCourse(course);
             
-            // Map DTO values to entity
             courseDescription.setSem1(dto.getSem1() == 1);
             courseDescription.setSem2(dto.getSem2() == 1);
             courseDescription.setSummer(dto.getSummer() == 1);
@@ -88,7 +84,6 @@ public class CourseScraperService {
             courseDescription.setOnline(dto.getOnline() == 1);
             courseDescription.setNoExam(dto.getNoExam() == 1);
             
-            // Save course description
             courseDescriptionRepository.save(courseDescription);
         }
     }

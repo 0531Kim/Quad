@@ -11,6 +11,7 @@ import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto
 import com.quad.quad_back.dto.response.review.GetStudiesByFacultyResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
 import com.quad.quad_back.dto.response.review.GetCourseReviewResponseDto;
+import com.quad.quad_back.dto.response.review.GetCourseDescriptionResponseDto;
 
 public interface ReviewService {
     
@@ -20,5 +21,6 @@ public interface ReviewService {
     public Map<String, Set<String>> getAllStudies();
     public Map<String, Set<CourseDto>> getAllCoursesByStudy();
     ResponseEntity<? super GetCourseReviewResponseDto> getCourseReview(String courseName);
+    ResponseEntity<? super GetCourseDescriptionResponseDto> getCourseDescription(String courseName);
     
 }

@@ -12,20 +12,25 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.quad.quad_back.dto.object.CourseDescriptionDto;
 import com.quad.quad_back.dto.object.CourseDto;
 import com.quad.quad_back.dto.object.ReviewListItem;
 import com.quad.quad_back.dto.response.ResponseDto;
 import com.quad.quad_back.dto.response.review.GetAllFacultyReviewsResponseDto;
+import com.quad.quad_back.dto.response.review.GetCourseDescriptionResponseDto;
 import com.quad.quad_back.dto.response.review.GetCourseReviewResponseDto;
 import com.quad.quad_back.dto.response.review.GetLatestReviewListItemResponseDto;
 import com.quad.quad_back.dto.response.review.GetTrendingReviewListItemResponseDto;
+import com.quad.quad_back.entity.CourseDescriptionEntity;
 import com.quad.quad_back.entity.CourseEntity;
 import com.quad.quad_back.entity.ReviewListViewEntity;
+import com.quad.quad_back.repository.CourseDescriptionRepository;
 import com.quad.quad_back.repository.CourseRepository;
 import com.quad.quad_back.repository.ReviewListViewRepository;
 import com.quad.quad_back.service.ReviewService;
 
 import lombok.RequiredArgsConstructor;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,6 +38,7 @@ public class ReviewServiceImplement implements ReviewService{
 
     private final ReviewListViewRepository reviewListViewRepository;
     private final CourseRepository courseRepository;
+    private final CourseDescriptionRepository courseDescriptionRepository;
 
     @Override
     public ResponseEntity<? super GetTrendingReviewListItemResponseDto> getTrendingReviewList() {
@@ -138,7 +144,37 @@ public class ReviewServiceImplement implements ReviewService{
         }
 
         return GetCourseReviewResponseDto.success(reviewList);
-
     }
+
+    @Override
+public ResponseEntity<? super GetCourseDescriptionResponseDto> getCourseDescription(String courseName) {
+    try {
+        String modifiedCourseName = courseName.replaceAll("(?<=\\D)(?=\\d)", " ");
+
+        // 1. Find CourseEntity
+        Optional<CourseEntity> courseOptional = courseRepository.findByCourseName(modifiedCourseName);
+        if (courseOptional.isEmpty()) {
+            return ResponseDto.databaseError();
+        }
+
+        CourseEntity course = courseOptional.get();
+
+        Optional<CourseDescriptionEntity> courseDescriptionOptional = courseDescriptionRepository.findByCourse(course);
+        if (courseDescriptionOptional.isEmpty()) {
+            return ResponseDto.databaseError();
+        }
+
+        CourseDescriptionEntity courseDescription = courseDescriptionOptional.get();
+
+        CourseDescriptionDto dto = new CourseDescriptionDto(courseDescription);
+        List<CourseDescriptionDto> dtoList = List.of(dto);
+
+        return GetCourseDescriptionResponseDto.success(dtoList);
+        
+    } catch (Exception e) {
+        e.printStackTrace();
+        return ResponseDto.databaseError();
+    }
+}
     
 }
