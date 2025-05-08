@@ -8,6 +8,7 @@ enum ResponseCode{
     DUPLICATE_USERNAME = "DU",
     NOT_EXISTED_EMAIL = "NE",
     NOT_EXISTED_REVIEW = "NR",
+    NOT_EXISTED_COURSE = "NC",
 
     // Http status 401
     SIGN_IN_FAIL = "SF",

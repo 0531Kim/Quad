@@ -11,6 +11,8 @@ import getAllFacultyReviewResponseDto from "./response/review/get-all-faculty-re
 import getStudiesByFacultyResponseDto from "./response/review/get-studies-by-faculty.response.dto";
 import getCourseReviewResponseDto from "./response/review/get-course-review.response.dto";
 import getCourseReviewRequestDto from "./request/review/get-course-review.request.dto";
+import getCourseDescriptionRequestDto from "./request/review/get-course-description.request.dto";
+import getCourseDescriptionResponseDto from "./response/review/get-course-description.response.dto";
 
 const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
 console.log('[DEBUG] DOMAIN:', DOMAIN);
@@ -37,6 +39,7 @@ const GET_ALL_FACULTY_REVIEW_LIST_URL = () => `${API_DOMAIN}/review/allFacultyRe
 const GET_STUDIES_BY_FACULTY_URL = () => `${API_DOMAIN}/review/allStudies`;
 const GET_COURSES_BY_STUDY_URL = () => `${API_DOMAIN}/review/CoursesByStudy`;
 const GET_COURSE_REVIEW_URL = (courseName: string) => `${API_DOMAIN}/review/getCourseReview?courseName=${courseName}`;
+const GET_COURSE_DESCRIPTION_URL = (courseName: string) => `${API_DOMAIN}/review/CourseDescription?courseName=${courseName}`
 
 export const signInRequest = async(requestBody: SignInRequestDto) => {
     const result = await axios.post(SIGN_IN_URL(), requestBody)
@@ -213,6 +216,24 @@ export const getCourseReview = async (requestBody: getCourseReviewRequestDto) =>
     const result = await axios.get(GET_COURSE_REVIEW_URL(requestBody.courseName))
     .then(response => {
         const responseBody: getCourseReviewResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const getCourseDescription = async (requestBody: getCourseDescriptionRequestDto) => {
+    const url = GET_COURSE_DESCRIPTION_URL(requestBody.courseName);
+    console.log('Sending GET request to:', url);
+    
+    const result = await axios.get(GET_COURSE_DESCRIPTION_URL(requestBody.courseName))
+    .then(response => {
+        const responseBody: getCourseDescriptionResponseDto = response.data;
+        console.log(responseBody);
         return responseBody;
     })
     .catch(error => {

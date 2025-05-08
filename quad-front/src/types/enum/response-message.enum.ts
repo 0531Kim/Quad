@@ -8,6 +8,7 @@ enum ResponseMessage{
     DUPLICATE_USERNAME = "Duplicate Username.",
     NOT_EXISTED_EMAIL = "This email does not exist.",
     NOT_EXISTED_REVIEW = "This review does not exist.",
+    NOT_EXISTED_COURSE = "This course does not exist",
 
     //Http status 401
     SIGN_IN_FAIL = "Login infomation mismatch.",

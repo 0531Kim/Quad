@@ -57,25 +57,11 @@ const ReviewBox = ({review}: Props) => {
         return Math.round(avg * 10) / 10; // 소수점 첫째 자리까지 반올림
     }
 
-    //            function            //
-    // const getStudiesByFacultyResponse = (responseBody: getStudiesByFacultyResponseDto | ResponseDto | null) => {
-    //     if(!responseBody) return;
-    //     const { code } = responseBody;
-    //     if(code === 'DBE') alert('Database Error!');
-    //     if(code !== 'SU') return;
-        
-    //     const { studiesByFaculty } = responseBody as getStudiesByFacultyResponseDto;
-    //     setStudiesByFaculty(studiesByFaculty);
-    // }
-
     //          effect          //
     useEffect(() => {
         const rate = avgRateCalculator(difficulty, leniency, entertaining, quality);
         setAvgRate(rate);
       }, []);
-    // useEffect(() => {
-    //     getStudiesByFaculty().then(getStudiesByFacultyResponse);
-    // }, []);
 
     //          render: Input Box component         //
     return(
@@ -87,8 +73,6 @@ const ReviewBox = ({review}: Props) => {
                     <div className='review-star-icon star'></div>
                     <div className='review-rate'>{avgRate.toFixed(1)}</div>
                 </div>
-                {/* <div className='review-div'></div>
-                <div className='review-username-box'>{username}</div> */}
                 <div className='review-div'></div>
                 <div className='review-date'>2024 S1</div>
                 <div className='review-div'></div>
