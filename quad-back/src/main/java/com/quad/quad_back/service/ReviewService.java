@@ -22,5 +22,4 @@ public interface ReviewService {
     public Map<String, Set<CourseDto>> getAllCoursesByStudy();
     ResponseEntity<? super GetCourseReviewResponseDto> getCourseReview(String courseName);
     ResponseEntity<? super GetCourseDescriptionResponseDto> getCourseDescription(String courseName);
-    
 }

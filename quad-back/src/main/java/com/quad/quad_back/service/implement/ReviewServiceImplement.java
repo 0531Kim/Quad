@@ -29,6 +29,7 @@ import com.quad.quad_back.repository.CourseRepository;
 import com.quad.quad_back.repository.ReviewListViewRepository;
 import com.quad.quad_back.service.ReviewService;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import java.util.Optional;
 
@@ -147,29 +148,28 @@ public class ReviewServiceImplement implements ReviewService{
     }
 
     @Override
-public ResponseEntity<? super GetCourseDescriptionResponseDto> getCourseDescription(String courseName) {
+    public ResponseEntity<? super GetCourseDescriptionResponseDto> getCourseDescription(String courseName) {
     try {
         String modifiedCourseName = courseName.replaceAll("(?<=\\D)(?=\\d)", " ");
 
-        // 1. Find CourseEntity
         Optional<CourseEntity> courseOptional = courseRepository.findByCourseName(modifiedCourseName);
         if (courseOptional.isEmpty()) {
-            return ResponseDto.databaseError();
+            return GetCourseDescriptionResponseDto.courseNotExist();
         }
 
         CourseEntity course = courseOptional.get();
 
         Optional<CourseDescriptionEntity> courseDescriptionOptional = courseDescriptionRepository.findByCourse(course);
         if (courseDescriptionOptional.isEmpty()) {
-            return ResponseDto.databaseError();
+            return GetCourseDescriptionResponseDto.courseNotExist();
         }
 
         CourseDescriptionEntity courseDescription = courseDescriptionOptional.get();
 
         CourseDescriptionDto dto = new CourseDescriptionDto(courseDescription);
-        List<CourseDescriptionDto> dtoList = List.of(dto);
+        CourseDescriptionDto result = dto;
 
-        return GetCourseDescriptionResponseDto.success(dtoList);
+        return GetCourseDescriptionResponseDto.success(result);
         
     } catch (Exception e) {
         e.printStackTrace();

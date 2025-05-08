@@ -10,6 +10,7 @@ public interface ResponseMessage {
     String DUPLICATE_USERNAME = "Duplicate Username.";
     String NOT_EXISTED_EMAIL = "This email does not exist.";
     String NOT_EXISTED_REVIEW = "This review does not exist.";
+    String NOT_EXISTED_COURSE = "This course does not exist.";
 
     //Http status 401
     String SIGN_IN_FAIL = "Login infomation mismatch.";

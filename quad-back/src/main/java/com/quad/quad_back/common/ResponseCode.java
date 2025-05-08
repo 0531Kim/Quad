@@ -11,6 +11,7 @@ public interface ResponseCode {
     String DUPLICATED_USERNAME = "DU";
     String NOT_EXISTED_EMAIL = "NE";
     String NOT_EXISTED_REVIEW = "NR";
+    String NOT_EXISTED_COURSE = "NC";
 
     // Http status 401: Unauthorized
     String SIGN_IN_FAIL = "SF";
