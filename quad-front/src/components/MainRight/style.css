@@ -7,7 +7,7 @@
     background-color: #F5F8FA;
     flex:1 1 auto;
     flex-shrink: 10;
-    min-width: 0;
+    min-width: 12rem;
 
     margin-bottom: 10rem;
 
@@ -28,3 +28,9 @@
 
     color: rgba(0, 0, 0, 0.7);
 }
+
+@media (max-width: 85rem) {
+    .main-right{
+        display: none;
+    }
+  }

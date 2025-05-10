@@ -1,5 +1,6 @@
 /** @jsxImportSource react */
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import './style.css';
 import {
   BarChart,
@@ -29,6 +30,7 @@ const data = [
 const colors = ['#A61E32', '#860064', '#E4660B', '#52A01B', '#492973', '#03618F', '#028384', '#0055A0', '#CFC70A'];
 
 export default function CustomBarChart() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
@@ -55,7 +57,7 @@ export default function CustomBarChart() {
       <BarChart data={data} margin={{ top: 0, right: 30, left: 0, bottom: 5 }}>
         <CartesianGrid strokeDasharray="4 3" />
         <XAxis dataKey="name" tick={{ fill: 'rgba(0, 0, 0, 0.8)', fontSize: 12, fontWeight: 500 }} />
-        <YAxis />
+        <YAxis tick={{ fontSize: isMobile ? 12 : 14 }} />
         <Tooltip
           content={<CustomTooltip />}
           itemStyle={{

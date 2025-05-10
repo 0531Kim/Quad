@@ -1,6 +1,6 @@
 package com.quad.quad_back.common;
 
-public interface ResponseCode {
+public interface ResponseCode{
     
     // Http status 200: SUCCESS
     public static final String SUCCESS = "SU";

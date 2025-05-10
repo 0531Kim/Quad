@@ -15,7 +15,7 @@ import getCourseDescriptionRequestDto from "./request/review/get-course-descript
 import getCourseDescriptionResponseDto from "./response/review/get-course-description.response.dto";
 
 const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
-console.log('[DEBUG] DOMAIN:', DOMAIN);
+// console.log('[DEBUG] DOMAIN:', DOMAIN);
 
 const API_DOMAIN = `${DOMAIN}/api/v1`;
 const authorization = (accessToken: string) => {

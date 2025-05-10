@@ -17,11 +17,17 @@
 }
 
 .header-left-box{
-    display: flex;
+    /* display: flex; */
     align-items: center;
     gap: 6px;
 
     cursor: pointer;
+
+    display: none;
+}
+
+.header-right-box-mobile{
+    display: none;
 }
 
 .header-logo{
@@ -42,7 +48,7 @@
 .header-right-box{
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .header-search-input-box{
@@ -72,4 +78,28 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 140%;
+}
+
+@media (max-width: 48rem) {
+    #header{
+        padding: 0.625rem 1rem;
+    }
+
+    .header-container{
+        justify-content: space-between;
+    }
+
+    .header-left-box{
+        display: flex;
+    }
+
+    .header-right-box{
+        display: none;
+    }
+
+    .header-right-box-mobile{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
 }

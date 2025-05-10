@@ -3,3 +3,10 @@
     max-height: 15rem;
     min-width: 25rem;
 }
+
+@media(max-width: 48rem){
+    .chart-responsive-container{
+        position: relative;
+        right: 0.5rem;
+    }
+}

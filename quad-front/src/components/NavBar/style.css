@@ -189,3 +189,9 @@
 .nav-bot-item:nth-of-type(3):hover .nav-bot-text {
   color: #C9510C;
 }
+
+@media (max-width: 48rem) {
+    .nav-bar-box{
+        display: none;
+    }
+}

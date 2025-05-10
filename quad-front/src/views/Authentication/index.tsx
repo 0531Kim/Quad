@@ -542,7 +542,7 @@ export default function Authentication() {
         setEmailBoxBlueNotification(true);
         setEmailBoxBlueMessage("A verification code has been sent to your email.");
       }
-      const requestBody: emailVerificationRequestDto = {email};
+      const requestBody: emailVerificationRequestDto = {email: email};
       sendEmailVerificationCode(requestBody).then(emailVerificationResponse);
     }
 
