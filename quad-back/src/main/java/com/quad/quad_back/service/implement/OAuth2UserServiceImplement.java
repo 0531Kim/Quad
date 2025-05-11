@@ -25,6 +25,9 @@ public class OAuth2UserServiceImplement extends DefaultOAuth2UserService{
         OAuth2User oAuth2User = super.loadUser(request);
 
         String clientEmail = (String) oAuth2User.getAttributes().get("email");
+        if (clientEmail == null) {
+            throw new OAuth2AuthenticationException("Email not found in OAuth2 attributes.");
+        }
         boolean userExists = userRepository.existsByEmail(clientEmail);
 
         if (!userExists) {
