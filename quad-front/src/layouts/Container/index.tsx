@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import Footer from 'layouts/Footer'
 import Header from 'layouts/Header'
 import { Outlet, useLocation } from 'react-router-dom'
-import { AUTH_PATH } from 'constant';
+import { AUTH_PATH, OAUTH_PATH } from 'constant';
 import './style.css';
 import NavBar from 'components/NavBar';
 import MainTop from 'components/MainTop';
@@ -49,10 +49,10 @@ export default function Container() {
     <>
       <div className="screen-container">
         <div className="main-wrapper">
-          {pathname !== AUTH_PATH() && <div ref={navBarRef}><NavBar /></div>}  
-          <div className={`main-box ${pathname === AUTH_PATH() ? 'auth' : ''}`}>
-            {pathname !== AUTH_PATH() && <Header />}  
-            {pathname !== AUTH_PATH() && <MainTop />}
+          {(pathname !== AUTH_PATH() && pathname !== OAUTH_PATH()) && <div ref={navBarRef}><NavBar /></div>}  
+          <div className={`main-box ${(pathname === AUTH_PATH() || pathname === OAUTH_PATH())  ? 'auth' : ''}`}>
+            {(pathname !== AUTH_PATH() && pathname !== OAUTH_PATH()) && <Header />}  
+            {(pathname !== AUTH_PATH() && pathname !== OAUTH_PATH()) && <MainTop />}
             <div className='main-content-area'>
               <Outlet />
               <MainRight />
@@ -60,7 +60,7 @@ export default function Container() {
           </div>
         </div>
         <footer ref={footerRef}>
-          {pathname !== AUTH_PATH() && <Footer />}
+          {(pathname !== AUTH_PATH() && pathname !== OAUTH_PATH()) && <Footer />}
         </footer>
       </div>
     </>
