@@ -1,7 +1,6 @@
 export const MAIN_PATH = () => '/';
 export const AUTH_PATH = () => '/auth';
 export const OAUTH_PATH = () => '/auth/oauth-response/:token/:expirationTime/:tempUsername?';
-// export const REVIEW_PATH = () => '/review';
 export const FACULTY_PATH = () => 'review';
 export const FACULTY_PATH_WITH_CODE = (facultyName: string) => `review/${facultyName}`;
 export const STUDY_PATH = (faculty: string, studyCode: string) => `/review/${faculty}/${studyCode}`;
