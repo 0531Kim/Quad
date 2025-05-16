@@ -5,9 +5,6 @@ import getAllFacultyReviewResponseDto from 'apis/response/review/get-all-faculty
 import { ResponseDto } from 'apis/response';
 import { getAllFacultyReview, getCourseDescription, getCourseReview } from 'apis';
 import ReviewListItem from 'types/interface/review-list-item.interface';
-import MainTop from 'components/MainTop';
-import SidebarBox from 'components/SideBar';
-import MainRight from 'components/MainRight';
 import { useNavigate, useParams } from 'react-router-dom';
 import FacultyListBox from 'components/FacultyListBox';
 import { codeToSubjectMap } from 'constant';

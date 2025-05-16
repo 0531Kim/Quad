@@ -1,6 +1,3 @@
-import MainRight from "components/MainRight";
-import MainTop from "components/MainTop";
-import SidebarBox from "components/SideBar";
 import { useNavigate, useParams } from 'react-router-dom';
 import './style.css';
 import { useEffect, useMemo, useState } from "react";
