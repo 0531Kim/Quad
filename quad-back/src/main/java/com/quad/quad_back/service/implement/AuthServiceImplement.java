@@ -197,7 +197,8 @@ public class AuthServiceImplement implements AuthService{
             UserEntity userEntity = userRepository.findByEmail(dto.getEmail());
             if(userEntity == null) return ChangeUsernameResponseDto.validationFailed();
 
-            userEntity.setPassword(dto.getNew_password());
+            String encodedPassword = passwordEncoder.encode(dto.getNew_password());
+            userEntity.setPassword(encodedPassword);
             userRepository.save(userEntity);
 
         }catch(Exception exception){
