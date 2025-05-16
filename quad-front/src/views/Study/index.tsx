@@ -1,7 +1,4 @@
-import MainTop from "components/MainTop"
 import "./style.css"
-import SidebarBox from "components/SideBar"
-import MainRight from "components/MainRight"
 import { useNavigate, useParams } from "react-router-dom"
 import FacultyListBox from "components/FacultyListBox"
 import { useEffect, useState } from "react"

@@ -9,11 +9,6 @@ import getLatestReviewResponseDto from 'apis/response/review/get-latest-review.r
 import { ResponseDto } from 'apis/response';
 import HighlightReviewListItem from 'types/interface/hightlight-review-list-item.interface';
 import getTrendingReviewResponseDto from 'apis/response/review/get-trending-review.response.dto';
-import ReviewContainer from 'views/Review';
-import MainTop from 'components/MainTop';
-import MainRight from 'components/MainRight';
-import NavBar from 'components/NavBar';
-
 export default function Main() {
   
   //      function: navigate        //

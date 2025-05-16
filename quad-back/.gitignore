@@ -7,6 +7,8 @@ build/
 
 src/main/resources/application.properties
 
+.DS_Store
+
 ### STS ###
 .apt_generated
 .classpath

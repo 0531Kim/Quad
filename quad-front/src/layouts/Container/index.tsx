@@ -62,7 +62,7 @@ export default function Container() {
             {!isAuthPath && !isOAuthPath && <MainTop />}
             <div className='main-content-area'>
               <Outlet />
-              <MainRight />
+              {!isAuthPath && !isOAuthPath && <MainRight />}
             </div>
           </div>
         </div>
