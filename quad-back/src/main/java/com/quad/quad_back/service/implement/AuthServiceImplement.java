@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.quad.quad_back.common.VerificationCode;
+import com.quad.quad_back.dto.request.auth.ChangePasswordRequestDto;
 import com.quad.quad_back.dto.request.auth.ChangeUsernameRequestDto;
 import com.quad.quad_back.dto.request.auth.ConfirmEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.EmailVerificationRequestDto;
@@ -14,6 +15,7 @@ import com.quad.quad_back.dto.request.auth.SignInRequestDto;
 import com.quad.quad_back.dto.request.auth.SignUpRequestDto;
 import com.quad.quad_back.dto.request.auth.UsernameCheckRequestDto;
 import com.quad.quad_back.dto.response.ResponseDto;
+import com.quad.quad_back.dto.response.auth.ChangePasswordResponseDto;
 import com.quad.quad_back.dto.response.auth.ChangeUsernameResponseDto;
 import com.quad.quad_back.dto.response.auth.ConfirmEmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.EmailVerificationResponseDto;
@@ -186,5 +188,23 @@ public class AuthServiceImplement implements AuthService{
         return ResponseDto.databaseError();
     }
        return ChangeUsernameResponseDto.success();
+    }
+
+    @Override
+    public ResponseEntity<? super ChangePasswordResponseDto> changePassword(ChangePasswordRequestDto dto) {
+        try{
+
+            UserEntity userEntity = userRepository.findByEmail(dto.getEmail());
+            if(userEntity == null) return ChangeUsernameResponseDto.validationFailed();
+
+            userEntity.setPassword(dto.getNew_password());
+            userRepository.save(userEntity);
+
+        }catch(Exception exception){
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+
+        return ChangePasswordResponseDto.success();
     }
 }

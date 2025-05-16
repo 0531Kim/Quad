@@ -49,4 +49,8 @@ public class UserEntity {
     public void setUsername(String newUsername){
         this.username = newUsername;
     }
+
+    public void setPassword(String newPassword){
+        this.password = newPassword;
+    }
 }
