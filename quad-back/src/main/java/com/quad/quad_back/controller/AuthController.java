@@ -90,4 +90,5 @@ public class AuthController {
         ResponseEntity<? super ChangePasswordResponseDto> response = authService.changePassword(requestBody);
         return response;
     }
+}
 
