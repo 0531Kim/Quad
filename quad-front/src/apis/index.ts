@@ -13,6 +13,8 @@ import getCourseReviewResponseDto from "./response/review/get-course-review.resp
 import getCourseReviewRequestDto from "./request/review/get-course-review.request.dto";
 import getCourseDescriptionRequestDto from "./request/review/get-course-description.request.dto";
 import getCourseDescriptionResponseDto from "./response/review/get-course-description.response.dto";
+import findPasswordEmailVerificationRequestDto from "./request/auth/find-password-email-verification.request.dto";
+import FindPasswordEmailVerificationCodeResponseDto from "./response/auth/find-password-email-verification-code.response.dto";
 
 const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
 // console.log('[DEBUG] DOMAIN:', DOMAIN);
@@ -29,6 +31,7 @@ const GET_SIGN_IN_USER_URL = () => `${API_DOMAIN}/user`;
 
 const CONFIRM_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/confirm-email-verification`;
 const SEND_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/email-verification`;
+const FIND_PASSWORD_SEND_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/find-password-email-verification`;
 const USERNAME_CHECK_URL = () => `${API_DOMAIN}/auth/username-check`;
 export const GOOGLE_SIGN_IN_URL = () => `${API_DOMAIN}/auth/oauth2/google`;
 export const AUTH_CHANGE_USERNAME_URL = () => `${API_DOMAIN}/auth/change-username`;
@@ -87,6 +90,20 @@ export const sendEmailVerificationCode = async (requestBody: emailVerificationRe
     const result = await axios.post(SEND_EMAIL_VERIFICATION_CODE_URL(), requestBody)
     .then(response => {
         const responseBody: EmailVerificationCodeResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const findPasswordSendEmailVerificationCode = async (requestBody: findPasswordEmailVerificationRequestDto) => {
+    const result = await axios.post(FIND_PASSWORD_SEND_EMAIL_VERIFICATION_CODE_URL(), requestBody)
+    .then(response => {
+        const responseBody: FindPasswordEmailVerificationCodeResponseDto = response.data;
         return responseBody;
     })
     .catch(error => {

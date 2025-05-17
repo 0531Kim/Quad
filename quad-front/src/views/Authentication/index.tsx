@@ -2,13 +2,15 @@ import React, { useState, KeyboardEvent, useRef, ChangeEvent, useEffect } from '
 import './style.css';
 import InputBox from 'components/InputBox';
 import { SignInRequestDto, SignUpRequestDto, emailVerificationRequestDto, checkVerificationCodeRequestDto, usernameCheckRequestDto } from 'apis/request/auth';
- import { checkValidateCode, GOOGLE_SIGN_IN_URL, sendEmailVerificationCode, signInRequest, signUpRequest, usernameCheck } from 'apis';
+ import { checkValidateCode, findPasswordSendEmailVerificationCode, GOOGLE_SIGN_IN_URL, sendEmailVerificationCode, signInRequest, signUpRequest, usernameCheck } from 'apis';
 import { checkVerificationCodeResponseDto, EmailVerificationCodeResponseDto, SignInResponseDto, SignUpResponseDto } from 'apis/response/auth';
 import { ResponseDto } from 'apis/response';
 import { useCookies } from 'react-cookie';
 import { MAIN_PATH } from 'constant';
 import { useNavigate } from 'react-router-dom';
 import usernameCheckResponseDto from 'apis/response/auth/username-check-response.dto';
+import findPasswordEmailVerificationRequestDto from 'apis/request/auth/find-password-email-verification.request.dto';
+import FindPasswordEmailVerificationCodeResponseDto from 'apis/response/auth/find-password-email-verification-code.response.dto';
 
 //          component: authentication page component            //
 export default function Authentication() {
@@ -784,7 +786,7 @@ export default function Authentication() {
     }
 
     //          function: email verification response          //
-    const emailVerificationResponse = (responseBody: EmailVerificationCodeResponseDto | ResponseDto | null) => {
+    const findPasswordEmailVerificationResponse = (responseBody: FindPasswordEmailVerificationCodeResponseDto | ResponseDto | null) => {
       if(!responseBody){
         alert('Network error: Please check your internet connection and try again.');
         return;
@@ -1018,8 +1020,8 @@ export default function Authentication() {
         setEmailBoxBlueNotification(true);
         setEmailBoxBlueMessage("A verification code has been sent to your email.");
       }
-      const requestBody: emailVerificationRequestDto = {email: email};
-      sendEmailVerificationCode(requestBody).then(emailVerificationResponse);
+      const requestBody: findPasswordEmailVerificationRequestDto = {email: email};
+      findPasswordSendEmailVerificationCode(requestBody).then(findPasswordEmailVerificationResponse);
     }
 
     //          event handler: validate number button click event handler          //
@@ -1067,14 +1069,21 @@ export default function Authentication() {
       }
     }, [page])
 
-    //          render: sign up card component rendering        //
+    //          render: find password card component rendering        //
     return (
       <div className ='auth-card'>
         <div className ='auth-card-box'>
           <div className ='auth-card-top'>
-            <div className='auth-card-title-box'>
-              <div className='auth-card-title'>{'Sign up'}</div>
-              <div className='auth-card-page'>{`${page}/2`}</div>
+            <div className='auth-card-title-box forgot-password-title-box'>
+              <div className='auth-card-title-box-top forgot-password-title-box-top'>
+                <div className='auth-card-title'>{'Forgot your password?'}</div>
+                <div className='auth-card-page'>{`${page}/2`}</div>
+              </div>
+              <div className='auth-card-title-box-bot'>
+                <div className='forgot-password-title-box-description'>
+                  Enter your email, and we'll help you reset your password
+                </div>
+              </div>
             </div>
             {page === 1 &&(
               <>

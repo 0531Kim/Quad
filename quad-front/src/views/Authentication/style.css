@@ -272,3 +272,20 @@
 .green-empty-large-full-button{
     margin-bottom: 12px;
 }
+
+.forgot-password-title-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.forgot-password-title-box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}  
+
+.forgot-password-title-box-description{
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.75);
+}
