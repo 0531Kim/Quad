@@ -11,6 +11,7 @@ import com.quad.quad_back.dto.request.auth.ChangePasswordRequestDto;
 import com.quad.quad_back.dto.request.auth.ChangeUsernameRequestDto;
 import com.quad.quad_back.dto.request.auth.ConfirmEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.EmailVerificationRequestDto;
+import com.quad.quad_back.dto.request.auth.FindPasswordEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.SignInRequestDto;
 import com.quad.quad_back.dto.request.auth.SignUpRequestDto;
 import com.quad.quad_back.dto.request.auth.UsernameCheckRequestDto;
@@ -29,6 +30,7 @@ import com.quad.quad_back.provider.JwtProvider;
 import com.quad.quad_back.repository.UserRepository;
 import com.quad.quad_back.repository.VertificationRepository;
 import com.quad.quad_back.service.AuthService;
+import com.quad.quad_back.dto.response.auth.FindPasswordEmailVerificationResponseDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -72,7 +74,7 @@ public class AuthServiceImplement implements AuthService{
 
             String verificationCode = VerificationCode.getVerificationCode();
 
-            boolean isSuccessed = emailProvider.sendVerificationMail(email, verificationCode);
+            boolean isSuccessed = emailProvider.sendVerificationMail(email, verificationCode, false);
             if(!isSuccessed) return EmailVerificationResponseDto.mailSendFail();
 
             EmailVerificationEntity verificationEntity = new EmailVerificationEntity(email, verificationCode);
@@ -207,5 +209,40 @@ public class AuthServiceImplement implements AuthService{
         }
 
         return ChangePasswordResponseDto.success();
+    }
+
+    @Override
+    public ResponseEntity<? super FindPasswordEmailVerificationResponseDto> findPasswordEmailVerification(
+            FindPasswordEmailVerificationRequestDto dto) {
+         
+        try{
+
+            String email = dto.getEmail();
+            System.out.println("Ready to send email to: " + email);
+            UserEntity userEntity = userRepository.findByEmail(email);
+            if(userEntity == null){
+                return FindPasswordEmailVerificationResponseDto.notExistEmail();
+            }
+
+            String userType = userEntity.getType();
+            
+            if("google".equals(userType)){
+                return FindPasswordEmailVerificationResponseDto.signInTypeWrong();
+            }
+
+            String verificationCode = VerificationCode.getVerificationCode();
+
+            boolean isSuccessed = emailProvider.sendVerificationMail(email, verificationCode, true);
+            if(!isSuccessed) return FindPasswordEmailVerificationResponseDto.mailSendFail();
+
+            EmailVerificationEntity verificationEntity = new EmailVerificationEntity(email, verificationCode);
+            vertificationRepository.save(verificationEntity);
+
+        }catch(Exception exception){
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+
+        return FindPasswordEmailVerificationResponseDto.success();
     }
 }

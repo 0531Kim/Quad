@@ -942,11 +942,15 @@ export default function Authentication() {
 
       const isCheckedPassword = password.trim().length > 8;
       if(!isCheckedPassword){
+        setPasswordCheckError(false);
+        setPasswordverificationCodeBoxBlueMessage('');
         setPasswordError(true);
         setPasswordErrorMessage("Password must contain at least 8 characters.");
       }
       const isEqualPassword = password === passwordCheck;
       if(!isEqualPassword){
+        setPasswordError(false);
+        setPasswordErrorMessage("");
         setPasswordCheckError(true);
         setPasswordverificationCodeBoxBlueMessage('Make sure both passwords are the same.');
       }
@@ -954,21 +958,8 @@ export default function Authentication() {
         return;
       }
 
-      const hasUsername = username.trim().length > 0;
-      if(!hasUsername){
-        setUsernameError(true);
-        setUsernameErrorMessage('Please enter your username.');
-      }
-
-      if(!agreedPersonal)setAgreedPersonalError(true);
-
-      if(!hasUsername || !agreedPersonal) return;
-
-      const requestBody: SignUpRequestDto = {
-        email, password, username
-      };
-
-      signUpRequest(requestBody).then(signUpResponse);
+      console.log("go");
+      // Implement save changed password API.
     }
     //          event handler: login link click handler         //
     const onSignInLinkClickHandler = () => {
@@ -1127,19 +1118,8 @@ export default function Authentication() {
               </>
             )}
             {page === 2 &&(
-              <>
-                <InputBox ref={usernameRef} label='Username' type='text' placeholder='Create your username' value={username} 
-                onChange={onUsernameChangeHandler} 
-                notification={usernameValidationRedNotification || usernameValidationBlueNotification} 
-                notificationMessage={usernameValidationRedMessage || usernameValidationBlueMessage} 
-                onKeyDown={onUsernameKeyDownHandler}
-                onValidButtonClick={onUsernameValidationButtonClickHandler} 
-                
-                buttonTitle= "Validate"
-                blueBox={usernameBlueBox}
-                />
-                
-                <InputBox ref={passwordRef} label='Password' type={passwordType} placeholder='Please enter your password' value={password} 
+              <>            
+                <InputBox ref={passwordRef} label='New Password' type={passwordType} placeholder='Please enter your new password' value={password} 
                 onChange={onPasswordChangeHandler} 
                 notification={isPasswordError} 
                 notificationMessage={passwordErrorMessage} 
@@ -1147,7 +1127,7 @@ export default function Authentication() {
                 onIconButtonClick={onPasswordButtonClickHandler} 
                 onKeyDown={onPasswordKeyDownHandler}/>
                 
-                <InputBox ref={passwordCheckRef} label='Confirm Password' type={passwordCheckType} placeholder='Please re-enter your password' value={passwordCheck} 
+                <InputBox ref={passwordCheckRef} label='Confirm New Password' type={passwordCheckType} placeholder='Please re-enter your new password' value={passwordCheck} 
                 onChange={onPasswordCheckChangeHandler} 
                 notification={isPasswordCheckError} 
                 notificationMessage={passwordverificationCodeBoxBlueMessage} 
@@ -1164,19 +1144,9 @@ export default function Authentication() {
             )}
             {page === 2 &&(
               <>
-              <div className='auth-consent-box'>
-                <div className='auth-check-box' onClick={onAgreedPersonalClickHandler}>
-                  <div className={`icon ${agreedPersonal ? 'check-round-fill-icon' : 'check-ring-light-icon'}`}></div>
-                </div>
-                <div className={isAgreedPersonalError ? 'auth-consent-title-error' : 'auth-consent-title'}>{'Agree to the Privacy Policy'}</div>
-                <div className='auth-consent-link'>{'Read more >'}</div>
-              </div>
-              <div className='green-large-full-button' onClick={onSignUpButtonClickHandler}>{'Sign Up'}</div>
+              <div className='green-large-full-button' onClick={onSignUpButtonClickHandler}>{'Save New Password'}</div>
               </>
             )}
-            <div className='auth-description-box'>
-              <div className='auth-description'>{'Do you already have an account? '}<span className='auth-description-link' onClick={onSignInLinkClickHandler}>{'Sign in'}</span></div>
-            </div>
           </div>
         </div>
       </div>
