@@ -83,7 +83,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 0.25rem;
 }
 
 .auth-card-title-box{
@@ -130,6 +130,8 @@
 .auth-description-box{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .auth-description{
@@ -143,6 +145,27 @@
 .auth-description-link{
     color: rgba(0, 0, 0, 1);
     font-weight: 600;
+    cursor: pointer;
+}
+
+.forgot-password-container{
+    margin-left: auto;
+    position: relative;
+    bottom: 0.75rem;
+    right: 0.5rem;
+}
+
+.forgot-password-text{
+    color: rgba(0, 0, 0, 0.8);
+
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.forgot-password-text:hover{
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 500;
     cursor: pointer;
 }
 
@@ -248,4 +271,21 @@
 
 .green-empty-large-full-button{
     margin-bottom: 12px;
+}
+
+.forgot-password-title-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.forgot-password-title-box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}  
+
+.forgot-password-title-box-description{
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.75);
 }
