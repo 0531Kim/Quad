@@ -2,7 +2,7 @@ import React, { useState, KeyboardEvent, useRef, ChangeEvent, useEffect } from '
 import './style.css';
 import InputBox from 'components/InputBox';
 import { SignInRequestDto, SignUpRequestDto, emailVerificationRequestDto, checkVerificationCodeRequestDto, usernameCheckRequestDto } from 'apis/request/auth';
- import { checkValidateCode, findPasswordSendEmailVerificationCode, GOOGLE_SIGN_IN_URL, sendEmailVerificationCode, signInRequest, signUpRequest, usernameCheck } from 'apis';
+ import { checkValidateCode, findPasswordSendEmailVerificationCode, GOOGLE_SIGN_IN_URL, sendEmailVerificationCode, signInRequest, signUpRequest, usernameCheck, saveChangedPasswordRequest } from 'apis';
 import { checkVerificationCodeResponseDto, EmailVerificationCodeResponseDto, SignInResponseDto, SignUpResponseDto } from 'apis/response/auth';
 import { ResponseDto } from 'apis/response';
 import { useCookies } from 'react-cookie';
@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 import usernameCheckResponseDto from 'apis/response/auth/username-check-response.dto';
 import findPasswordEmailVerificationRequestDto from 'apis/request/auth/find-password-email-verification.request.dto';
 import FindPasswordEmailVerificationCodeResponseDto from 'apis/response/auth/find-password-email-verification-code.response.dto';
+import ChangedPasswordRequestDto from 'apis/request/auth/changed-password.request.dto';
+import ChangedPasswordResponseDto from 'apis/response/auth/changed-password.response.dto';
 
 //          component: authentication page component            //
 export default function Authentication() {
@@ -867,6 +869,19 @@ export default function Authentication() {
       setUsernameValidationBlueMessage("This username is available!");
     }
 
+    //          function: Changed Password function         //
+    const saveChangedPasswordResponse = (responseBody: ChangedPasswordResponseDto | ResponseDto | null) => {
+      if(!responseBody){
+        alert('Network error: Please check your internet connection and try again.');
+        return;
+      }
+      const {code} = responseBody;
+
+      if(code === 'DBE') alert('Database error occurred.');
+
+      if(code !== 'SU')return;
+    }
+
     //          event Handler : change handler        //
     const onEmailChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
       const {value} = event.target;
@@ -958,8 +973,8 @@ export default function Authentication() {
         return;
       }
 
-      console.log("go");
-      // Implement save changed password API.
+      const requestBody: ChangedPasswordRequestDto = {email: email, changedPassword : password};
+      saveChangedPasswordRequest(requestBody).then(saveChangedPasswordResponse);
     }
     //          event handler: login link click handler         //
     const onSignInLinkClickHandler = () => {
@@ -1165,7 +1180,6 @@ export default function Authentication() {
             </div>
             <div className='auth-jumbotron-textbox'>
               <div className='auth-jumbotron-text'>{'Quad shares informative and exclusive lecture reviews strictly related to the University of Auckland.'}</div>
-              {/* <div className='auth-jumbotron-text'>{'Know before you enroll'}</div> */}
             </div>
           </div>
         </div>
