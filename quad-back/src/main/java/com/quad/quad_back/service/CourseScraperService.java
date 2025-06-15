@@ -1,21 +1,17 @@
 package com.quad.quad_back.service;
 
 import com.quad.quad_back.dto.object.CourseDescriptionDto;
-import com.quad.quad_back.dto.object.CourseDto;
 import com.quad.quad_back.entity.CourseDescriptionEntity;
 import com.quad.quad_back.entity.CourseEntity;
 import com.quad.quad_back.repository.CourseDescriptionRepository;
 import com.quad.quad_back.repository.CourseRepository;
 import com.quad.quad_back.util.CourseDescriptionUpdater;
-import com.quad.quad_back.util.CourseDescriptionUpdater.Course;
 
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -80,9 +76,6 @@ public class CourseScraperService {
             courseDescription.setSem2Link(dto.getSem2Link());
             courseDescription.setSummerLink(dto.getSummerLink());
             courseDescription.setDescription(dto.getDescription());
-            courseDescription.setInPerson(dto.getInPerson() == 1);
-            courseDescription.setOnline(dto.getOnline() == 1);
-            courseDescription.setNoExam(dto.getNoExam() == 1);
             
             courseDescriptionRepository.save(courseDescription);
         }

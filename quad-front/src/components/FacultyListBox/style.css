@@ -1,6 +1,4 @@
 .review-faculty-list-box{
-    width: 830px;
-
     display: flex;
     align-items: center;
     gap: 4px;
@@ -11,6 +9,8 @@
 
     margin-bottom: 6px;
 }
+
+
 
 .department-container{
     width: 32px;
@@ -23,7 +23,6 @@
     border-radius: 2px;
 
     cursor: pointer;
-    
 }
 
 .department-icon{
@@ -82,3 +81,99 @@
     background-color: rgb(207, 199, 10);
     color: white;
   }
+
+  .review-faculty-wrapper{
+    display: none;
+  }
+
+@media (max-width: 60rem) {
+  .department-container{
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 4px 18px;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+  }
+
+  .faculty-view-container{
+    padding: 0rem 0rem !important;
+  }
+
+  .faculty-view-container-bot{
+    padding: 0rem !important;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  }
+
+  .review-faculty-wrapper{
+    display: block;
+    position: relative;
+  overflow: hidden; 
+  }
+
+  .review-faculty-list-box{
+    display: none;
+  }
+
+  /* .review-faculty-list-box {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    position: relative;
+  
+  
+    scrollbar-width: none;    
+    -ms-overflow-style: none; 
+  }
+  
+  .review-faculty-list-box::-webkit-scrollbar {
+    display: none;        
+  }
+
+  .review-faculty-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;     
+    height: 100%;
+    pointer-events: none;  
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 1;
+  }
+
+  .review-faculty-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 1;
+  } */
+}
+
+.faculty-view-text-box {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* justify-content: flex-end; */
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.faculty-view-text-box::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.faculty-view-text-box {
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}

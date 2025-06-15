@@ -96,7 +96,7 @@ export default function StudyView() {
   return (
         <div className='study-view-container'>
           <FacultyListBox setHoveredFaculty={() => {}} defaultFacultyKey={faculty} notHoverClick={1} />
-          <div className='faculty-view-container-top'>
+          {/* <div className='faculty-view-container-top'> */}
             <div className='faculty-view-text-box'>
               <i className={`fa-solid ${facultyIconMap[faculty ?? "ART"]} faculty-icon`} style={{ color: facultyColorMap[faculty ?? "ART"] }}></i>
               <div className='faculty-view-text-container'>
@@ -118,7 +118,12 @@ export default function StudyView() {
                 </div>
               )}
             </div>
-          </div>
+            <div className='study-view-container-mobile-text-container'>
+              <div className='study-view-container-mobile-text'>
+                {codeToSubjectMap[studyCode ?? "LAWENVIR"]}
+              </div>
+            </div>
+          {/* </div> */}
           <div className='study-view-container-bot'>
             {studyCode && course[studyCode] && (() => {
               const items = course[studyCode]

@@ -13,6 +13,6 @@ public interface ReviewListViewRepository extends JpaRepository<ReviewListViewEn
     List<ReviewListViewEntity> findTop4ByOrderByWriteDatetimeDesc();
     List<ReviewListViewEntity> findTop4ByOrderByLikeCountDescWriteDatetimeDesc();
     List<ReviewListViewEntity> findTop500ByOrderByWriteDatetimeDesc();
-    List<ReviewListViewEntity> findByCourseName(String courseName);
+    List<ReviewListViewEntity> findByCourseNameOrderByWriteDatetimeDesc(String courseName);
     
 }

@@ -22,7 +22,7 @@ public class UsernameCheckResponseDto extends ResponseDto{
     }
 
     public static ResponseEntity<ResponseDto> duplicateUsername() {
-        ResponseDto responseBody = new ResponseDto(ResponseCode.DUPLICATED_USERNAME, ResponseMessage.DUPLICATE_USERNAME);
+        ResponseDto responseBody = new ResponseDto(ResponseCode.DUPLICATED_USERNAME, ResponseMessage.DUPLICATED_USERNAME);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
     }
 }

@@ -1,12 +1,15 @@
 export default interface ReviewListItem{
+    reviewNumber: number;
     username: string;
     courseName: string;
     date: string;
-    noExam: number;
     difficulty: number;
-    leniency: number;
-    entertaining: number;
+    workload: number;
+    enjoyable: number;
     quality: number;
     content: string;
-    faculty: string;
+    likeCount: number;
+    score: number;
+    takenSemester: number;
+    exam: number;
 }

@@ -190,7 +190,7 @@
   color: #C9510C;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 58rem) {
     .nav-bar-box{
         display: none;
     }

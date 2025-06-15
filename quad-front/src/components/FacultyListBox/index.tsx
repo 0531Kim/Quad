@@ -63,6 +63,7 @@ const FacultyListBox = ({ setHoveredFaculty, defaultFacultyKey, notHoverClick }:
   }, [defaultFacultyKey]);
 
   return (
+    <div className='review-faculty-wrapper'>
     <div className="review-faculty-list-box">
       {departments.map((department, index) => (
         <div
@@ -74,6 +75,8 @@ const FacultyListBox = ({ setHoveredFaculty, defaultFacultyKey, notHoverClick }:
           <div className="department-text">{department.name}</div>
         </div>
       ))}
+    </div>
+          
     </div>
   );
 };

@@ -13,6 +13,8 @@ public class ValidationExceptionHandler {
     
     @ExceptionHandler({MethodArgumentNotValidException.class, HttpMessageNotReadableException.class})
     public ResponseEntity<ResponseDto> exceptionHandler(Exception exception){
+        System.out.println("[ValidationHandler] Exception occurred: " + exception.getClass().getName());
+        System.out.println("[ValidationHandler] Exception message: " + exception.getMessage());
         return ResponseDto.validationFailed();
     }
 

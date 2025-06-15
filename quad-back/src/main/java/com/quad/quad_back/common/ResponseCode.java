@@ -12,9 +12,10 @@ public interface ResponseCode{
     String NOT_EXISTED_EMAIL = "NE";
     String NOT_EXISTED_REVIEW = "NR";
     String NOT_EXISTED_COURSE = "NC";
+    String NOT_EXISTED_USER = "NU";
 
     // Http status 401: Unauthorized
-    String SIGN_IN_FAIL = "SF";
+    String SIGN_IN_FAILED = "SF";
     String AUTHORIZATION_FAIL = "AF";
     String EMAIL_VERIFICATION_FAILED = "EVF";
     String SIGN_IN_TYPE_WRONG = "STW";

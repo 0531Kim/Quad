@@ -5,6 +5,7 @@ import { AUTH_PATH, MAIN_PATH, USER_PATH } from 'constant';
 import { useCookies } from 'react-cookie';
 import { useLoginUserStore } from 'stores';
 import { ResponseDto } from 'apis/response';
+import HamburgerMenu from 'components/HamburgerMenu';
 
 
 //          Component: header layout component         //
@@ -43,14 +44,25 @@ export default function Header() {
   //          state: user page state          //
   const [isUserPage, setUserPage] = useState<boolean>(false);
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   //          function: navigate function           //
   const navigate = useNavigate();
+
+  const handleResize = () => {
+  if (window.innerWidth > 768) {
+    setIsMenuOpen(false);
+  }
+  };
 
   //          event Handler: logo click event Handler          //
   const  onLogoClickHandler = () => {
     navigate(MAIN_PATH());
   }
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   //        component: search btn component           //
   const SearchButton = () => {
@@ -122,7 +134,7 @@ export default function Header() {
     //        event Handler: Mypage btn click event handler         //
     const onMyPageButtonClickHandler = () =>{
       if(!loginUser)return;
-      const{email} = loginUser;
+      const{ email } = loginUser;
       navigate(USER_PATH(email));
     }
 
@@ -164,8 +176,23 @@ export default function Header() {
     setLogin(loginUser !== null);
   },[loginUser]);
 
+  //        effect: closes menu when window width exceeds 768px         //
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  },[]);
+
+  //        effect: closes menu when pathname changes         //
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   //          render: header layout rendering         //
   return (
+    <>
     <div id = 'header'>
       {!isAuthPage && 
         <div className = 'header-container'>
@@ -181,10 +208,14 @@ export default function Header() {
             </div>
             <div className ='header-right-box-mobile'>
               <i className="fa-regular fa-lg fa-magnifying-glass"></i>
-              <i className="fa-regular fa-lg fa-bars"></i>
+              <i className="fa-regular fa-lg fa-bars" onClick={handleMenuToggle}></i>
             </div>
         </div>
       }
     </div>
+    {isMenuOpen && (
+        <HamburgerMenu />
+      )}
+      </>
   )
 }

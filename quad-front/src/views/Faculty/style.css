@@ -23,15 +23,13 @@
     flex-shrink: 1;
     padding: 0rem 1rem;
 }
-
+/* 
 .faculty-view-container-top{
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 10px 14px 12px 24px;
-
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
-}
+} */
 
 .faculty-view-bottom{
     margin-bottom: 80px;
@@ -45,14 +43,13 @@
 }
 
 .faculty-view-text-box{
-    display: flex;
-}
-
-.faculty-view-text-box{
+  z-index: 50;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     height: 52px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .faculty-view-text-container{
@@ -126,19 +123,19 @@
     line-height: 140%;
 }
 
-.study-name-box:hover .studies-in-faculty{
+/* .study-name-box:hover .studies-in-faculty{
     font-weight: 600;
     padding: 0px 9px 0px 8px;
-}
+} */
 
-.study-name-box:hover .study-name-box-dot {
+/* .study-name-box:hover .study-name-box-dot {
     min-width: 5.5px;
     min-height: 5.5px;
 }
 
 .study-name-box:hover{
     border-radius: 3px;
-}
+} */
 
 
 .art-hover-border:hover {
@@ -169,16 +166,98 @@
     border: 1.2px solid rgb(207, 199, 10);
   }
 
-  .review-faculty-list-box{
-    width: 830px;
+.faculty-view-review-text-container{
+  display:none;
+}
 
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.faculty-view-review-text-title{
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+}
 
-    padding: 3px 0px;
+.faculty-view-container-mobile-text{
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: "Special Gothic Condensed One", sans-serif;
+  color: rgba(0, 0, 0, 0.85);
+  display:none;
+}
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  @media (max-width: 38rem) {
 
-    margin-bottom: 6px;
+    .faculty-view-review-text-container{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      display: none;
+
+      /* border-bottom: 1px solid #00000038;
+      padding-bottom: 1rem; */
+    }
+
+    .faculty-view-container-top{
+      padding: 0rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      
+      width: 100vw;
+    }
+
+    .faculty-view-text-box{
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      height: 2rem;
+
+      background-color: rgba(0, 0, 0, 0.03);;
+
+      padding: 0rem 1rem;
+
+      margin-left:-1rem;
+
+      margin-bottom: 0.5rem;
+
+      gap: 6px;
+    
+      /* 스크롤바 숨기기 */
+      scrollbar-width: none;     /* Firefox */
+      -ms-overflow-style: none;  /* IE/Edge */
+    }
+    .faculty-view-text-box::-webkit-scrollbar {
+      display: none;             /* Chrome/Safari */
+    }
+    .faculty-view-description{
+      display: none;
+    }
+    .faculty-icon{
+      font-size: 12px;
+    }
+
+    .faculty-view-title{
+      font-size: 12px;
+      font-weight: 500;
+      font-family: "Roboto", sans-serif;
+      color: rgba(0, 0, 0, 0.8);
+
+      white-space: nowrap;
+    }
+
+    .faculty-view-review-text-title{
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.85);
+    }
+
+    .faculty-view-container-mobile-text{
+      display: block;
+      padding: 0.25rem 0rem;
+    }
+
+    /* .faculty-icon{
+      display: none;
+    } */
 }

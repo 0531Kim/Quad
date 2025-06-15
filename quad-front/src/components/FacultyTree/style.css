@@ -1,0 +1,40 @@
+
+.faculty-tree-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .faculty-tree-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  
+  .faculty-tree-item:hover {
+    background: #f2f6fc;
+  }
+  
+  .faculty-tree-item.selected {
+    background: #e6f0ff;
+  }
+  
+  .faculty-tree-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 2px;
+  }
+  
+  .faculty-tree-label {
+    font-size: 1rem;
+    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  

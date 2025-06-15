@@ -5,14 +5,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.quad.quad_back.dto.request.auth.ChangeUsernameRequestDto;
 import com.quad.quad_back.dto.request.auth.ConfirmEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.EmailVerificationRequestDto;
+import com.quad.quad_back.dto.request.auth.FindPasswordEmailVerificationRequestDto;
 import com.quad.quad_back.dto.request.auth.SignInRequestDto;
 import com.quad.quad_back.dto.request.auth.SignUpRequestDto;
+import com.quad.quad_back.dto.response.auth.ChangePasswordResponseDto;
 import com.quad.quad_back.dto.response.auth.ChangeUsernameResponseDto;
 import com.quad.quad_back.dto.response.auth.ConfirmEmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.EmailVerificationResponseDto;
+import com.quad.quad_back.dto.response.auth.FindPasswordEmailVerificationResponseDto;
 import com.quad.quad_back.dto.response.auth.SignInResponseDto;
 import com.quad.quad_back.dto.response.auth.SignUpResponseDto;
 import com.quad.quad_back.dto.request.auth.UsernameCheckRequestDto;
+import com.quad.quad_back.dto.request.auth.ChangePasswordRequestDto;
 import com.quad.quad_back.dto.response.auth.UsernameCheckResponseDto;
 import com.quad.quad_back.service.AuthService;
 
@@ -47,6 +51,14 @@ public class AuthController {
         ResponseEntity<? super EmailVerificationResponseDto> response = authService.emailVerification(requestBody);
         return response;
     }
+
+    @PostMapping("/find-password-email-verification")
+    public ResponseEntity<? super FindPasswordEmailVerificationResponseDto> findPasswordEmailVerification(
+        @RequestBody @Valid FindPasswordEmailVerificationRequestDto requestBody
+    ) {
+        ResponseEntity<? super FindPasswordEmailVerificationResponseDto> response = authService.findPasswordEmailVerification(requestBody);
+        return response;
+    }
     
     @PostMapping("/confirm-email-verification")
     public ResponseEntity<? super ConfirmEmailVerificationResponseDto> confirmEmailVerification(
@@ -71,6 +83,8 @@ public class AuthController {
         return response;
     }
 
+    // This is called when user signs up with oauth
+    // and change default username to customized one.
     @PatchMapping("/change-username")
     public ResponseEntity<? super ChangeUsernameResponseDto> changeUsername(
         @RequestBody ChangeUsernameRequestDto requestBody
@@ -78,4 +92,14 @@ public class AuthController {
         ResponseEntity<? super ChangeUsernameResponseDto> response = authService.changeUsername(requestBody);
         return response;
     }
+
+    @PatchMapping("/change-password")
+    public ResponseEntity<? super ChangePasswordResponseDto> changePassword(
+        @RequestBody ChangePasswordRequestDto requestBody
+    ){
+        ResponseEntity<? super ChangePasswordResponseDto> response = authService.changePassword(requestBody);
+        return response;
+    }
+    
 }
+

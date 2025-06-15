@@ -40,13 +40,4 @@ public class CourseDescriptionEntity {
     
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
-    
-    @Column(name = "in_person")
-    private Boolean inPerson;
-    
-    @Column(name = "online")
-    private Boolean online;
-    
-    @Column(name = "no_exam")
-    private Boolean noExam;
 }

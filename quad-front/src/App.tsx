@@ -11,13 +11,16 @@ import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { ResponseDto } from 'apis/response';
 import { GetSignInUserResponseDto } from 'apis/response/user';
-import { getSignInUserRequest } from 'apis';
+import { getLikedReviewIndexList, getSignInUserRequest } from 'apis';
 import { User } from 'types/interface';
 import Main from 'views/Main';
 import Container from 'layouts/Container';
 import ReviewView from 'views/Review';
 import FacultyView from 'views/Faculty';
 import StudyView from 'views/Study';
+import UserView from 'views/User';
+import GetLikedReviewIndexListResponseDto from 'apis/response/review/get-liked-review-index-list.response.dto';
+import useLikedReviewStore from 'stores/liked-review.store';
 
 // app renders twice.
 //      Component: Application component      //
@@ -40,6 +43,17 @@ function App() {
     setLoginUser(loginUser);
   }
 
+  //        function: get liked review index list response handle function          //
+  const getLikedReviewIndexListResponse = (responseBody: GetLikedReviewIndexListResponseDto | ResponseDto | null) => {
+    if(!responseBody) return;
+    const { code } = responseBody;
+    if(code === 'DBE') alert('Database Error!');
+    if(code !== 'SU') return;
+
+    const { likedReviewIndexList } = responseBody as GetLikedReviewIndexListResponseDto;
+    useLikedReviewStore.getState().setLikedReviewIndexList(likedReviewIndexList);
+  }
+
   //        effect: runs when accessToken cookie changes        //
   useEffect(() => {
     if(!cookies.accessToken){
@@ -47,6 +61,15 @@ function App() {
       return;
     }
     getSignInUserRequest(cookies.accessToken).then(getSignInUserResponse);
+  }, [cookies.accessToken]);
+
+  //        effect: runs when user is logged in        //
+  useEffect(() => {
+    if(!cookies.accessToken){
+      resetLoginUser();
+      return;
+    }
+    getLikedReviewIndexList(cookies.accessToken).then(getLikedReviewIndexListResponse);
   }, [cookies.accessToken]);
 
   //      render:rendering Application component      //
@@ -60,6 +83,7 @@ function App() {
         <Route path={FACULTY_PATH_WITH_CODE(":facultyName")} element={<FacultyView />} />
         <Route path={STUDY_PATH(":faculty",":studyCode")} element={<StudyView />} />
         <Route path={COURSE_PATH(":faculty",":studyCode",":courseCode")} element={<ReviewView />} />
+        <Route path={USER_PATH(":userEmail")} element={<UserView />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Route>
     </Routes>

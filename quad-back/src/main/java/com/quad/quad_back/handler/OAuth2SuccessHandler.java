@@ -30,8 +30,6 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
 		Authentication authentication
     ) throws IOException, ServletException {
 
-        System.out.println("Success handler");
-
         CustomOAuth2User oAuth2User = (CustomOAuth2User) authentication.getPrincipal();
 
         String userEmail = oAuth2User.getName();
@@ -41,7 +39,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
         String username = userEntity.getUsername();
         boolean isDefaultUsername = false;
 
-        String defaultPrefix = "default_" + userEmail.substring(0, 4);
+        String defaultPrefix = "default_user";
         isDefaultUsername = username.startsWith(defaultPrefix);
 
         if(!isDefaultUsername){
@@ -49,5 +47,11 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
         }else{
             response.sendRedirect("https://quadnz.com/auth/oauth-response/" + token + "/3600/" + username);
         }
+
+        // if(!isDefaultUsername){
+        //     response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600");
+        // }else{
+        //     response.sendRedirect("http://localhost:3000/auth/oauth-response/" + token + "/3600/" + username);
+        // }
 	}
 }

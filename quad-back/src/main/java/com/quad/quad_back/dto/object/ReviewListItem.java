@@ -20,28 +20,34 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReviewListItem {
+    private int reviewNumber;
     private String username;
     private String courseName;
     private String date;
-    private Integer noExam;
     private int difficulty;
-    private int leniency;
-    private int entertaining;
+    private int workload;
+    private int enjoyable;
     private int quality;
+    private int takenSemester;
     private String content;
-    private String faculty;
+    private int score;
+    private int likeCount;
+    private int exam;
 
     public ReviewListItem(ReviewListViewEntity reviewListViewEntity){
+        this.reviewNumber = reviewListViewEntity.getReviewNumber();
         this.username = reviewListViewEntity.getUsername();
         this.courseName = reviewListViewEntity.getCourseName();
         this.date = timeChanger(reviewListViewEntity.getWriteDatetime());
-        this.noExam = reviewListViewEntity.getNoExam();
         this.difficulty = reviewListViewEntity.getDifficulty();
-        this.leniency = reviewListViewEntity.getLeniency();
-        this.entertaining = reviewListViewEntity.getEntertaining();
+        this.workload = reviewListViewEntity.getWorkload();
+        this.enjoyable = reviewListViewEntity.getEnjoyable();
         this.quality = reviewListViewEntity.getQuality();
+        this.takenSemester = reviewListViewEntity.getTakenSemester();
         this.content = reviewListViewEntity.getContent();
-        this.faculty = reviewListViewEntity.getFaculty();
+        this.score = reviewListViewEntity.getScore();
+        this.likeCount = reviewListViewEntity.getLikeCount();
+        this.exam = reviewListViewEntity.getExam();
     }
 
     private String timeChanger(String time) {
@@ -52,12 +58,6 @@ public class ReviewListItem {
         LocalDateTime localDateTime = LocalDateTime.parse(time, inputFormatter);
         ZonedDateTime zonedDateTime = localDateTime.atZone(aucklandZone);
 
-        LocalDate today = ZonedDateTime.now(aucklandZone).toLocalDate();
-
-        if (zonedDateTime.toLocalDate().isEqual(today)) {
-            return zonedDateTime.format(DateTimeFormatter.ofPattern("HH:mm"));
-        } else {
-            return zonedDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
-        }
+        return zonedDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
     }
 }

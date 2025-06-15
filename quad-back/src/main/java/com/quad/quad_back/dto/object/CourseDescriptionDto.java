@@ -56,8 +56,5 @@ public class CourseDescriptionDto {
     this.sem2Link = entity.getSem2Link();
     this.summerLink = entity.getSummerLink();
     this.description = entity.getDescription();
-    this.inPerson = entity.getInPerson() ? 1 : 0;
-    this.online = entity.getOnline() ? 1 : 0;
-    this.noExam = entity.getNoExam() ? 1 : 0;
 }
 }

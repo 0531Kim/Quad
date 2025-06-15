@@ -7,7 +7,4 @@ export default interface CourseDescription {
     sem2_link: string;
     summer_link: string;
     description: string;
-    in_person: number;
-    online: number;
-    noExam: number;
 }

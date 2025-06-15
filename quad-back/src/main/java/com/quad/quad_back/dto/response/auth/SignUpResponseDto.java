@@ -27,7 +27,7 @@ public class SignUpResponseDto extends ResponseDto{
     }
 
     public static ResponseEntity<ResponseDto> duplicateUsername(){
-        ResponseDto result = new ResponseDto(ResponseCode.DUPLICATED_USERNAME, ResponseMessage.DUPLICATE_USERNAME);
+        ResponseDto result = new ResponseDto(ResponseCode.DUPLICATED_USERNAME, ResponseMessage.DUPLICATED_USERNAME);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
     }
 

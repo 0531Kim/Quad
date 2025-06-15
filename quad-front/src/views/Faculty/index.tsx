@@ -99,6 +99,13 @@ export default function FacultyView() {
     useEffect(() => {
         getStudiesByFaculty().then(getStudiesByFacultyResponse)
     }, [])
+
+    useEffect(() => {
+        if(facultyName && facultyKeyMap[facultyName]) {
+        setHoveredFaculty(facultyName);
+        setFaculty(facultyKeyMap[facultyName]);
+        }
+    }, [facultyName]);
     
     const currentFacultyKey = hoveredFaculty ?? 'ART';
 
@@ -106,6 +113,12 @@ export default function FacultyView() {
                 <div className='faculty-view-container'>
                     <FacultyListBox setHoveredFaculty={setHoveredFaculty} defaultFacultyKey={hoveredFaculty} notHoverClick = {0}/>
                     <div className='faculty-view-container-top'>
+                        <div className='faculty-view-review-text-container'>
+                            {/* <i className="fa-regular fa-lg fa-pencil"></i> */}
+                            <div className='faculty-view-review-text-title'>
+                                Course Review
+                            </div>
+                        </div>
                         <div className='faculty-view-text-box'>
                             <i className={`fa-solid ${facultyIconMap[hoveredFaculty]} faculty-icon`} style={{ color: facultyColorMap[hoveredFaculty] }}></i>
                             <div className='faculty-view-text-container'>
@@ -114,6 +127,11 @@ export default function FacultyView() {
                                     {facultyDescriptionMap[hoveredFaculty]}
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div className='faculty-view-container-mobile-text-container'>
+                        <div className='faculty-view-container-mobile-text'>
+                            {facultyKeyMap[hoveredFaculty]}
                         </div>
                     </div>
                     <div className='faculty-view-container-bot'>

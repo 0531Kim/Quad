@@ -1,7 +1,8 @@
 .screen-container{
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+    overflow-y: hidden;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .main-wrapper{
@@ -27,7 +28,7 @@
     padding: 0px 1rem;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 58rem) {
     .main-box{
         padding-left: 0rem;
     }

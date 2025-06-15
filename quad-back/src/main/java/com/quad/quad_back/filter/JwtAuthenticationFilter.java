@@ -38,42 +38,48 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
             throws ServletException, IOException {
 
         String path = request.getRequestURI();
+        System.out.println("[JwtFilter] Request path: " + path);
+        System.out.println("[JwtFilter] Authorization header: " + request.getHeader("Authorization"));
 
-        System.out.println("THIS IS A PATH BEFORE FILTER " + path);
-
-        if (path.startsWith("/api/v1/review/")
-            || path.equals("/api/v1/review")
-            || path.equals("/api/v1/courseScraping")
-            || path.startsWith("/actuator/")
-            || path.equals("/actuator")
-            || path.startsWith("/api/courses/scrape")
-            || path.equals("/api/courses/scrape")
-        ) {
-            filterChain.doFilter(request, response);
-            return;
-        }
+        // if (path.startsWith("/api/v1/review/")
+        //     || path.equals("/api/v1/courseScraping")
+        //     || path.startsWith("/actuator/")
+        //     || path.equals("/actuator")
+        //     || path.startsWith("/api/courses/scrape")
+        //     || path.equals("/api/courses/scrape")
+        // ) {
+        //     System.out.println("[JwtFilter] Path is in permit list, skipping filter");
+        //     filterChain.doFilter(request, response);
+        //     return;
+        // }
 
         System.out.println("THIS IS A PATH AFTER FILTER " + path);
 
         try {
-
             String token = parseBearerToken(request);
+            System.out.println("[JwtFilter] Parsed token: " + token);
 
             if (token == null) {
+                System.out.println("[JwtFilter] Token is null, skipping filter");
                 filterChain.doFilter(request, response);
                 return;
             }
 
             String email = jwtProvider.validate(token);
+            System.out.println("[JwtFilter] Validated email: " + email);
+            
             if (email == null) {
+                System.out.println("[JwtFilter] Email validation failed");
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.setContentType("application/json");
-                response.getWriter().write("{ \"code\":\"Invalid Token\", \"message\": \"Token validation failed.\"}");
+                response.getWriter().write("{ \"code\":\"AF\", \"message\": \"Token validation failed.\"}");
                 return;
             }
 
             UserEntity userEntity = userRepository.findByEmail(email);
+            System.out.println("[JwtFilter] Found user: " + (userEntity != null ? userEntity.getEmail() : "null"));
             String role = userEntity.getRole(); // role : ROLE_USER or ROLE_ADMIN
+            System.out.println("[JwtFilter] User role: " + role);
 
             List<GrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority(role));
@@ -88,11 +94,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
             SecurityContextHolder.setContext(securityContext);
 
         } catch(Exception exception) {
-
+            System.out.println("[JwtFilter] Exception occurred: " + exception.getMessage());
             exception.printStackTrace();
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType("application/json");
-            response.getWriter().write("{ \"code\":\"Auth Error\", \"message\": \"" + exception.getMessage() + "\"}");
+            response.getWriter().write("{ \"code\":\"AF\", \"message\": \"" + exception.getMessage() + "\"}");
             return;
         }     
 

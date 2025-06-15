@@ -17,18 +17,16 @@ public class ReviewListViewEntity {
     
     @Id
     private int reviewNumber;
-    private String title;
-    private String content;
     private String courseName;
-    private int likeCount;
-    private int commentCount;
-    private int viewCount;
-    private String writeDatetime;
-    private int difficulty;
-    private int leniency;
-    private int entertaining;
+    private int score;
     private int quality;
+    private int enjoyable;
+    private int difficulty;
+    private int workload;
+    private int exam;
+    private String writeDatetime;
+    private int takenSemester;
+    private String content;
+    private int likeCount;
     private String username;
-    private Integer noExam;
-    private String faculty;
 }

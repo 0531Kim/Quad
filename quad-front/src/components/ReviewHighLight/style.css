@@ -1,6 +1,5 @@
 .high-light-content{
     height: auto;
-    margin: 0px auto;
 }
 
 .high-light-content-top{
@@ -35,11 +34,6 @@
     border-bottom: 0.9px solid rgba(0, 0, 0, 0.2);
 }
 
-.contentCard:hover{
-    margin-left: 4px;
-    cursor: pointer;
-}
-
 .content-card-top{
     display: flex;
     align-items: center;
@@ -49,6 +43,7 @@
 
 .content-card-top-left{
     display: flex;
+    align-items: center;
     gap: 6px;
 }
 
@@ -71,7 +66,7 @@
 .content-card-likes{
     display: flex;
     align-items: center;
-    gap: 0.2px;
+    gap: 2px;
     
     width: 30px;
     height: 100%;
@@ -90,7 +85,7 @@
 .content-card-right-content{
     display: flex;
     font-size: 14px;
-    color: rgb(0, 0, 0, 0.7);
+    color: rgb(0, 0, 0, 0.85);
     gap: 5px;
     align-items: center;
 }
@@ -99,6 +94,8 @@
     font-size: 1rem;
     font-weight: 400;
     color: rgb(0, 0, 0, 0.9);
+
+    line-height: 125%;
 }
 
 .content-rate{
@@ -126,12 +123,8 @@
 }
 
 .content-card-icon{
-    position: relative;
-    top: -1.4px;
-    
-    width: 13px;
-    height: 12.5px;
-
     background-position: 50% 50%;
     background-size: 100% 100%;
+
+    color: #ff4d4d;
 }

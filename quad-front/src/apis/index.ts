@@ -13,6 +13,20 @@ import getCourseReviewResponseDto from "./response/review/get-course-review.resp
 import getCourseReviewRequestDto from "./request/review/get-course-review.request.dto";
 import getCourseDescriptionRequestDto from "./request/review/get-course-description.request.dto";
 import getCourseDescriptionResponseDto from "./response/review/get-course-description.response.dto";
+import findPasswordEmailVerificationRequestDto from "./request/auth/find-password-email-verification.request.dto";
+import FindPasswordEmailVerificationCodeResponseDto from "./response/auth/find-password-email-verification-code.response.dto";
+import ChangedPasswordRequestDto from "./request/auth/changed-password.request.dto";
+import ChangedPasswordResponseDto from "./response/auth/changed-password.response.dto";
+import PostReviewRequestDto from "./request/review/post-review.request.dto";
+import PostReviewResponseDto from "./response/review/post-review.response.dto";
+import LikeReviewRequestDto from "./request/review/like-review.request.dto";
+import LikeReviewResponseDto from "./response/review/like-review.response.dto";
+import DeleteReviewRequestDto from "./request/review/remove-like-review.request.dto";
+import DeleteReviewResponseDto from "./response/review/remove-like-review.response.dto";
+import GetLikedReviewResponseDto from "./response/review/get-liked-review-index-list.response.dto";
+import GetLikedReviewIndexListRequestDto from "./request/review/get-liked-review-index-list.request.dto";
+import ReportReviewResponseDto from "./response/review/report-review.response.dto";
+import ReportReviewRequestDto from "./request/review/report-review.request.dto";
 
 const DOMAIN = process.env.REACT_APP_API_DOMAIN!;
 // console.log('[DEBUG] DOMAIN:', DOMAIN);
@@ -29,6 +43,8 @@ const GET_SIGN_IN_USER_URL = () => `${API_DOMAIN}/user`;
 
 const CONFIRM_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/confirm-email-verification`;
 const SEND_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/email-verification`;
+const FIND_PASSWORD_SEND_EMAIL_VERIFICATION_CODE_URL = () => `${API_DOMAIN}/auth/find-password-email-verification`;
+const CHANGED_PASSWORD_URL = () => `${API_DOMAIN}/auth/change-password`;
 const USERNAME_CHECK_URL = () => `${API_DOMAIN}/auth/username-check`;
 export const GOOGLE_SIGN_IN_URL = () => `${API_DOMAIN}/auth/oauth2/google`;
 export const AUTH_CHANGE_USERNAME_URL = () => `${API_DOMAIN}/auth/change-username`;
@@ -40,6 +56,14 @@ const GET_STUDIES_BY_FACULTY_URL = () => `${API_DOMAIN}/review/allStudies`;
 const GET_COURSES_BY_STUDY_URL = () => `${API_DOMAIN}/review/CoursesByStudy`;
 const GET_COURSE_REVIEW_URL = (courseName: string) => `${API_DOMAIN}/review/getCourseReview?courseName=${courseName}`;
 const GET_COURSE_DESCRIPTION_URL = (courseName: string) => `${API_DOMAIN}/review/CourseDescription?courseName=${courseName}`
+
+const POST_REVIEW_URL = () => `${API_DOMAIN}/review`;
+const POST_REVIEW_LIKE_URL = () => `${API_DOMAIN}/review/likes`;
+const DELETE_REVIEW_LIKE_URL = () => `${API_DOMAIN}/review/likes`;
+const GET_LIKED_REVIEW_INDEX_LIST_URL = () => `${API_DOMAIN}/review/likedReviewIndexList`;
+const DELETE_REVIEW_URL = () => `${API_DOMAIN}/review`;
+const REPORT_REVIEW_URL = () => `${API_DOMAIN}/review/report`;
+
 
 export const signInRequest = async(requestBody: SignInRequestDto) => {
     const result = await axios.post(SIGN_IN_URL(), requestBody)
@@ -87,6 +111,34 @@ export const sendEmailVerificationCode = async (requestBody: emailVerificationRe
     const result = await axios.post(SEND_EMAIL_VERIFICATION_CODE_URL(), requestBody)
     .then(response => {
         const responseBody: EmailVerificationCodeResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const findPasswordSendEmailVerificationCode = async (requestBody: findPasswordEmailVerificationRequestDto) => {
+    const result = await axios.post(FIND_PASSWORD_SEND_EMAIL_VERIFICATION_CODE_URL(), requestBody)
+    .then(response => {
+        const responseBody: FindPasswordEmailVerificationCodeResponseDto = response.data;
+        return responseBody;
+    })
+    .catch(error => {
+        if(!error.response) return null;
+        const responseBody: ResponseDto = error.response.data;
+        return responseBody;
+    });
+    return result;
+}
+
+export const saveChangedPasswordRequest = async (requestBody: ChangedPasswordRequestDto) =>{
+    const result = await axios.patch(CHANGED_PASSWORD_URL(), requestBody)
+    .then(response => {
+        const responseBody: ChangedPasswordResponseDto = response.data;
         return responseBody;
     })
     .catch(error => {
@@ -241,5 +293,89 @@ export const getCourseDescription = async (requestBody: getCourseDescriptionRequ
         const responseBody: ResponseDto = error.response.data;
         return responseBody;
     });
+    return result;
+}
+
+export const postReviewRequest = async (requestBody: PostReviewRequestDto, accessToken: string) => {
+    const result = await axios.post(POST_REVIEW_URL(), requestBody, authorization(accessToken))
+        .then(response => {
+            const responseBody: PostReviewResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if(!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
+    return result;
+}
+
+export const postReviewLikeRequest = async (requestBody: LikeReviewRequestDto, accessToken: string) => {
+    const result = await axios.post(POST_REVIEW_LIKE_URL(), requestBody, authorization(accessToken))
+        .then(response => {
+            const responseBody: LikeReviewResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if(!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
+    return result;
+}
+
+export const deleteReviewLikeRequest = async (requestBody: DeleteReviewRequestDto, accessToken: string) => {
+    const result = await axios.delete(DELETE_REVIEW_LIKE_URL(), { data: requestBody, ...authorization(accessToken) })
+        .then(response => {
+            const responseBody: DeleteReviewResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if(!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
+    return result;
+}
+
+export const getLikedReviewIndexList = async (accessToken: string) => {
+    const result = await axios.get(GET_LIKED_REVIEW_INDEX_LIST_URL(), authorization(accessToken))
+        .then(response => {
+            const responseBody: GetLikedReviewResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if(!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
+    return result;
+}
+
+export const deleteReviewRequest = async (requestBody: DeleteReviewRequestDto, accessToken: string) => {
+    const result = await axios.delete(DELETE_REVIEW_URL(), { data: requestBody, ...authorization(accessToken) })
+        .then(response => {
+            const responseBody: DeleteReviewResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if(!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
+    return result;
+}
+
+export const reportReviewRequest = async (requestBody: ReportReviewRequestDto, accessToken: string) => {
+    const result = await axios.post(REPORT_REVIEW_URL(), requestBody, authorization(accessToken))
+        .then(response => {
+            const responseBody: ReportReviewResponseDto = response.data;
+            return responseBody;
+        })
+        .catch(error => {
+            if(!error.response) return null;
+            const responseBody: ResponseDto = error.response.data;
+            return responseBody;
+        });
     return result;
 }

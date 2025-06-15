@@ -95,7 +95,6 @@ body{
 
   /* background-color: rgba(0, 0, 0, 1); */
   background-color: #00804b;
-  border: 1.5px solid #00804b;
   color: rgba(255, 255, 255, 1);
   font-size: 16px;
   font-weight: 400;
@@ -106,7 +105,6 @@ body{
 
 .green-large-full-button:hover{
   background-color: rgba(0, 128, 75, 0.9);
-  border: 1.5px solid rgba(0, 128, 75, 0.9);
 }
 
 .green-empty-large-full-button{

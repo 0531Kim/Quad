@@ -52,24 +52,28 @@ export default function Container() {
 
 
     //          render: render layout           //
-  return (
-    <>
-      <div className="screen-container">
-        <div className="main-wrapper">
-          {!isAuthPath && !isOAuthPath && <div ref={navBarRef}><NavBar /></div>}  
-          <div className={`main-box ${isAuthPath || isOAuthPath ? 'auth' : ''}`}>
-            {!isAuthPath && !isOAuthPath && <Header />}  
-            {!isAuthPath && !isOAuthPath && <MainTop />}
-            <div className='main-content-area'>
-              <Outlet />
-              {!isAuthPath && !isOAuthPath && <MainRight />}
-            </div>
-          </div>
+    return (
+      <>
+        <div className="screen-container">
+          {isAuthPath || isOAuthPath ? (
+            <Outlet />
+          ) : (
+            <>
+              <div ref={navBarRef}><NavBar /></div>
+              <div className="main-box">
+                <Header />
+                <MainTop />
+                <div className='main-content-area'>
+                  <Outlet />
+                  <MainRight />
+                </div>
+              </div>
+              <footer ref={footerRef}>
+                {!isAuthPath && !isOAuthPath && <Footer />}
+              </footer>
+            </>
+          )}
         </div>
-        <footer ref={footerRef}>
-          {!isAuthPath && !isOAuthPath && <Footer />}
-        </footer>
-      </div>
-    </>
-  )
+      </>
+    )
 }
